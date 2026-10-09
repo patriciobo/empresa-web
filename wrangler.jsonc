@@ -1,0 +1,10 @@
+// Despliegue en Cloudflare Workers (sitio estático): sirve el build de Astro (dist/).
+// Cloudflare corre `npm run build` y después `npx wrangler deploy`.
+{
+  "name": "empresa-web",
+  "compatibility_date": "2026-10-01",
+  "assets": {
+    "directory": "./dist",
+    "not_found_handling": "404-page"
+  }
+}
