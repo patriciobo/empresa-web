@@ -738,5 +738,94 @@
     ],
     "orden": 8,
     "destacado": false
+  },
+  {
+    "slug": "altolasflores",
+    "nombre": "Alto las Flores",
+    "url": "https://altolasflores.com.ar",
+    "tagline": "Cabañas con pileta y parque en Santa Rosa de Calamuchita, Córdoba",
+    "descripcion": "Complejo de cabañas en una zona tranquila de Santa Rosa de Calamuchita, con fácil acceso a compras diarias, restaurantes y el centro de la ciudad. Cabañas de dos plantas con cocina equipada, comedor, habitación matrimonial y habitación con cuchetas, Wi-Fi y televisión en todas las cabañas. Parque amplio con pileta, sombrillas de paja, parrilla y juegos para chicos. A 5 minutos de la playa Mate de Luna, 15 del centro de Santa Rosa, 20 de Villa General Belgrano y 25 de Villa Yacanto. Las consultas y reservas se hacen por WhatsApp.",
+    "rubro": "Turismo · Alojamiento",
+    "tipo": "Marca y presencia online",
+    "capas": [
+      "presencia",
+      "marca"
+    ],
+    "desafio": "Un complejo de cabañas en Santa Rosa de Calamuchita tenía un sitio desactualizado, sin identidad visual propia y con las fotos dispersas en el celular.",
+    "solucion": "Una identidad nueva (logo, favicon e íconos) y un sitio liviano con galería de fotos reales, servicios, ubicación con mapa y consulta directa por WhatsApp.",
+    "funciones": [
+      "Galería de fotos reales del complejo, optimizadas en WebP",
+      "Servicios de cada cabaña y del parque en una sola página",
+      "Mapa y distancias a la playa, al centro y a Villa General Belgrano",
+      "Consulta por WhatsApp con un toque desde cualquier sección",
+      "Logo, favicon e íconos nuevos para la web y el celular"
+    ],
+    "mejoras": [
+      "Las consultas llegan por WhatsApp con la información ya vista",
+      "El sitio carga rápido en el celular, donde se planean las escapadas",
+      "Fotos y contenidos listos para publicar en redes"
+    ],
+    "beneficios": [
+      {
+        "para": "Huéspedes",
+        "texto": "Ven las cabañas, el parque y la ubicación antes de consultar"
+      },
+      {
+        "para": "Dueños",
+        "texto": "Una vidriera propia, sin depender sólo de las plataformas"
+      }
+    ],
+    "stack": [
+      "HTML",
+      "CSS",
+      "JavaScript"
+    ],
+    "colores": [
+      "#2e5a3a",
+      "#f7f6f2",
+      "#1b1f1a",
+      "#e3ebe2"
+    ],
+    "logo": "/proyectos/altolasflores/logo.webp",
+    "imagenes": [
+      {
+        "src": "/proyectos/altolasflores/1.webp",
+        "ancho": 900,
+        "alto": 1200,
+        "vertical": true
+      },
+      {
+        "src": "/proyectos/altolasflores/2.webp",
+        "ancho": 900,
+        "alto": 1200,
+        "vertical": true
+      },
+      {
+        "src": "/proyectos/altolasflores/3.webp",
+        "ancho": 900,
+        "alto": 1200,
+        "vertical": true
+      },
+      {
+        "src": "/proyectos/altolasflores/4.webp",
+        "ancho": 900,
+        "alto": 1200,
+        "vertical": true
+      },
+      {
+        "src": "/proyectos/altolasflores/5.webp",
+        "ancho": 900,
+        "alto": 1200,
+        "vertical": true
+      },
+      {
+        "src": "/proyectos/altolasflores/6.webp",
+        "ancho": 900,
+        "alto": 1200,
+        "vertical": true
+      }
+    ],
+    "orden": 9,
+    "destacado": false
   }
 ]

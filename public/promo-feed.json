@@ -104,6 +104,19 @@
       "pillar": "casos reales",
       "url": "https://fogondigital.com.ar/proyectos/brotes",
       "image": "https://fogondigital.com.ar/proyectos/brotes/1.webp"
+    },
+    {
+      "id": "caso-altolasflores",
+      "title": "Alto las Flores: Cabañas con pileta y parque en Santa Rosa de Calamuchita, Córdoba",
+      "body": "Un complejo de cabañas en Santa Rosa de Calamuchita tenía un sitio desactualizado, sin identidad visual propia y con las fotos dispersas en el celular. Una identidad nueva (logo, favicon e íconos) y un sitio liviano con galería de fotos reales, servicios, ubicación con mapa y consulta directa por WhatsApp.",
+      "bullets": [
+        "Las consultas llegan por WhatsApp con la información ya vista",
+        "El sitio carga rápido en el celular, donde se planean las escapadas",
+        "Fotos y contenidos listos para publicar en redes"
+      ],
+      "pillar": "casos reales",
+      "url": "https://fogondigital.com.ar/proyectos/altolasflores",
+      "image": "https://fogondigital.com.ar/proyectos/altolasflores/1.webp"
     }
   ]
 }
