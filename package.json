@@ -1,0 +1,28 @@
+{
+  "name": "empresa-web",
+  "type": "module",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro check && astro build",
+    "preview": "astro preview",
+    "proyectos": "node scripts/sync-proyectos.mjs",
+    "promo:shots": "node scripts/promo-shots.mjs",
+    "promo:capture": "node .promo/capture.mjs",
+    "og": "node scripts/og.mjs"
+  },
+  "dependencies": {
+    "@astrojs/sitemap": "^3.7.4",
+    "@fontsource-variable/inter-tight": "^5.3.0",
+    "@fontsource/ibm-plex-mono": "^5.3.0",
+    "astro": "^7.3.5",
+    "sharp": "^0.35.5"
+  },
+  "devDependencies": {
+    "@astrojs/check": "^0.9.10",
+    "playwright": "^1.64.0",
+    "typescript": "^6.0.3",
+    "yaml": "^2.8.0"
+  }
+}

@@ -1,0 +1,240 @@
+---
+import { AUTODIAGNOSTICO } from "../content";
+import SeccionCabeza from "../components/SeccionCabeza.astro";
+import Editorial from "../layouts/Editorial.astro";
+import { SITE } from "../site";
+
+const opciones = [
+  { v: 2, t: "Sí" },
+  { v: 1, t: "A medias" },
+  { v: 0, t: "No" },
+];
+---
+
+<Editorial
+  title="Autodiagnóstico"
+  description="En 2 minutos, descubrí qué tan ordenado y medible está tu negocio en presencia online, marca, procesos y datos, y por dónde conviene empezar."
+>
+  <section class="bloque cabeza">
+    <SeccionCabeza num="01" titulo="Autodiagnóstico" nota="8 preguntas · 2 minutos" h1 />
+    <p class="intro">
+      ¿Qué tan preparado está tu negocio para crecer? Respondé y te mostramos tu puntaje en presencia online, marca,
+      procesos y datos, con el primer paso recomendado.
+    </p>
+
+    <form id="form" data-whatsapp={SITE.whatsapp} data-email={SITE.email}>
+      {
+        AUTODIAGNOSTICO.map((q, i) => (
+          <fieldset data-area={q.area}>
+            <legend>
+              <span class="ed-mono ed-gris">{String(i + 1).padStart(2, "0")} · {q.area}</span>
+              {q.pregunta}
+            </legend>
+            <div class="opciones">
+              {opciones.map((o) => (
+                <label class="opcion">
+                  <input type="radio" name={`q${i}`} value={o.v} required />
+                  <span>{o.t}</span>
+                </label>
+              ))}
+            </div>
+          </fieldset>
+        ))
+      }
+      <button class="enviar" type="submit">Ver mi resultado <span aria-hidden="true">→</span></button>
+    </form>
+
+    <div id="resultado" class="resultado" hidden aria-live="polite">
+      <p class="ed-mono ed-gris">Tu resultado</p>
+      <p class="resultado__total"><strong id="total"></strong><span class="ed-mono"> / 100</span></p>
+      <div id="areas" class="areas"></div>
+      <div class="recomendacion">
+        <p class="ed-mono ed-acento">Primer paso recomendado</p>
+        <p id="recomendacion"></p>
+      </div>
+      <div class="resultado__botones">
+        <a id="enviar" class="ed-link" href="#">Enviar mi resultado y agendar <span aria-hidden="true">→</span></a>
+        <button class="ed-mono reiniciar" type="button" id="reiniciar">Volver a empezar</button>
+      </div>
+      <p class="ed-mono ed-gris">No guardamos tus respuestas: el resultado se calcula en tu navegador.</p>
+    </div>
+  </section>
+</Editorial>
+
+<script>
+  const RECOMENDACION: Record<string, string> = {
+    Presencia:
+      "Empezar por tu presencia online: un sitio propio que aparezca en Google y reciba consultas o reservas sin depender de que contestes cada mensaje. Es el plan Presencia.",
+    Marca:
+      "Ordenar tu marca: logo, colores y forma de comunicar consistentes en todos lados. Hace que cada peso que inviertas en redes rinda más.",
+    Procesos:
+      "Llevar tu operación a un sistema: turnos, pedidos, stock o cobros en un solo lugar, con recordatorios y avisos automáticos. Es el plan Gestión.",
+    Datos:
+      "Medir: un resumen mensual con ingresos, gastos y margen por producto o servicio, para planificar los próximos meses con números y no a ojo. Es el plan Gestión, con tablero.",
+  };
+
+  const form = document.getElementById("form") as HTMLFormElement;
+  const res = document.getElementById("resultado") as HTMLElement;
+
+  form.addEventListener("submit", (e) => {
+    e.preventDefault();
+    const puntos: Record<string, { s: number; max: number }> = {};
+    for (const fs of form.querySelectorAll<HTMLFieldSetElement>("fieldset")) {
+      const area = fs.dataset.area!;
+      const v = Number(fs.querySelector<HTMLInputElement>("input:checked")?.value ?? 0);
+      puntos[area] ??= { s: 0, max: 0 };
+      puntos[area].s += v;
+      puntos[area].max += 2;
+    }
+    const pct = Object.entries(puntos).map(([area, { s, max }]) => ({ area, pct: Math.round((s / max) * 100) }));
+    const total = Math.round(pct.reduce((a, b) => a + b.pct, 0) / pct.length);
+    const peor = [...pct].sort((a, b) => a.pct - b.pct)[0];
+
+    document.getElementById("total")!.textContent = String(total);
+    document.getElementById("areas")!.innerHTML = pct
+      .map((p) => `<div class="area"><span>${p.area}</span><div class="barra"><i style="width:${p.pct}%"></i></div><b>${p.pct}%</b></div>`)
+      .join("");
+    document.getElementById("recomendacion")!.textContent = RECOMENDACION[peor.area];
+
+    const texto = `Hola, hice el autodiagnóstico: ${total}/100 (${pct.map((p) => `${p.area} ${p.pct}%`).join(", ")}). Quiero agendar el diagnóstico gratuito.`;
+    const wa = form.dataset.whatsapp;
+    (document.getElementById("enviar") as HTMLAnchorElement).href = wa
+      ? `https://wa.me/${wa}?text=${encodeURIComponent(texto)}`
+      : `mailto:${form.dataset.email}?subject=${encodeURIComponent("Mi autodiagnóstico")}&body=${encodeURIComponent(texto)}`;
+
+    form.hidden = true;
+    res.hidden = false;
+    res.scrollIntoView({ behavior: "smooth", block: "start" });
+  });
+
+  document.getElementById("reiniciar")!.addEventListener("click", () => {
+    form.reset();
+    res.hidden = true;
+    form.hidden = false;
+  });
+</script>
+
+<style>
+  .cabeza {
+    padding-top: 120px;
+  }
+  .intro {
+    max-width: 56ch;
+    color: var(--hueso-2);
+    font-size: clamp(1.1rem, 1.6vw, 1.3rem);
+    margin-bottom: 40px;
+  }
+  form {
+    border-top: 1px solid var(--linea);
+    max-width: 900px;
+  }
+  fieldset {
+    border: 0;
+    border-bottom: 1px solid var(--linea);
+    margin: 0;
+    padding: 24px 0;
+  }
+  legend {
+    float: left;
+    width: 100%;
+    display: grid;
+    gap: 8px;
+    font-size: clamp(1.15rem, 2vw, 1.5rem);
+    font-weight: 500;
+    letter-spacing: -0.03em;
+    line-height: 1.2;
+    margin-bottom: 16px;
+  }
+  .opciones {
+    clear: both;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+  .enviar {
+    margin-top: 32px;
+    background: var(--brasa);
+    color: var(--negro);
+    border: 0;
+    padding: 16px 24px;
+    font: inherit;
+    font-weight: 600;
+    font-size: 1.1rem;
+    cursor: pointer;
+  }
+  .enviar:hover {
+    background: var(--hueso);
+  }
+  .resultado {
+    display: grid;
+    gap: 28px;
+    max-width: 900px;
+    border-top: 1px solid var(--linea);
+    padding-top: 14px;
+    scroll-margin-top: 90px;
+  }
+  .resultado__total strong {
+    font-size: clamp(5rem, 16vw, 12rem);
+    font-weight: 500;
+    letter-spacing: -0.06em;
+    line-height: 0.9;
+    color: var(--brasa);
+  }
+  .areas {
+    display: grid;
+    border-top: 1px solid var(--linea);
+  }
+  .areas :global(.area) {
+    display: grid;
+    grid-template-columns: 7rem 1fr 3.5rem;
+    align-items: center;
+    gap: 16px;
+    padding: 14px 0;
+    border-bottom: 1px solid var(--linea);
+  }
+  .areas :global(.area span) {
+    font-family: var(--mono);
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+  }
+  .areas :global(.barra) {
+    height: 6px;
+    background: var(--linea);
+  }
+  .areas :global(.barra i) {
+    display: block;
+    height: 100%;
+    background: var(--brasa);
+  }
+  .areas :global(b) {
+    text-align: right;
+    font-weight: 500;
+  }
+  .recomendacion {
+    display: grid;
+    gap: 10px;
+  }
+  .recomendacion p:last-child {
+    font-size: clamp(1.2rem, 2.2vw, 1.7rem);
+    letter-spacing: -0.03em;
+    line-height: 1.25;
+    max-width: 44ch;
+  }
+  .resultado__botones {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 16px 32px;
+    font-size: 1.2rem;
+  }
+  .reiniciar {
+    background: none;
+    border: 0;
+    color: var(--hueso-2);
+    cursor: pointer;
+    padding: 0;
+    text-decoration: underline;
+    text-underline-offset: 4px;
+  }
+</style>

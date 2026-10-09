@@ -1,0 +1,124 @@
+# Manifiesto para Promo Studio: describe Fogón para generar su contenido de Instagram.
+# Ver github.com/patriciobo/promo-studio (asistente, validación y documentación de cada campo).
+# Estrategia completa (pilares, calendario, anuncios): docs/estrategia-redes.md
+name: Fogón
+url: https://fogondigital.com.ar
+tagline: Marca, sitio web y sistemas de gestión para emprendedores, por suscripción mensual
+description: >-
+  Equipo de soluciones tecnológicas para emprendedores y pymes de Argentina. Diseña la marca, el sitio web,
+  ordena los procesos y desarrolla sistemas de gestión a medida (agenda, clientes, stock, gastos, cobros,
+  trazabilidad) con tableros para medir el progreso y planificar con datos. Se contrata por suscripción
+  mensual que incluye desarrollo, hosting, soporte y mejoras, sin un pago inicial grande. Proyectos en uso
+  en odontología, construcción, talleres, deporte y medios.
+category: Desarrollo de software y consultoría para pymes
+audience:
+  countries: [AR]
+  age: [28, 58]
+  interests: [emprendimiento, pequeñas empresas, gestión empresarial, marketing digital, transformación digital, productividad]
+  description: >-
+    dueños de emprendimientos y pymes de servicios (salud, construcción, talleres, educación, comercio) con
+    2 a 30 personas, que ya venden pero gestionan con WhatsApp, papel y planillas, no saben bien sus números
+    y quieren profesionalizarse sin hacer una inversión grande de entrada
+languages: [es]
+tone: >-
+  español rioplatense con voseo; cercano, claro y concreto, como un socio que sabe de tecnología y de negocios;
+  sin jerga técnica, sin metáforas ni promesas exageradas, con ejemplos reales del día a día de un negocio
+brand:
+  colors: ["#ff5a1f", "#ece6dc", "#0c0b0a", "#7d776e"]
+  font: Inter Tight
+  logo: public/favicon.svg
+  imageStyle: >-
+    dark editorial still life on a near-black background: objects of small businesses (laptop, notebook, dental
+    tools, ceramic pieces, construction tools) lit by warm low orange light, high contrast, film grain, minimal
+    composition with lots of negative space, cinematic, not a cartoon, no text, no logos
+  photoStyle: >-
+    low-key cinematic photo of a small business owner in their own workplace (workshop, clinic, construction site,
+    studio) checking a laptop, dark background, warm orange practical light, film grain, Argentina, no visible text
+features:
+  - Sistemas de gestión a medida para emprendedores, en el celular y la PC
+  - Resumen mensual con ingresos, gastos y rentabilidad
+  - Sitios web con SEO local y preparados para asistentes de IA
+  - Diseño de marca e identidad
+  - Relevamiento y mejora de procesos antes de programar
+  - Suscripción mensual con desarrollo, hosting, soporte y mejoras incluidos
+  - Autodiagnóstico digital gratuito de 2 minutos en el sitio
+  - Proyectos en uso en odontología, construcción, talleres de cerámica, deporte y medios
+screenshots: # capturas del sitio en celular (.promo/shots); se regeneran con `npm run promo:shots`
+  - .promo/shots/inicio.webp
+  - .promo/shots/proyectos.webp
+  - .promo/shots/caso-consultorio.webp
+  - .promo/shots/caso-obras.webp
+  - .promo/shots/autodiagnostico.webp
+  - .promo/shots/planes.webp
+pillars: [casos reales, números del negocio, procesos y productividad, marca y presencia online, detrás de escena]
+hashtags: ["#fogondigital", "#emprendedores", "#pymes", "#emprendedoresargentinos", "#gestiondenegocios", "#transformaciondigital", "#software", "#marketingdigital", "#cordoba"]
+avoid:
+  - inventar clientes, testimonios, reseñas, logos o cifras de resultados que no estén en los proyectos
+  - prometer aumentos de ventas, ganancias o resultados garantizados
+  - mencionar precios, descuentos o promociones que no estén en el sitio
+  - mostrar ilustraciones o pantallas generadas como si fueran capturas reales de los sistemas
+  - criticar o nombrar a la competencia, a otros programas o a contadores
+  - dar asesoramiento contable, impositivo o legal
+  - jerga técnica (frameworks, lenguajes, bases de datos) en lugar de beneficios para el negocio
+cta: Hacé el autodiagnóstico gratis (link en la bio)
+location: Córdoba, Argentina
+links:
+  - { label: Autodiagnóstico gratis, url: "https://fogondigital.com.ar/diagnostico" }
+  - { label: Ver proyectos, url: "https://fogondigital.com.ar/proyectos" }
+  - { label: Planes, url: "https://fogondigital.com.ar/planes" }
+contact:
+  email: hola@fogondigital.com.ar
+sources:
+  # Un caso de éxito por proyecto, generado por `npm run proyectos` desde proyectos.yaml.
+  - { type: feed, url: "https://fogondigital.com.ar/promo-feed.json" }
+  # Servicios, planes y preguntas frecuentes completos.
+  - { type: url, url: "https://fogondigital.com.ar/llms.txt" }
+cadence: { feed: 3, reels: 2, stories: 3 }
+
+# Capturas reales de flujos: `npm run build && node .promo/capture.mjs` (sitio estático, sin login ni datos personales).
+capture:
+  start: npm run preview -- --port 4329
+  url: http://localhost:4329
+  device: mobile
+flows:
+  - id: autodiagnostico
+    name: Autodiagnóstico en 2 minutos
+    description: Respondés 8 preguntas y ves tu puntaje en presencia, marca, procesos y datos con el primer paso recomendado
+    pillar: números del negocio
+    steps:
+      - { path: /diagnostico, shows: "Pregunta inicial del autodiagnóstico con opciones Sí, A medias y No" }
+      - path: /diagnostico
+        actions:
+          - { click: "fieldset >> nth=0 >> text=Sí" }
+          - { click: "fieldset >> nth=1 >> text=A medias" }
+          - { click: "fieldset >> nth=2 >> text=No" }
+          - { click: "fieldset >> nth=3 >> text=A medias" }
+          - { click: "fieldset >> nth=4 >> text=No" }
+          - { click: "fieldset >> nth=5 >> text=No" }
+          - { click: "fieldset >> nth=6 >> text=A medias" }
+          - { click: "fieldset >> nth=7 >> text=No" }
+          - { click: "text=Ver mi resultado" }
+          - { waitFor: "#resultado:visible" }
+        shows: Puntaje total y por área, con el primer paso recomendado
+  - id: caso-consultorio
+    name: Caso real, consultorio odontológico
+    description: Cómo un sistema de gestión ordenó turnos, stock y números de un consultorio
+    pillar: casos reales
+    steps:
+      - { path: /proyectos/consultorio, shows: "Ficha del proyecto con capturas reales de la app" }
+      - { path: /proyectos/consultorio, actions: [{ scroll: 1240 }], shows: "El desafío y la solución" }
+      - { path: /proyectos/consultorio, actions: [{ scroll: 1800 }], shows: "Mejoras en el día a día del consultorio" }
+  - id: caso-obras
+    name: Caso real, constructora
+    description: Control de presupuesto, sueldos y herramientas de una constructora chica
+    pillar: casos reales
+    steps:
+      - { path: /proyectos/obras-trazabilidad, shows: "Ficha del sistema de obras con su rubro y capas" }
+      - { path: /proyectos/obras-trazabilidad, actions: [{ scroll: 1840 }], shows: "Mejoras: desvíos de presupuesto detectados a tiempo" }
+  - id: planes
+    name: Planes por suscripción
+    description: Tres planes mensuales con desarrollo, hosting y soporte incluidos, sin pago inicial grande
+    pillar: marca y presencia online
+    steps:
+      - { path: /planes, actions: [{ scroll: 400 }], shows: "Planes Presencia, Gestión e Integral" }
+      - { path: /planes, actions: [{ scroll: 2130 }], shows: "Comparación entre pago único y suscripción" }

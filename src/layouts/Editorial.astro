@@ -1,0 +1,278 @@
+---
+// Layout del sitio: estilo editorial (ver ~/.claude/skills/diseno-editorial).
+import "../styles/editorial.css";
+import { SERVICIOS } from "../content";
+import { agendaLink, SITE } from "../site";
+
+interface Props {
+  title: string;
+  description: string;
+  /** Imagen para compartir (ruta pública absoluta). */
+  ogImage?: string;
+  /** Datos estructurados propios de la página (se suman a los de la empresa). */
+  schema?: Record<string, unknown>[];
+  noindex?: boolean;
+  /** Precarga la foto del hero (sólo en la home). */
+  preloadHero?: boolean;
+}
+
+const { title, description, ogImage = "/og.png", schema = [], noindex = false, preloadHero = false } = Astro.props;
+const canonical = new URL(Astro.url.pathname.replace(/\/$/, "") || "/", SITE.url).href;
+const ogUrl = new URL(ogImage, SITE.url).href;
+const fullTitle = Astro.url.pathname === "/" ? `${SITE.nombre} — ${title}` : `${title} — ${SITE.nombre}`;
+
+const sameAs = [...Object.values(SITE.redes), SITE.github].filter(Boolean);
+const empresa = {
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  "@id": `${SITE.url}/#empresa`,
+  name: SITE.nombre,
+  description: `${SITE.bajada}: marca, presencia online, procesos, sistemas de gestión y tableros de datos por suscripción mensual.`,
+  slogan: SITE.slogan,
+  url: SITE.url,
+  logo: `${SITE.url}/favicon.svg`,
+  image: `${SITE.url}/og.png`,
+  email: SITE.email,
+  address: { "@type": "PostalAddress", addressLocality: SITE.ciudad, addressRegion: SITE.provincia, addressCountry: SITE.pais },
+  areaServed: { "@type": "Country", name: "Argentina" },
+  knowsAbout: SERVICIOS.map((s) => s.titulo),
+  ...(sameAs.length ? { sameAs } : {}),
+};
+
+const nav = [
+  { href: "/proyectos", texto: "Proyectos" },
+  { href: "/#servicios", texto: "Servicios" },
+  { href: "/planes", texto: "Planes" },
+  { href: "/diagnostico", texto: "Autodiagnóstico" },
+];
+---
+
+<!doctype html>
+<html lang="es-AR">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{fullTitle}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonical} />
+    {noindex && <meta name="robots" content="noindex" />}
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <meta name="theme-color" content="#0c0b0a" />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="es_AR" />
+    <meta property="og:site_name" content={SITE.nombre} />
+    <meta property="og:title" content={fullTitle} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:image" content={ogUrl} />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="sitemap" href="/sitemap-index.xml" />
+    <link rel="alternate" type="text/markdown" title="Resumen para asistentes de IA" href="/llms.txt" />
+    {preloadHero && <link rel="preload" as="image" href="/alt/fuego-hero.webp" imagesrcset="/alt/fuego-hero-800.webp 800w, /alt/fuego-hero.webp 1600w" imagesizes="100vw" />}
+    <script type="application/ld+json" set:html={JSON.stringify([empresa, ...schema])} />
+  </head>
+  <body>
+    <a class="ed-saltar" href="#contenido">Ir al contenido</a>
+    <header class="cabecera">
+      <a href="/" class="cabecera__marca" aria-label={`${SITE.nombre}, inicio`}>{SITE.nombre}</a>
+      <span class="ed-mono cabecera__dato">Córdoba, AR — 31°25′S 64°11′O</span>
+      <nav aria-label="Principal" class="cabecera__nav">
+        {nav.map((n) => <a class="ed-mono" href={n.href} aria-current={Astro.url.pathname === n.href ? "page" : undefined}>{n.texto}</a>)}
+      </nav>
+      <a class="ed-mono cabecera__cta" href={agendaLink}>Diagnóstico gratis ↗</a>
+      <button class="ed-mono cabecera__menu" type="button" popovertarget="menu">Menú</button>
+    </header>
+
+    <nav id="menu" class="menu" popover aria-label="Menú">
+      <button class="ed-mono menu__cerrar" type="button" popovertarget="menu" popovertargetaction="hide">Cerrar ✕</button>
+      <ol>
+        {nav.map((n, i) => <li><a href={n.href}><span class="ed-mono ed-gris">{String(i + 1).padStart(2, "0")}</span>{n.texto}</a></li>)}
+      </ol>
+      <a class="ed-link menu__cta" href={agendaLink}>Agendar diagnóstico gratis <span aria-hidden="true">→</span></a>
+    </nav>
+
+    <main id="contenido">
+      <slot />
+    </main>
+
+    <footer class="pie">
+      <div class="pie__fila">
+        <div>
+          <p class="ed-mono ed-gris">Contacto</p>
+          <a href={`mailto:${SITE.email}`} class="pie__link">{SITE.email}</a>
+          {Object.entries(SITE.redes).filter(([, url]) => url).map(([red, url]) => <><br /><a href={url} rel="me" class="pie__link">{red[0].toUpperCase() + red.slice(1)}</a></>)}
+        </div>
+        <div>
+          <p class="ed-mono ed-gris">Estudio</p>
+          <p>{SITE.ciudad}, Argentina<br />Trabajo remoto en todo el país</p>
+        </div>
+        <div>
+          <p class="ed-mono ed-gris">Índice</p>
+          <p>{nav.map((n) => <><a href={n.href} class="pie__link">{n.texto}</a><br /></>)}</p>
+        </div>
+      </div>
+      <p class="pie__marca" aria-hidden="true">{SITE.nombre}</p>
+      <div class="pie__legal ed-mono">
+        <span>© {new Date().getFullYear()} {SITE.nombre}</span>
+        <span>
+          Fotos: <a href="https://unsplash.com/photos/a-close-up-of-a-fire-in-the-dark-0YipCURhUY8">Unsplash</a>,
+          <a href="https://unsplash.com/photos/a-close-up-of-fire-flames-on-a-black-background-lOoT-4vMQy4">Bernd Dittrich / Unsplash</a>
+        </span>
+      </div>
+    </footer>
+  </body>
+</html>
+
+<style>
+  .cabecera {
+    position: fixed;
+    inset: 0 0 auto 0;
+    z-index: 30;
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    padding: 14px var(--pad);
+    mix-blend-mode: difference;
+    color: #fff;
+  }
+  .cabecera__marca {
+    font-weight: 600;
+    font-size: 1.25rem;
+    letter-spacing: -0.04em;
+    text-decoration: none;
+  }
+  .cabecera__dato {
+    display: none;
+  }
+  .cabecera__nav {
+    display: none;
+    gap: 22px;
+    margin-left: auto;
+  }
+  .cabecera__nav a,
+  .cabecera__cta {
+    text-decoration: none;
+  }
+  .cabecera__nav a:hover,
+  .cabecera__nav a[aria-current="page"],
+  .cabecera__cta:hover {
+    text-decoration: underline;
+    text-underline-offset: 4px;
+  }
+  .cabecera__cta {
+    margin-left: auto;
+  }
+  .cabecera__menu {
+    background: none;
+    border: 0;
+    color: inherit;
+    padding: 6px 0;
+    cursor: pointer;
+  }
+  @media (max-width: 479px) {
+    .cabecera__cta {
+      display: none;
+    }
+    .cabecera__menu {
+      margin-left: auto;
+    }
+  }
+  @media (min-width: 760px) {
+    .cabecera__dato {
+      display: inline;
+    }
+  }
+  @media (min-width: 1080px) {
+    .cabecera__nav {
+      display: flex;
+    }
+    .cabecera__cta {
+      margin-left: 0;
+    }
+    .cabecera__menu {
+      display: none;
+    }
+  }
+
+  .menu {
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    max-width: none;
+    max-height: none;
+    margin: 0;
+    border: 0;
+    padding: 16px var(--pad) 32px;
+    background: var(--negro);
+    color: var(--hueso);
+    flex-direction: column;
+  }
+  .menu:popover-open {
+    display: flex;
+  }
+  .menu__cerrar {
+    align-self: flex-end;
+    background: none;
+    border: 0;
+    color: inherit;
+    padding: 6px 0;
+    cursor: pointer;
+  }
+  .menu ol {
+    list-style: none;
+    margin: 48px 0 32px;
+    padding: 0;
+    border-top: 1px solid var(--linea);
+  }
+  .menu li a {
+    display: flex;
+    align-items: baseline;
+    gap: 16px;
+    padding: 18px 0;
+    border-bottom: 1px solid var(--linea);
+    font-size: 2.4rem;
+    font-weight: 500;
+    letter-spacing: -0.045em;
+    text-decoration: none;
+  }
+  .menu__cta {
+    align-self: flex-start;
+    font-size: 1.2rem;
+  }
+
+  .pie {
+    border-top: 1px solid var(--linea);
+    padding: clamp(40px, 6vw, 72px) var(--pad) 20px;
+  }
+  .pie__fila {
+    display: grid;
+    gap: 28px;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 220px), 1fr));
+    line-height: 1.6;
+  }
+  .pie__fila .ed-mono {
+    margin-bottom: 10px;
+  }
+  .pie__link {
+    text-decoration: none;
+  }
+  .pie__link:hover {
+    color: var(--brasa);
+  }
+  .pie__marca {
+    font-size: clamp(5rem, 24vw, 22rem);
+    font-weight: 600;
+    letter-spacing: -0.07em;
+    line-height: 0.8;
+    margin: clamp(40px, 8vw, 96px) 0 24px -0.04em;
+  }
+  .pie__legal {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 8px 24px;
+    border-top: 1px solid var(--linea);
+    padding-top: 16px;
+    color: var(--gris);
+  }
+</style>

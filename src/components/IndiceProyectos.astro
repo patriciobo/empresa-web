@@ -1,0 +1,135 @@
+---
+// Índice numerado de proyectos: filas con nombre grande, rubro y capas; vista previa que sigue al cursor.
+import { CAPA_NOMBRE, type Proyecto } from "../data";
+
+interface Props {
+  proyectos: Proyecto[];
+}
+const { proyectos } = Astro.props;
+const n2 = (i: number) => String(i + 1).padStart(2, "0");
+---
+
+<ol class="indice">
+  {
+    proyectos.map((p, i) => (
+      <li data-capas={p.capas.join(" ")}>
+        <a href={`/proyectos/${p.slug}`} class="indice__fila" data-img={p.imagenes[0]?.src}>
+          <span class="ed-mono ed-gris indice__num">{n2(i)}</span>
+          <span class="indice__nombre">{p.nombre.split(" · ")[0]}</span>
+          <span class="indice__rubro">{p.rubro}</span>
+          <span class="ed-mono indice__capas">{p.capas.slice(0, 3).map((c) => CAPA_NOMBRE[c]).join(" / ")}</span>
+          <span class="indice__flecha" aria-hidden="true">↗</span>
+          {p.imagenes[0] && <img class="indice__mini" src={p.imagenes[0].src} alt="" loading="lazy" width="72" height="72" />}
+        </a>
+      </li>
+    ))
+  }
+</ol>
+<img class="vista" alt="" aria-hidden="true" />
+
+<script>
+  // Vista previa que sigue al cursor (sólo con mouse).
+  const vista = document.querySelector<HTMLImageElement>(".vista");
+  if (vista && matchMedia("(hover: hover) and (pointer: fine)").matches) {
+    for (const fila of document.querySelectorAll<HTMLAnchorElement>(".indice__fila")) {
+      fila.addEventListener("mouseenter", () => {
+        if (!fila.dataset.img) return;
+        vista.src = fila.dataset.img;
+        vista.classList.add("vista--on");
+      });
+      fila.addEventListener("mouseleave", () => vista.classList.remove("vista--on"));
+      fila.addEventListener("mousemove", (e) => {
+        vista.style.transform = `translate(${e.clientX + 24}px, ${e.clientY - 120}px)`;
+      });
+    }
+  }
+</script>
+
+<style>
+  .indice {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    border-top: 1px solid var(--linea);
+  }
+  .indice__fila {
+    display: grid;
+    grid-template-columns: 2.5rem 1fr auto;
+    align-items: center;
+    gap: 6px 16px;
+    padding: 20px 0;
+    border-bottom: 1px solid var(--linea);
+    text-decoration: none;
+    transition: color 0.2s, padding 0.3s;
+  }
+  .indice__nombre {
+    font-size: clamp(1.7rem, 4.6vw, 4rem);
+    font-weight: 500;
+    letter-spacing: -0.045em;
+    line-height: 1;
+  }
+  .indice__rubro {
+    grid-column: 2;
+    color: var(--hueso-2);
+    font-size: 0.95rem;
+  }
+  .indice__capas {
+    display: none;
+    color: var(--gris);
+  }
+  .indice__flecha {
+    display: none;
+    font-size: 1.6rem;
+  }
+  .indice__mini {
+    grid-column: 3;
+    grid-row: 1 / span 2;
+    width: 72px;
+    height: 72px;
+    object-fit: cover;
+    object-position: top;
+    filter: grayscale(1) contrast(1.1);
+  }
+  .indice__fila:hover {
+    color: var(--brasa);
+  }
+  @media (min-width: 900px) {
+    .indice__fila {
+      grid-template-columns: 4rem 1.6fr 1fr 1fr 2rem;
+      padding: 26px 0;
+    }
+    .indice__fila:hover {
+      padding-left: 16px;
+    }
+    .indice__rubro {
+      grid-column: auto;
+    }
+    .indice__capas,
+    .indice__flecha {
+      display: block;
+    }
+    .indice__flecha {
+      text-align: right;
+    }
+    .indice__mini {
+      display: none;
+    }
+  }
+  .vista {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 240px;
+    aspect-ratio: 3 / 4;
+    object-fit: cover;
+    object-position: top;
+    pointer-events: none;
+    z-index: 20;
+    opacity: 0;
+    transition: opacity 0.2s;
+    box-shadow: 0 20px 50px rgb(0 0 0 / 0.5);
+  }
+  .vista--on {
+    opacity: 1;
+  }
+</style>

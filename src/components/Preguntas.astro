@@ -1,0 +1,50 @@
+---
+import { FAQ } from "../content";
+---
+
+<div class="faq">
+  {
+    FAQ.map((f) => (
+      <details>
+        <summary>{f.p}</summary>
+        <p>{f.r}</p>
+      </details>
+    ))
+  }
+</div>
+
+<style>
+  .faq {
+    border-top: 1px solid var(--linea);
+  }
+  .faq details {
+    border-bottom: 1px solid var(--linea);
+  }
+  .faq summary {
+    list-style: none;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    gap: 24px;
+    padding: 22px 0;
+    font-size: clamp(1.15rem, 2vw, 1.6rem);
+    letter-spacing: -0.03em;
+    font-weight: 500;
+  }
+  .faq summary::-webkit-details-marker {
+    display: none;
+  }
+  .faq summary::after {
+    content: "+";
+    font-family: var(--mono);
+    color: var(--brasa);
+  }
+  .faq details[open] summary::after {
+    content: "−";
+  }
+  .faq details p {
+    color: var(--hueso-2);
+    max-width: 70ch;
+    padding-bottom: 24px;
+  }
+</style>

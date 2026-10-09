@@ -1,0 +1,742 @@
+[
+  {
+    "slug": "consultorio",
+    "nombre": "Consultorio",
+    "url": "https://consultorio-digital.com.ar",
+    "tagline": "Software odontológico simple para consultorios de Argentina",
+    "descripcion": "App web para odontólogos independientes: agenda semanal, pacientes, atenciones con prestación, pieza dental (FDI), materiales y monto, stock de materiales que se descuenta solo al atender, gastos y un resumen mensual para saber si el consultorio es rentable. Se usa desde el celular o la PC, se instala como app y los datos se exportan cuando quieras (CSV o JSON).",
+    "rubro": "Salud · Odontología",
+    "tipo": "Software de gestión por suscripción",
+    "capas": [
+      "gestion",
+      "procesos",
+      "datos",
+      "presencia"
+    ],
+    "desafio": "Odontólogos independientes llevaban turnos, stock de materiales y gastos en papel o en planillas sueltas, sin saber a fin de mes si el consultorio era rentable.",
+    "solucion": "Una app web instalable en el celular que une agenda, pacientes, atenciones, stock y gastos, y que arma sola el resumen del mes.",
+    "funciones": [
+      "Agenda semanal con recordatorio por WhatsApp",
+      "Registrá una atención en menos de 30 segundos",
+      "Stock de materiales que se descuenta solo al atender",
+      "Gastos e ingresos con resumen mensual de rentabilidad",
+      "Odontograma con numeración FDI",
+      "Funciona en el celular y se instala como app",
+      "Exportación completa de tus datos en CSV o JSON"
+    ],
+    "mejoras": [
+      "Registrar una atención pasa a llevar menos de 30 segundos",
+      "El stock se descuenta solo con cada atención y avisa qué reponer",
+      "Recordatorios de turnos por WhatsApp con un toque",
+      "Rentabilidad mensual sin hacer cuentas"
+    ],
+    "beneficios": [
+      {
+        "para": "Profesional",
+        "texto": "Menos tiempo administrativo y más tiempo atendiendo"
+      },
+      {
+        "para": "Pacientes",
+        "texto": "Recordatorios claros y un historial ordenado de cada pieza"
+      },
+      {
+        "para": "Negocio",
+        "texto": "Ingresos, gastos y resultado del mes en una pantalla"
+      }
+    ],
+    "stack": [
+      "React",
+      "Vite",
+      "API Node.js",
+      "PostgreSQL",
+      "PGlite",
+      "Tailwind CSS",
+      "PWA"
+    ],
+    "colores": [
+      "#0f766e",
+      "#fafaf9",
+      "#18181b",
+      "#e6f4f2"
+    ],
+    "logo": "/proyectos/consultorio/logo.svg",
+    "imagenes": [
+      {
+        "src": "/proyectos/consultorio/1.webp",
+        "ancho": 876,
+        "alto": 1836,
+        "vertical": true
+      },
+      {
+        "src": "/proyectos/consultorio/2.webp",
+        "ancho": 876,
+        "alto": 1836,
+        "vertical": true
+      },
+      {
+        "src": "/proyectos/consultorio/3.webp",
+        "ancho": 900,
+        "alto": 825,
+        "vertical": false
+      },
+      {
+        "src": "/proyectos/consultorio/4.webp",
+        "ancho": 900,
+        "alto": 622,
+        "vertical": false
+      },
+      {
+        "src": "/proyectos/consultorio/5.webp",
+        "ancho": 900,
+        "alto": 622,
+        "vertical": false
+      },
+      {
+        "src": "/proyectos/consultorio/6.webp",
+        "ancho": 900,
+        "alto": 676,
+        "vertical": false
+      }
+    ],
+    "orden": 1,
+    "destacado": true
+  },
+  {
+    "slug": "plena-experiencia",
+    "nombre": "Plena Experiencia",
+    "url": "https://plenaexperiencia.com.ar",
+    "tagline": "Recorridos de trekking con guía y alojamientos en las sierras de Córdoba",
+    "descripcion": "Plataforma para planear una escapada a las sierras de Córdoba en un solo lugar: recorridos de trekking y senderismo con guías locales y alojamientos (cabañas, casas y complejos) en las seis regiones turísticas de la provincia. Los recorridos se filtran por dificultad (rincones, paseos, principiante, intermedio y avanzado) y cada uno tiene duración, distancia y mapa del sendero descargable. Los alojamientos se buscan por localidad, radio, fechas y cantidad de personas, y se reservan por WhatsApp sin pagar nada por adelantado: el propietario confirma la solicitud.",
+    "rubro": "Turismo · Alojamientos y recorridos",
+    "tipo": "Plataforma de reservas y gestión",
+    "capas": [
+      "presencia",
+      "gestion",
+      "procesos",
+      "ia"
+    ],
+    "desafio": "Los alojamientos y guías de las sierras de Córdoba dependen de las grandes plataformas, que cobran comisión por reserva, o de publicar en redes y contestar cada consulta a mano.",
+    "solucion": "Una plataforma regional que reúne alojamientos y recorridos con guía: el visitante busca por zona, fechas y personas y reserva por WhatsApp sin pagar por adelantado; cada propietario gestiona sus unidades, tarifas y calendario desde su panel.",
+    "funciones": [
+      "Búsqueda de alojamientos por localidad, radio, fechas y cantidad de personas",
+      "Tarifas por unidad según la cantidad de personas, con cálculo automático del precio",
+      "Panel del propietario con propiedades, unidades, fotos y calendario de disponibilidad",
+      "Reserva por WhatsApp sin pago por adelantado; el propietario confirma",
+      "Recorridos con guía por dificultad, con duración, distancia y mapa descargable",
+      "Recorridos cercanos sugeridos en cada alojamiento",
+      "Seis regiones turísticas con su contenido propio"
+    ],
+    "mejoras": [
+      "Consultas que llegan con fechas y cantidad de personas definidas",
+      "Disponibilidad y tarifas al día sin depender de mensajes",
+      "Alojamiento y actividades de la zona en un mismo lugar"
+    ],
+    "beneficios": [
+      {
+        "para": "Visitantes",
+        "texto": "Planean la escapada completa: dónde dormir y qué caminar"
+      },
+      {
+        "para": "Propietarios",
+        "texto": "Publican y gestionan sus unidades sin comisión por reserva"
+      },
+      {
+        "para": "Guías",
+        "texto": "Sus salidas aparecen junto a los alojamientos de la zona"
+      }
+    ],
+    "stack": [
+      "Next.js",
+      "React",
+      "Tailwind CSS"
+    ],
+    "colores": [
+      "#4d5c34",
+      "#faf7f2",
+      "#29251f",
+      "#a85828"
+    ],
+    "logo": "/proyectos/plena-experiencia/logo.webp",
+    "imagenes": [
+      {
+        "src": "/proyectos/plena-experiencia/1.webp",
+        "ancho": 900,
+        "alto": 1532,
+        "vertical": true
+      },
+      {
+        "src": "/proyectos/plena-experiencia/2.webp",
+        "ancho": 900,
+        "alto": 1532,
+        "vertical": true
+      },
+      {
+        "src": "/proyectos/plena-experiencia/3.webp",
+        "ancho": 900,
+        "alto": 1532,
+        "vertical": true
+      },
+      {
+        "src": "/proyectos/plena-experiencia/4.webp",
+        "ancho": 900,
+        "alto": 1532,
+        "vertical": true
+      },
+      {
+        "src": "/proyectos/plena-experiencia/5.webp",
+        "ancho": 900,
+        "alto": 1532,
+        "vertical": true
+      },
+      {
+        "src": "/proyectos/plena-experiencia/6.webp",
+        "ancho": 900,
+        "alto": 675,
+        "vertical": false
+      }
+    ],
+    "orden": 2,
+    "destacado": true
+  },
+  {
+    "slug": "obras-trazabilidad",
+    "nombre": "Obras · Trazabilidad y costos",
+    "url": null,
+    "tagline": "Control de obras, costos, sueldos y herramientas para constructoras chicas",
+    "descripcion": "Sistema web para una constructora chica: obras con presupuesto, etapas y certificaciones; gastos de materiales, mano de obra y otros por obra; planilla semanal de sueldos; inventario de herramientas con código, fotos y ubicación (depósito, service u obra); gastos generales y fijos de la empresa, y un balance mensual para los socios. Avisa cuando una obra pasa el 80 % del presupuesto, cuando hay certificaciones vencidas o herramientas hace mucho en service. Cada alta, cambio y movimiento queda registrado con su usuario. Se usa desde el celular en la obra y desde la PC en la oficina.",
+    "rubro": "Construcción",
+    "tipo": "Sistema de gestión a medida",
+    "capas": [
+      "gestion",
+      "procesos",
+      "datos"
+    ],
+    "desafio": "Una constructora chica controlaba presupuestos, certificaciones, sueldos semanales y herramientas repartidas en varias obras con planillas y mensajes, sin saber a tiempo si una obra se pasaba de presupuesto.",
+    "solucion": "Un sistema web con obras, gastos, sueldos, inventario de herramientas con fotos y un balance mensual para los socios, donde cada movimiento queda registrado con su usuario.",
+    "funciones": [
+      "Aviso automático cuando una obra pasa el 80 % del presupuesto",
+      "Gastos, sueldos y certificaciones por obra con el % consumido del cotizado",
+      "Inventario de herramientas con código, fotos y ubicación",
+      "Movimientos de herramientas con fecha, usuario y fotos",
+      "Planilla semanal de sueldos con \"copiar semana anterior\"",
+      "Gastos generales y fijos de la empresa",
+      "Balance mensual para los socios",
+      "Registro de actividad con quién cargó o cambió cada cosa"
+    ],
+    "mejoras": [
+      "Desvíos de presupuesto detectados durante la obra, no al final",
+      "Cada herramienta tiene ubicación conocida y su historial con fotos",
+      "La planilla de sueldos semanal se arma en minutos",
+      "Los socios ven el resultado del mes sin pedir informes"
+    ],
+    "beneficios": [
+      {
+        "para": "Socios",
+        "texto": "Resultado real de cada obra y de la empresa, mes a mes"
+      },
+      {
+        "para": "Capataces",
+        "texto": "Cargan gastos y movimientos desde el celular en la obra"
+      },
+      {
+        "para": "Administración",
+        "texto": "Todo auditado: quién cargó qué y cuándo"
+      }
+    ],
+    "stack": [
+      "Next.js",
+      "React",
+      "PostgreSQL",
+      "Tailwind CSS",
+      "Gráficos"
+    ],
+    "colores": [
+      "#d9691f",
+      "#2e2a26"
+    ],
+    "logo": "/proyectos/obras-trazabilidad/logo.webp",
+    "imagenes": [
+      {
+        "src": "/proyectos/obras-trazabilidad/1.webp",
+        "ancho": 900,
+        "alto": 1532,
+        "vertical": true
+      },
+      {
+        "src": "/proyectos/obras-trazabilidad/2.webp",
+        "ancho": 900,
+        "alto": 1532,
+        "vertical": true
+      },
+      {
+        "src": "/proyectos/obras-trazabilidad/3.webp",
+        "ancho": 900,
+        "alto": 1532,
+        "vertical": true
+      },
+      {
+        "src": "/proyectos/obras-trazabilidad/4.webp",
+        "ancho": 900,
+        "alto": 1532,
+        "vertical": true
+      },
+      {
+        "src": "/proyectos/obras-trazabilidad/5.webp",
+        "ancho": 900,
+        "alto": 1532,
+        "vertical": true
+      },
+      {
+        "src": "/proyectos/obras-trazabilidad/6.webp",
+        "ancho": 900,
+        "alto": 1532,
+        "vertical": true
+      }
+    ],
+    "orden": 3,
+    "destacado": true
+  },
+  {
+    "slug": "ciricina",
+    "nombre": "Ciricina · Taller de cerámica",
+    "url": "https://ciricina.onrender.com",
+    "tagline": "Inscripción online, cupos en vivo y gestión integral de un taller de cerámica",
+    "descripcion": "Taller de cerámica artesanal y de diseño en Camino a Chacra de la Merced, Córdoba. Clases guiadas una vez por semana, de 2 horas, en grupos reducidos de hasta 12 personas, donde cada persona elige qué hacer: objetos decorativos o de uso cotidiano con las técnicas de zurullo, pellizco y plancha. No hace falta experiencia previa. La cuota mensual incluye 4 clases, 2 kg de arcilla, engobes, esmalte cristal, todas las herramientas y el horneado de las piezas. Los cupos se ven en vivo en la web y la inscripción se hace online.",
+    "rubro": "Educación · Talleres",
+    "tipo": "Sitio, gestión, dispositivo e IA",
+    "capas": [
+      "presencia",
+      "gestion",
+      "datos",
+      "ia"
+    ],
+    "desafio": "El taller coordinaba inscripciones, cupos, cuotas, venta de materiales y el control del horno por mensajes y en papel, sin saber cuánto costaba cada alumno.",
+    "solucion": "Una web con cupos en vivo e inscripción que deriva a WhatsApp para el pago, un panel de administración con cuotas, stock y costos, y un dispositivo junto al horno: una pequeña cámara fotografía el display y una inteligencia artificial lee la temperatura para seguir cada horneada desde el celular.",
+    "funciones": [
+      "Inscripción online con cupos por día actualizados en vivo",
+      "Confirmación y coordinación del pago por WhatsApp",
+      "Cobro de cuotas por alumno y por mes",
+      "Stock de materiales con compras, ventas, fiado y conteo con merma",
+      "Costo por alumno según cada tipo de gasto",
+      "Dispositivo con cámara (ESP32-CAM) que fotografía el display del horno cada pocos minutos",
+      "Inteligencia artificial de visión que lee la temperatura de cada foto",
+      "Gráfico de cada horneada completa, de la subida al enfriamiento"
+    ],
+    "mejoras": [
+      "Las inscripciones llegan solas y no se pisan los cupos",
+      "El precio de la cuota se calcula con los costos reales",
+      "La horneada se sigue desde el celular, sin estar al lado del horno",
+      "Cada horneada queda registrada con su curva de temperatura para comparar y repetir"
+    ],
+    "beneficios": [
+      {
+        "para": "Docente",
+        "texto": "Menos mensajes y cupos siempre al día"
+      },
+      {
+        "para": "Alumnos",
+        "texto": "Se inscriben en un minuto y ven los lugares libres"
+      },
+      {
+        "para": "Negocio",
+        "texto": "Cuotas, gastos y materiales en un mismo lugar"
+      },
+      {
+        "para": "Horneadas",
+        "texto": "Temperatura y curva de cada cocción registradas solas, con aviso si la cámara deja de mandar fotos"
+      }
+    ],
+    "stack": [
+      "Next.js",
+      "React",
+      "PostgreSQL",
+      "Tailwind CSS",
+      "ESP32-CAM",
+      "IA de visión"
+    ],
+    "colores": [
+      "#33261d",
+      "#fbf7f1",
+      "#c0703d"
+    ],
+    "logo": "/proyectos/ciricina/logo.webp",
+    "imagenes": [
+      {
+        "src": "/proyectos/ciricina/1.webp",
+        "ancho": 900,
+        "alto": 1532,
+        "vertical": true
+      },
+      {
+        "src": "/proyectos/ciricina/2.webp",
+        "ancho": 900,
+        "alto": 1532,
+        "vertical": true
+      },
+      {
+        "src": "/proyectos/ciricina/3.webp",
+        "ancho": 900,
+        "alto": 1532,
+        "vertical": true
+      },
+      {
+        "src": "/proyectos/ciricina/4.webp",
+        "ancho": 900,
+        "alto": 1532,
+        "vertical": true
+      },
+      {
+        "src": "/proyectos/ciricina/5.webp",
+        "ancho": 900,
+        "alto": 1532,
+        "vertical": true
+      },
+      {
+        "src": "/proyectos/ciricina/6.webp",
+        "ancho": 900,
+        "alto": 1532,
+        "vertical": true
+      }
+    ],
+    "orden": 4,
+    "destacado": true
+  },
+  {
+    "slug": "hogacor",
+    "nombre": "Hogacor · Soluciones Constructivas",
+    "url": "https://hogacor.com.ar",
+    "tagline": "Sitio institucional y catálogo de una constructora de Steel Frame en Córdoba",
+    "descripcion": "Landing estática (Astro) de Hogacor Soluciones Constructivas, Córdoba.",
+    "rubro": "Construcción",
+    "tipo": "Presencia online y posicionamiento",
+    "capas": [
+      "presencia",
+      "marca"
+    ],
+    "desafio": "Una constructora con años de trayectoria y decenas de obras no tenía una presencia online que mostrara su trabajo ni aparecía en las búsquedas de su zona.",
+    "solucion": "Un sitio institucional rápido con catálogo de módulos, ampliaciones y viviendas, optimizado para Google y para los asistentes de IA, con contacto directo por WhatsApp.",
+    "funciones": [
+      "Catálogo de módulos habitacionales, ampliaciones y viviendas con fichas",
+      "SEO local para Córdoba Capital y alrededores",
+      "Datos estructurados para Google (empresa, servicios, productos y preguntas frecuentes)",
+      "llms.txt para que ChatGPT, Gemini y Claude recomienden a la empresa",
+      "Contacto directo por WhatsApp desde cada página",
+      "Imágenes optimizadas que cargan rápido en el celular"
+    ],
+    "mejoras": [
+      "Consultas que llegan con el producto elegido",
+      "Respuestas a las preguntas frecuentes antes del primer contacto"
+    ],
+    "beneficios": [
+      {
+        "para": "Clientes",
+        "texto": "Ven modelos, medidas y proceso antes de consultar"
+      },
+      {
+        "para": "Empresa",
+        "texto": "Una vidriera que trabaja las 24 horas"
+      }
+    ],
+    "stack": [
+      "Astro"
+    ],
+    "colores": [
+      "#ff5a0f",
+      "#1c1c1c"
+    ],
+    "logo": "/proyectos/hogacor/logo.webp",
+    "imagenes": [
+      {
+        "src": "/proyectos/hogacor/1.webp",
+        "ancho": 900,
+        "alto": 584,
+        "vertical": false
+      },
+      {
+        "src": "/proyectos/hogacor/2.webp",
+        "ancho": 780,
+        "alto": 275,
+        "vertical": false
+      },
+      {
+        "src": "/proyectos/hogacor/3.webp",
+        "ancho": 900,
+        "alto": 246,
+        "vertical": false
+      },
+      {
+        "src": "/proyectos/hogacor/4.webp",
+        "ancho": 380,
+        "alto": 156,
+        "vertical": false
+      }
+    ],
+    "orden": 5,
+    "destacado": false
+  },
+  {
+    "slug": "radarglobal",
+    "nombre": "Radar Global",
+    "url": "https://www.radarglobal.com.ar",
+    "tagline": "La actualidad internacional y su impacto en el comercio y las empresas, cada día",
+    "descripcion": "Resumen diario y gratuito de la actualidad internacional: rastrea 115 medios de 23 países, filtra los titulares con alcance internacional y publica cada mañana un reporte en español con tres secciones: resumen por región, clima internacional (comercio, industria y materias primas) y empresas potencialmente afectadas. Se puede recibir por email suscribiéndose sólo con el correo. La metodología, la lista de medios y su clasificación por propiedad son públicas.",
+    "rubro": "Medios · Inteligencia de datos",
+    "tipo": "Plataforma de datos con IA",
+    "capas": [
+      "datos",
+      "ia",
+      "presencia"
+    ],
+    "desafio": "Seguir la actualidad internacional y su impacto en el comercio exige leer decenas de medios en varios idiomas todos los días.",
+    "solucion": "Un sistema que rastrea 115 medios de 23 países, filtra lo relevante y publica cada mañana un reporte en español con impacto en comercio, materias primas y empresas, también por email.",
+    "funciones": [
+      "Reporte diario con 115 medios de 23 países",
+      "Resumen por región (Norteamérica, Latinoamérica, Europa, Asia, Eurasia, África y Oceanía)",
+      "Clima internacional de comercio, industria y materias primas",
+      "Empresas potencialmente afectadas por región",
+      "Newsletter gratuito por email con el resumen ejecutivo",
+      "Metodología y clasificación de los medios abiertas y verificables"
+    ],
+    "mejoras": [
+      "Horas de lectura diaria resumidas en un reporte de minutos",
+      "Publicación y envío por email automáticos cada mañana",
+      "Metodología y fuentes abiertas y verificables"
+    ],
+    "beneficios": [
+      {
+        "para": "Empresas",
+        "texto": "Anticipan cambios en comercio exterior y materias primas"
+      },
+      {
+        "para": "Lectores",
+        "texto": "Un resumen diario claro, sin sensacionalismo"
+      }
+    ],
+    "stack": [
+      "Next.js",
+      "React"
+    ],
+    "colores": [
+      "#c81e1e",
+      "#ffffff",
+      "#171717",
+      "#666666"
+    ],
+    "logo": "/proyectos/radarglobal/logo.webp",
+    "imagenes": [
+      {
+        "src": "/proyectos/radarglobal/1.webp",
+        "ancho": 900,
+        "alto": 1951,
+        "vertical": true
+      },
+      {
+        "src": "/proyectos/radarglobal/2.webp",
+        "ancho": 900,
+        "alto": 1951,
+        "vertical": true
+      },
+      {
+        "src": "/proyectos/radarglobal/3.webp",
+        "ancho": 900,
+        "alto": 1951,
+        "vertical": true
+      },
+      {
+        "src": "/proyectos/radarglobal/4.webp",
+        "ancho": 900,
+        "alto": 1951,
+        "vertical": true
+      }
+    ],
+    "orden": 6,
+    "destacado": false
+  },
+  {
+    "slug": "mi-tenis",
+    "nombre": "Mi Tenis",
+    "url": "https://mitenis.app",
+    "tagline": "Entrenamiento físico para tenistas amateur, en casa y a tu ritmo",
+    "descripcion": "App web gratuita que arma un plan físico semanal para tenistas amateur que compiten: ejercicios en casa sin máquinas con figuras 3D, adaptado a molestias y al calendario de partidos, con intención antes de cada partido, reflexión después y guías tácticas para cada tipo de rival.",
+    "rubro": "Deporte · Bienestar",
+    "tipo": "Producto digital propio",
+    "capas": [
+      "gestion",
+      "datos",
+      "presencia"
+    ],
+    "desafio": "Los tenistas amateur que compiten entrenan poco tiempo por semana y sin un plan que se adapte a sus partidos ni a sus molestias.",
+    "solucion": "Una app que arma un plan físico semanal automático, guía cada ejercicio con una figura 3D y acompaña cada partido con intención, reflexión y guías tácticas.",
+    "funciones": [
+      "Plan semanal automático según días, minutos y objetivos",
+      "111 ejercicios sin máquinas con figura 3D",
+      "Autoevaluación física y de juego",
+      "Calendario flexible que se adapta a tus partidos",
+      "Intención antes del partido y reflexión después",
+      "29 guías tácticas para cada tipo de rival"
+    ],
+    "mejoras": [
+      "Plan semanal que se reacomoda solo al calendario de partidos",
+      "Seguimiento de constancia, carga semanal y resultados"
+    ],
+    "beneficios": [
+      {
+        "para": "Jugadores",
+        "texto": "Saben qué entrenar cada día y por qué"
+      },
+      {
+        "para": "Profesores",
+        "texto": "Una herramienta para acompañar a sus alumnos entre clases"
+      }
+    ],
+    "stack": [
+      "React",
+      "Vite",
+      "3D (Three.js)",
+      "PWA"
+    ],
+    "colores": [
+      "#1c6a4e",
+      "#f6f6f3",
+      "#17191b",
+      "#c5d82e"
+    ],
+    "logo": "/proyectos/mi-tenis/logo.svg",
+    "imagenes": [
+      {
+        "src": "/proyectos/mi-tenis/1.webp",
+        "ancho": 780,
+        "alto": 1688,
+        "vertical": true
+      },
+      {
+        "src": "/proyectos/mi-tenis/2.webp",
+        "ancho": 780,
+        "alto": 1688,
+        "vertical": true
+      },
+      {
+        "src": "/proyectos/mi-tenis/3.webp",
+        "ancho": 780,
+        "alto": 1688,
+        "vertical": true
+      },
+      {
+        "src": "/proyectos/mi-tenis/4.webp",
+        "ancho": 780,
+        "alto": 1688,
+        "vertical": true
+      },
+      {
+        "src": "/proyectos/mi-tenis/5.webp",
+        "ancho": 780,
+        "alto": 1688,
+        "vertical": true
+      },
+      {
+        "src": "/proyectos/mi-tenis/6.webp",
+        "ancho": 400,
+        "alto": 400,
+        "vertical": false
+      }
+    ],
+    "orden": 7,
+    "destacado": false
+  },
+  {
+    "slug": "brotes",
+    "nombre": "Brotes",
+    "url": null,
+    "tagline": "Juegos tranquilos para la primera infancia, sin puntos, sin premios y con final",
+    "descripcion": "App de juegos calmos para chicos de 12 meses a 7 años, organizados en cinco etapas de desarrollo (Semilla, Raíz, Tallo, Hoja y Flor) con 8 juegos cada una, dibujo libre, 18 dibujos para colorear y 15 cuentos sobre emociones, rutinas y cambios. Pensada contra la sobreestimulación: sin publicidad, sin compras, sin puntos ni rachas; cada juego termina solo y propone una actividad fuera de la pantalla. Un sol marca el tiempo diario sugerido por etapa. Funciona sin conexión y nada sale del dispositivo.",
+    "rubro": "Educación · Primera infancia",
+    "tipo": "Producto digital propio",
+    "capas": [
+      "presencia",
+      "procesos"
+    ],
+    "desafio": "Las apps para chicos chicos suelen estar diseñadas para enganchar: puntos, premios, niveles infinitos y reproducción automática, justo lo que la evidencia desaconseja en la primera infancia.",
+    "solucion": "Una app de juegos calmos por etapa de desarrollo, basada en investigación, donde cada juego termina solo, un sol marca el tiempo del día y cada actividad propone seguir jugando fuera de la pantalla.",
+    "funciones": [
+      "40 juegos en 5 etapas de desarrollo, de 12 meses a 7 años",
+      "Cada juego termina solo y propone una actividad sin pantalla",
+      "Un sol muestra el tiempo del día y avisa antes del último juego",
+      "Sin publicidad, sin compras, sin puntos ni premios que enganchen",
+      "15 cuentos sobre emociones, rutinas, celos, miedo y cambios",
+      "Dibujo libre y 18 dibujos para colorear",
+      "Área de adultos con el porqué de cada juego y sus fuentes",
+      "Funciona sin conexión y no guarda datos fuera del dispositivo"
+    ],
+    "mejoras": [
+      "Límite diario amable que anticipa el final y evita cortes bruscos",
+      "Cada juego explica a los adultos qué trabaja y cómo jugarlo juntos",
+      "Funciona sin conexión y no guarda datos fuera del dispositivo"
+    ],
+    "beneficios": [
+      {
+        "para": "Familias",
+        "texto": "Pantalla poca y buena, con un final claro"
+      },
+      {
+        "para": "Chicos",
+        "texto": "Juegos tranquilos, sin presión ni castigo por equivocarse"
+      },
+      {
+        "para": "Docentes",
+        "texto": "Actividades por etapa con su fundamento y una propuesta sin pantalla"
+      }
+    ],
+    "stack": [
+      "React",
+      "Vite",
+      "PWA"
+    ],
+    "colores": [
+      "#7e9a7a",
+      "#f4efe6",
+      "#4b4740",
+      "#d49a86"
+    ],
+    "logo": "/proyectos/brotes/logo.svg",
+    "imagenes": [
+      {
+        "src": "/proyectos/brotes/1.webp",
+        "ancho": 900,
+        "alto": 1532,
+        "vertical": true
+      },
+      {
+        "src": "/proyectos/brotes/2.webp",
+        "ancho": 900,
+        "alto": 1532,
+        "vertical": true
+      },
+      {
+        "src": "/proyectos/brotes/3.webp",
+        "ancho": 900,
+        "alto": 1532,
+        "vertical": true
+      },
+      {
+        "src": "/proyectos/brotes/4.webp",
+        "ancho": 900,
+        "alto": 1532,
+        "vertical": true
+      },
+      {
+        "src": "/proyectos/brotes/5.webp",
+        "ancho": 900,
+        "alto": 1532,
+        "vertical": true
+      },
+      {
+        "src": "/proyectos/brotes/6.webp",
+        "ancho": 900,
+        "alto": 1532,
+        "vertical": true
+      }
+    ],
+    "orden": 8,
+    "destacado": false
+  }
+]

@@ -1,0 +1,317 @@
+---
+import Cierre from "../../components/Cierre.astro";
+import IndiceProyectos from "../../components/IndiceProyectos.astro";
+import SeccionCabeza from "../../components/SeccionCabeza.astro";
+import { CAPA_NOMBRE, type Proyecto, PROYECTOS } from "../../data";
+import Editorial from "../../layouts/Editorial.astro";
+import { contactoLink, SITE } from "../../site";
+
+export function getStaticPaths() {
+  return PROYECTOS.map((p) => ({ params: { slug: p.slug }, props: { p } }));
+}
+
+const { p } = Astro.props as { p: Proyecto };
+const indice = PROYECTOS.findIndex((o) => o.slug === p.slug);
+const otros = PROYECTOS.filter((o) => o.slug !== p.slug && o.capas.some((c) => p.capas.includes(c))).slice(0, 4);
+const n2 = (i: number) => String(i + 1).padStart(2, "0");
+let seccion = 0;
+const num = () => n2(seccion++);
+
+const schema = [
+  {
+    "@context": "https://schema.org",
+    "@type": "CreativeWork",
+    name: p.nombre,
+    description: p.descripcion || p.tagline,
+    genre: p.rubro,
+    creator: { "@id": `${SITE.url}/#empresa` },
+    ...(p.url ? { url: p.url } : {}),
+    ...(p.imagenes[0] ? { image: `${SITE.url}${p.imagenes[0].src}` } : {}),
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Proyectos", item: `${SITE.url}/proyectos` },
+      { "@type": "ListItem", position: 2, name: p.nombre, item: `${SITE.url}/proyectos/${p.slug}` },
+    ],
+  },
+];
+---
+
+<Editorial title={p.nombre} description={`${p.tagline}. ${p.solucion || p.descripcion}`.slice(0, 160)} ogImage={p.imagenes[0]?.src} schema={schema}>
+  <header class="cabeza">
+    <div class="cabeza__arriba">
+      <a class="ed-mono volver" href="/proyectos">← Índice de proyectos</a>
+      <span class="ed-mono ed-gris">Proyecto {n2(indice)} / {String(PROYECTOS.length).padStart(2, "0")}</span>
+    </div>
+    <h1>{p.nombre}</h1>
+    <p class="cabeza__tagline">{p.tagline}</p>
+    <dl class="meta">
+      <div><dt class="ed-mono ed-gris">Rubro</dt><dd>{p.rubro}</dd></div>
+      {p.tipo && <div><dt class="ed-mono ed-gris">Tipo</dt><dd>{p.tipo}</dd></div>}
+      <div><dt class="ed-mono ed-gris">Capas</dt><dd>{p.capas.map((c) => CAPA_NOMBRE[c]).join(", ")}</dd></div>
+      {
+        p.url && (
+          <div>
+            <dt class="ed-mono ed-gris">Sitio</dt>
+            <dd>
+              <a class="ed-link" href={p.url} rel="noopener" target="_blank">
+                {new URL(p.url).hostname.replace(/^www\./, "")} <span aria-hidden="true">↗</span>
+              </a>
+            </dd>
+          </div>
+        )
+      }
+    </dl>
+  </header>
+
+  {
+    p.imagenes.length > 0 && (
+      <section class="galeria" aria-label="Capturas">
+        <div class="galeria__pista">
+          {p.imagenes.map((i, n) => (
+            <figure class:list={["galeria__item", { "galeria__item--ancha": !i.vertical }]}>
+              <img src={i.src} width={i.ancho} height={i.alto} alt={`${p.nombre}, pantalla ${n + 1}`} loading={n < 3 ? "eager" : "lazy"} />
+              <figcaption class="ed-mono ed-gris">{n2(n)}</figcaption>
+            </figure>
+          ))}
+        </div>
+      </section>
+    )
+  }
+
+  <section class="bloque">
+    <SeccionCabeza num={num()} titulo="El caso" />
+    <div class="caso">
+      {
+        p.desafio && (
+          <div>
+            <p class="ed-mono ed-gris">Desafío</p>
+            <p class="caso__texto">{p.desafio}</p>
+          </div>
+        )
+      }
+      <div>
+        <p class="ed-mono ed-acento">Solución</p>
+        <p class="caso__texto caso__texto--fuerte">{p.solucion || p.descripcion}</p>
+      </div>
+    </div>
+  </section>
+
+  {
+    p.mejoras.length > 0 && (
+      <section class="bloque bloque--claro">
+        <SeccionCabeza num={num()} titulo="Qué cambió" nota="Mejoras en el día a día" />
+        <ol class="mejoras">
+          {p.mejoras.map((m, i) => (
+            <li>
+              <span class="ed-mono">{n2(i)}</span>
+              <p>{m}</p>
+            </li>
+          ))}
+        </ol>
+      </section>
+    )
+  }
+
+  <section class="bloque">
+    <SeccionCabeza num={num()} titulo="Qué permite hacer" />
+    <div class="dos">
+      <ul class="lista-mono funciones">{p.funciones.map((f) => <li>{f}</li>)}</ul>
+      {
+        p.beneficios.length > 0 && (
+          <dl class="beneficios">
+            {p.beneficios.map((b) => (
+              <div>
+                <dt class="ed-mono ed-acento">{b.para}</dt>
+                <dd>{b.texto}</dd>
+              </div>
+            ))}
+          </dl>
+        )
+      }
+    </div>
+    {
+      p.stack.length > 0 && (
+        <p class="stack ed-mono ed-gris">
+          Tecnología: {p.stack.join(" / ")}
+        </p>
+      )
+    }
+  </section>
+
+  {
+    otros.length > 0 && (
+      <section class="bloque">
+        <SeccionCabeza num={num()} titulo="Otros proyectos" />
+        <IndiceProyectos proyectos={otros} />
+      </section>
+    )
+  }
+
+  <Cierre
+    etiqueta={`(${num()}) ¿Querés algo así?`}
+    titulo="Contanos tu negocio"
+    texto={`Te mostramos cómo se vería una solución como ${p.nombre.split(" · ")[0]} adaptada a tu rubro.`}
+    href={contactoLink(`Hola, vi el proyecto ${p.nombre} y quiero algo parecido para mi negocio.`)}
+  />
+</Editorial>
+
+<style>
+  .cabeza {
+    padding: 100px var(--pad) clamp(40px, 6vw, 72px);
+    display: grid;
+    gap: 24px;
+  }
+  .cabeza__arriba {
+    display: flex;
+    justify-content: space-between;
+    gap: 16px;
+    border-top: 1px solid var(--linea);
+    padding-top: 12px;
+  }
+  .volver {
+    text-decoration: none;
+  }
+  .volver:hover {
+    color: var(--brasa);
+  }
+  .cabeza h1 {
+    font-size: clamp(3rem, 10vw, 10rem);
+    margin-top: clamp(24px, 6vw, 80px);
+  }
+  .cabeza__tagline {
+    font-size: clamp(1.2rem, 2.2vw, 1.8rem);
+    letter-spacing: -0.02em;
+    color: var(--hueso-2);
+    max-width: 40ch;
+  }
+  .meta {
+    margin: 16px 0 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 200px), 1fr));
+    border-top: 1px solid var(--linea);
+  }
+  .meta div {
+    padding: 14px 16px 14px 0;
+    border-bottom: 1px solid var(--linea);
+  }
+  .meta dt {
+    margin-bottom: 6px;
+  }
+  .meta dd {
+    margin: 0;
+  }
+
+  .galeria {
+    border-block: 1px solid var(--linea);
+  }
+  .galeria__pista {
+    display: flex;
+    gap: 1px;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    background: var(--linea);
+  }
+  .galeria__item {
+    flex: none;
+    margin: 0;
+    padding: clamp(16px, 3vw, 32px);
+    background: var(--negro-2);
+    scroll-snap-align: start;
+    display: grid;
+    gap: 10px;
+  }
+  .galeria__item img {
+    height: min(68svh, 620px);
+    width: auto;
+    max-width: none;
+  }
+  .galeria__item--ancha img {
+    height: min(52svh, 460px);
+    align-self: center;
+  }
+
+  .caso {
+    display: grid;
+    gap: 40px;
+  }
+  .caso .ed-mono {
+    margin-bottom: 12px;
+  }
+  .caso__texto {
+    color: var(--hueso-2);
+    font-size: clamp(1.1rem, 1.6vw, 1.3rem);
+    max-width: 52ch;
+  }
+  .caso__texto--fuerte {
+    color: var(--hueso);
+    font-size: clamp(1.4rem, 2.6vw, 2.2rem);
+    letter-spacing: -0.03em;
+    line-height: 1.2;
+  }
+  @media (min-width: 900px) {
+    .caso {
+      grid-template-columns: 1fr 1.6fr;
+    }
+  }
+
+  .mejoras {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    border-top: 1px solid var(--linea-oscura);
+  }
+  .mejoras li {
+    display: grid;
+    grid-template-columns: 3rem 1fr;
+    gap: 16px;
+    align-items: baseline;
+    padding: 22px 0;
+    border-bottom: 1px solid var(--linea-oscura);
+  }
+  .mejoras p {
+    font-size: clamp(1.4rem, 3vw, 2.6rem);
+    font-weight: 500;
+    letter-spacing: -0.04em;
+    line-height: 1.1;
+  }
+
+  .dos {
+    display: grid;
+    gap: 40px;
+  }
+  .funciones {
+    font-size: 0.9rem;
+    gap: 12px;
+  }
+  .beneficios {
+    margin: 0;
+    border-top: 1px solid var(--linea);
+  }
+  .beneficios div {
+    display: grid;
+    gap: 6px;
+    padding: 16px 0;
+    border-bottom: 1px solid var(--linea);
+  }
+  .beneficios dd {
+    margin: 0;
+    font-size: 1.15rem;
+    letter-spacing: -0.02em;
+  }
+  @media (min-width: 900px) {
+    .dos {
+      grid-template-columns: 1fr 1fr;
+    }
+    .beneficios div {
+      grid-template-columns: 9rem 1fr;
+    }
+  }
+  .stack {
+    margin-top: 48px;
+    border-top: 1px solid var(--linea);
+    padding-top: 14px;
+  }
+</style>

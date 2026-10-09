@@ -1,0 +1,107 @@
+---
+import { CONDICIONES, PLANES } from "../content";
+import { contactoLink } from "../site";
+---
+
+<div class="planes">
+  {
+    PLANES.map((p) => (
+      <article class:list={["plan", { "plan--destacado": p.destacado }]}>
+        <header>
+          <h3>{p.nombre}</h3>
+          <p class="plan__para">{p.para}</p>
+        </header>
+        <p class="plan__precio">
+          {p.desde === null ? "A medida" : `${p.moneda} ${p.desde}`}
+          {p.desde !== null && <span class="ed-mono"> / mes</span>}
+        </p>
+        <ul>
+          {p.incluye.map((i) => (
+            <li>{i}</li>
+          ))}
+        </ul>
+        <a class="ed-link plan__cta" href={contactoLink(`Hola, me interesa el plan ${p.nombre}.`)}>
+          Consultar <span aria-hidden="true">→</span>
+        </a>
+      </article>
+    ))
+  }
+</div>
+<ul class="condiciones">{CONDICIONES.map((c) => <li>{c}</li>)}</ul>
+
+<style>
+  .planes {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr));
+    border-top: 1px solid var(--linea);
+    border-left: 1px solid var(--linea);
+  }
+  .plan {
+    border-right: 1px solid var(--linea);
+    border-bottom: 1px solid var(--linea);
+    padding: 28px;
+    display: grid;
+    gap: 22px;
+    grid-template-rows: auto auto 1fr auto;
+  }
+  .plan h3 {
+    font-size: 2rem;
+    margin-bottom: 8px;
+  }
+  .plan__para {
+    font-family: var(--mono);
+    font-size: 0.82rem;
+    color: var(--gris);
+  }
+  .plan__precio {
+    font-size: clamp(2.4rem, 4vw, 3.4rem);
+    font-weight: 500;
+    letter-spacing: -0.05em;
+  }
+  .plan__precio .ed-mono {
+    color: var(--gris);
+  }
+  .plan ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    gap: 8px;
+    align-content: start;
+    color: var(--hueso-2);
+    font-size: 0.95rem;
+  }
+  .plan li::before {
+    content: "+ ";
+    color: var(--brasa);
+    font-family: var(--mono);
+  }
+  .plan__cta {
+    justify-self: start;
+  }
+  .plan--destacado {
+    background: var(--brasa);
+    color: var(--negro);
+  }
+  .plan--destacado .plan__para,
+  .plan--destacado ul,
+  .plan--destacado .plan__precio .ed-mono {
+    color: rgb(12 11 10 / 0.75);
+  }
+  .plan--destacado li::before {
+    color: var(--negro);
+  }
+  .plan--destacado .plan__cta:hover {
+    color: var(--negro);
+  }
+  .condiciones {
+    list-style: none;
+    margin: 24px 0 0;
+    padding: 0;
+    display: grid;
+    gap: 6px;
+    font-family: var(--mono);
+    font-size: 0.8rem;
+    color: var(--gris);
+  }
+</style>

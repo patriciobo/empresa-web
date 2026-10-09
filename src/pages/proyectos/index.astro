@@ -1,0 +1,84 @@
+---
+import Cierre from "../../components/Cierre.astro";
+import IndiceProyectos from "../../components/IndiceProyectos.astro";
+import SeccionCabeza from "../../components/SeccionCabeza.astro";
+import { CAPA_NOMBRE, type Capa, PROYECTOS, RUBROS } from "../../data";
+import Editorial from "../../layouts/Editorial.astro";
+import { SITE } from "../../site";
+
+const capas = (Object.keys(CAPA_NOMBRE) as Capa[]).filter((c) => PROYECTOS.some((p) => p.capas.includes(c)));
+const lista = {
+  "@context": "https://schema.org",
+  "@type": "ItemList",
+  itemListElement: PROYECTOS.map((p, i) => ({ "@type": "ListItem", position: i + 1, url: `${SITE.url}/proyectos/${p.slug}`, name: p.nombre })),
+};
+---
+
+<Editorial
+  title="Proyectos"
+  description={`Proyectos de ${SITE.nombre}: sistemas de gestión, sitios web y plataformas de datos en uso en ${RUBROS.join(", ").toLowerCase()}.`}
+  schema={[lista]}
+>
+  <section class="bloque cabeza">
+    <SeccionCabeza num="01" titulo="Proyectos" nota={`${PROYECTOS.length} sistemas en uso, ${RUBROS.length} rubros`} h1 />
+    <p class="intro">
+      Cada proyecto empezó con un problema concreto: turnos que se pisaban, obras que se pasaban de presupuesto,
+      inscripciones por mensaje. Acá está qué hicimos y qué cambió.
+    </p>
+
+    <div class="filtros" role="group" aria-label="Filtrar por tipo de solución">
+      <button type="button" class="ed-mono" aria-pressed="true" data-capa="">Todos</button>
+      {capas.map((c) => <button type="button" class="ed-mono" aria-pressed="false" data-capa={c}>{CAPA_NOMBRE[c]}</button>)}
+    </div>
+
+    <IndiceProyectos proyectos={PROYECTOS} />
+  </section>
+
+  <Cierre etiqueta="(02) ¿Tu negocio tiene un problema parecido?" />
+</Editorial>
+
+<script>
+  const botones = document.querySelectorAll<HTMLButtonElement>(".filtros button");
+  const filas = document.querySelectorAll<HTMLElement>(".indice > li");
+  for (const b of botones) {
+    b.addEventListener("click", () => {
+      const capa = b.dataset.capa ?? "";
+      for (const o of botones) o.setAttribute("aria-pressed", String(o === b));
+      for (const f of filas) f.hidden = !!capa && !(f.dataset.capas ?? "").split(" ").includes(capa);
+    });
+  }
+</script>
+
+<style>
+  .cabeza {
+    padding-top: 120px;
+  }
+  .intro {
+    max-width: 52ch;
+    color: var(--hueso-2);
+    font-size: clamp(1.1rem, 1.6vw, 1.3rem);
+    margin-bottom: 40px;
+  }
+  .filtros {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 24px;
+  }
+  .filtros button {
+    background: none;
+    color: var(--hueso-2);
+    border: 1px solid var(--linea);
+    padding: 9px 14px;
+    cursor: pointer;
+  }
+  .filtros button:hover {
+    color: var(--hueso);
+    border-color: var(--hueso-2);
+  }
+  .filtros button[aria-pressed="true"] {
+    background: var(--brasa);
+    border-color: var(--brasa);
+    color: var(--negro);
+  }
+</style>

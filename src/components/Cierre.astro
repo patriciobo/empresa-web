@@ -1,0 +1,63 @@
+---
+// Llamado final con foto real a sangre y link gigante.
+import { agendaLink } from "../site";
+
+interface Props {
+  etiqueta?: string;
+  titulo?: string;
+  texto?: string;
+  href?: string;
+}
+const {
+  etiqueta = "Diagnóstico gratuito · 45 min",
+  titulo = "Contanos tu negocio",
+  texto = "Te llevás un diagnóstico escrito aunque no trabajemos juntos.",
+  href = agendaLink,
+} = Astro.props;
+---
+
+<section class="cierre foto-sangre">
+  <img class="foto-sangre__img" src="/alt/fuego-cierre.webp" alt="" loading="lazy" width="1600" height="1067" />
+  <div class="foto-sangre__velo" aria-hidden="true"></div>
+  <div class="cierre__contenido">
+    <span class="ed-mono">{etiqueta}</span>
+    <a class="cierre__link" href={href}>{titulo} <span aria-hidden="true">→</span></a>
+    <p class="ed-mono">{texto}</p>
+  </div>
+</section>
+
+<style>
+  .cierre {
+    min-height: 80svh;
+    display: grid;
+    align-items: end;
+    padding: var(--pad);
+  }
+  .cierre .foto-sangre__velo {
+    background: linear-gradient(180deg, rgb(12 11 10 / 0.2), rgb(12 11 10 / 0.85));
+  }
+  .cierre__contenido {
+    display: grid;
+    gap: 18px;
+    border-top: 1px solid var(--linea);
+    padding-top: 14px;
+  }
+  .cierre__link {
+    font-size: clamp(2.8rem, 9vw, 9rem);
+    font-weight: 500;
+    letter-spacing: -0.055em;
+    line-height: 0.95;
+    text-decoration: none;
+    text-wrap: balance;
+  }
+  .cierre__link:hover {
+    color: var(--brasa);
+  }
+  .cierre__link span {
+    display: inline-block;
+    transition: transform 0.25s;
+  }
+  .cierre__link:hover span {
+    transform: translateX(12px);
+  }
+</style>

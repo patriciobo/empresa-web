@@ -1,0 +1,27 @@
+---
+import Editorial from "../layouts/Editorial.astro";
+---
+
+<Editorial title="Página no encontrada" description="La página que buscás no existe." noindex>
+  <section class="bloque nf">
+    <span class="ed-mono ed-gris">(404)</span>
+    <h1>Esta página no existe.</h1>
+    <a class="ed-link" href="/">Volver al inicio <span aria-hidden="true">→</span></a>
+  </section>
+</Editorial>
+
+<style>
+  .nf {
+    min-height: 80svh;
+    display: grid;
+    align-content: end;
+    gap: 28px;
+  }
+  .nf h1 {
+    font-size: clamp(3rem, 10vw, 9rem);
+  }
+  .nf .ed-link {
+    justify-self: start;
+    font-size: 1.3rem;
+  }
+</style>

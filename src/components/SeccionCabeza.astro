@@ -1,0 +1,19 @@
+---
+// Cabecera de sección editorial: número en mono · título grande · nota a la derecha.
+interface Props {
+  num: string;
+  titulo: string;
+  nota?: string;
+  id?: string;
+  /** Usar h1 (cabecera principal de páginas internas). */
+  h1?: boolean;
+}
+const { num, titulo, nota, id, h1 = false } = Astro.props;
+const Tag = h1 ? "h1" : "h2";
+---
+
+<div class="bloque__cabeza">
+  <span class="ed-mono">({num})</span>
+  <Tag id={id}>{titulo}</Tag>
+  {nota && <p class="ed-mono ed-gris">{nota}</p>}
+</div>

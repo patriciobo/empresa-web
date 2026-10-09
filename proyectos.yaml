@@ -1,0 +1,244 @@
+# Proyectos que se muestran en el sitio como casos de éxito.
+#
+# Para sumar un proyecto: agregá una entrada y corré `npm run proyectos`.
+# El script lee del repo (en este orden) promo.yaml, README.md y package.json, copia logo e imágenes
+# a public/proyectos/<slug>/ y genera src/data/proyectos.json y public/promo-feed.json.
+#
+# Fuente (una de las dos):
+#   path: carpeta local del repo (relativa a este archivo o absoluta)
+#   repo: owner/nombre en GitHub (público, o privado con GITHUB_TOKEN en el entorno); rama: opcional
+#
+# Todo lo demás es opcional y PISA lo que se lee del repo. Lo que el repo no dice
+# (desafío, mejoras de proceso, resultados) conviene escribirlo acá: es lo que vende.
+#   slug, nombre, url, tagline, descripcion, rubro, tipo, capas, desafio, solucion,
+#   funciones, mejoras, beneficios, stack, colores, logo, imagenes, orden, destacado, publicarUrl
+#
+# capas: marca | presencia | procesos | gestion | datos | ia   (las capas de servicio de src/content.ts)
+
+proyectos:
+  - path: ../proyectos-clientes/consultorio
+    slug: consultorio
+    rubro: Salud · Odontología
+    tipo: Software de gestión por suscripción
+    capas: [gestion, procesos, datos, presencia]
+    orden: 1
+    destacado: true
+    desafio: >-
+      Odontólogos independientes llevaban turnos, stock de materiales y gastos en papel o en planillas
+      sueltas, sin saber a fin de mes si el consultorio era rentable.
+    solucion: >-
+      Una app web instalable en el celular que une agenda, pacientes, atenciones, stock y gastos, y que
+      arma sola el resumen del mes.
+    mejoras:
+      - Registrar una atención pasa a llevar menos de 30 segundos
+      - El stock se descuenta solo con cada atención y avisa qué reponer
+      - Recordatorios de turnos por WhatsApp con un toque
+      - Rentabilidad mensual sin hacer cuentas
+    beneficios:
+      - { para: Profesional, texto: "Menos tiempo administrativo y más tiempo atendiendo" }
+      - { para: Pacientes, texto: "Recordatorios claros y un historial ordenado de cada pieza" }
+      - { para: Negocio, texto: "Ingresos, gastos y resultado del mes en una pantalla" }
+
+  - path: ../proyectos-clientes/obras-trazabilidad
+    slug: obras-trazabilidad
+    rubro: Construcción
+    tipo: Sistema de gestión a medida
+    capas: [gestion, procesos, datos]
+    orden: 3
+    destacado: true
+    publicarUrl: false # sistema interno del cliente
+    colores: ["#d9691f", "#2e2a26"]
+    desafio: >-
+      Una constructora chica controlaba presupuestos, certificaciones, sueldos semanales y herramientas
+      repartidas en varias obras con planillas y mensajes, sin saber a tiempo si una obra se pasaba de presupuesto.
+    solucion: >-
+      Un sistema web con obras, gastos, sueldos, inventario de herramientas con fotos y un balance mensual
+      para los socios, donde cada movimiento queda registrado con su usuario.
+    mejoras:
+      - Desvíos de presupuesto detectados durante la obra, no al final
+      - Cada herramienta tiene ubicación conocida y su historial con fotos
+      - La planilla de sueldos semanal se arma en minutos
+      - Los socios ven el resultado del mes sin pedir informes
+    beneficios:
+      - { para: Socios, texto: "Resultado real de cada obra y de la empresa, mes a mes" }
+      - { para: Capataces, texto: "Cargan gastos y movimientos desde el celular en la obra" }
+      - { para: Administración, texto: "Todo auditado: quién cargó qué y cuándo" }
+
+  - path: ../proyectos-clientes/ciricina
+    slug: ciricina
+    nombre: Ciricina · Taller de cerámica
+    tagline: Inscripción online, cupos en vivo y gestión integral de un taller de cerámica
+    rubro: Educación · Talleres
+    tipo: Sitio, gestión, dispositivo e IA
+    stack: [Next.js, React, PostgreSQL, Tailwind CSS, ESP32-CAM, IA de visión]
+    capas: [presencia, gestion, datos, ia]
+    colores: ["#33261d", "#fbf7f1", "#c0703d"]
+    orden: 4
+    destacado: true
+    desafio: >-
+      El taller coordinaba inscripciones, cupos, cuotas, venta de materiales y el control del horno por
+      mensajes y en papel, sin saber cuánto costaba cada alumno.
+    solucion: >-
+      Una web con cupos en vivo e inscripción que deriva a WhatsApp para el pago, un panel de administración
+      con cuotas, stock y costos, y un dispositivo junto al horno: una pequeña cámara fotografía el display
+      y una inteligencia artificial lee la temperatura para seguir cada horneada desde el celular.
+    funciones:
+      - Inscripción online con cupos por día actualizados en vivo
+      - Confirmación y coordinación del pago por WhatsApp
+      - Cobro de cuotas por alumno y por mes
+      - Stock de materiales con compras, ventas, fiado y conteo con merma
+      - Costo por alumno según cada tipo de gasto
+      - "Dispositivo con cámara (ESP32-CAM) que fotografía el display del horno cada pocos minutos"
+      - Inteligencia artificial de visión que lee la temperatura de cada foto
+      - Gráfico de cada horneada completa, de la subida al enfriamiento
+    mejoras:
+      - Las inscripciones llegan solas y no se pisan los cupos
+      - El precio de la cuota se calcula con los costos reales
+      - La horneada se sigue desde el celular, sin estar al lado del horno
+      - Cada horneada queda registrada con su curva de temperatura para comparar y repetir
+    beneficios:
+      - { para: Docente, texto: "Menos mensajes y cupos siempre al día" }
+      - { para: Alumnos, texto: "Se inscriben en un minuto y ven los lugares libres" }
+      - { para: Negocio, texto: "Cuotas, gastos y materiales en un mismo lugar" }
+      - { para: Horneadas, texto: "Temperatura y curva de cada cocción registradas solas, con aviso si la cámara deja de mandar fotos" }
+    imagenes:
+      - .promo/screens/inscribirse/1.png
+      - .promo/screens/horno/3.png
+      - .promo/screens/panel-cupos/2.png
+      - .promo/screens/horno/2.png
+      - .promo/screens/cuentas-del-mes/2.png
+      - .promo/screens/inscribirse/3.png
+
+  - path: ../proyectos-clientes/hogacor-web
+    slug: hogacor
+    nombre: Hogacor · Soluciones Constructivas
+    tagline: Sitio institucional y catálogo de una constructora de Steel Frame en Córdoba
+    url: https://hogacor.com.ar
+    rubro: Construcción
+    tipo: Presencia online y posicionamiento
+    capas: [presencia, marca]
+    colores: ["#ff5a0f", "#1c1c1c"]
+    orden: 5
+    desafio: >-
+      Una constructora con años de trayectoria y decenas de obras no tenía una presencia online que
+      mostrara su trabajo ni aparecía en las búsquedas de su zona.
+    solucion: >-
+      Un sitio institucional rápido con catálogo de módulos, ampliaciones y viviendas, optimizado para
+      Google y para los asistentes de IA, con contacto directo por WhatsApp.
+    funciones:
+      - Catálogo de módulos habitacionales, ampliaciones y viviendas con fichas
+      - SEO local para Córdoba Capital y alrededores
+      - Datos estructurados para Google (empresa, servicios, productos y preguntas frecuentes)
+      - llms.txt para que ChatGPT, Gemini y Claude recomienden a la empresa
+      - Contacto directo por WhatsApp desde cada página
+      - Imágenes optimizadas que cargan rápido en el celular
+    mejoras:
+      - Consultas que llegan con el producto elegido
+      - Respuestas a las preguntas frecuentes antes del primer contacto
+    beneficios:
+      - { para: Clientes, texto: "Ven modelos, medidas y proceso antes de consultar" }
+      - { para: Empresa, texto: "Una vidriera que trabaja las 24 horas" }
+    imagenes:
+      - src/assets/img/h1-hero.png
+      - src/assets/img/cov-hero.png
+      - src/assets/img/amp-hero.png
+      - src/assets/img/h2-living.png
+
+  - path: ../noticias
+    slug: radarglobal
+    rubro: Medios · Inteligencia de datos
+    tipo: Plataforma de datos con IA
+    capas: [datos, ia, presencia]
+    orden: 6
+    desafio: >-
+      Seguir la actualidad internacional y su impacto en el comercio exige leer decenas de medios
+      en varios idiomas todos los días.
+    solucion: >-
+      Un sistema que rastrea 115 medios de 23 países, filtra lo relevante y publica cada mañana un
+      reporte en español con impacto en comercio, materias primas y empresas, también por email.
+    mejoras:
+      - Horas de lectura diaria resumidas en un reporte de minutos
+      - Publicación y envío por email automáticos cada mañana
+      - Metodología y fuentes abiertas y verificables
+    beneficios:
+      - { para: Empresas, texto: "Anticipan cambios en comercio exterior y materias primas" }
+      - { para: Lectores, texto: "Un resumen diario claro, sin sensacionalismo" }
+
+  - path: ../proyectos-exitosos/mi-tenis
+    slug: mi-tenis
+    rubro: Deporte · Bienestar
+    tipo: Producto digital propio
+    capas: [gestion, datos, presencia]
+    orden: 7
+    desafio: >-
+      Los tenistas amateur que compiten entrenan poco tiempo por semana y sin un plan que se adapte
+      a sus partidos ni a sus molestias.
+    solucion: >-
+      Una app que arma un plan físico semanal automático, guía cada ejercicio con una figura 3D y
+      acompaña cada partido con intención, reflexión y guías tácticas.
+    mejoras:
+      - Plan semanal que se reacomoda solo al calendario de partidos
+      - Seguimiento de constancia, carga semanal y resultados
+    beneficios:
+      - { para: Jugadores, texto: "Saben qué entrenar cada día y por qué" }
+      - { para: Profesores, texto: "Una herramienta para acompañar a sus alumnos entre clases" }
+
+  - path: ../proyectos-exitosos/brotes
+    slug: brotes
+    rubro: Educación · Primera infancia
+    tipo: Producto digital propio
+    capas: [presencia, procesos]
+    orden: 8
+    publicarUrl: false # todavía sin publicar
+    desafio: >-
+      Las apps para chicos chicos suelen estar diseñadas para enganchar: puntos, premios, niveles infinitos
+      y reproducción automática, justo lo que la evidencia desaconseja en la primera infancia.
+    solucion: >-
+      Una app de juegos calmos por etapa de desarrollo, basada en investigación, donde cada juego termina solo,
+      un sol marca el tiempo del día y cada actividad propone seguir jugando fuera de la pantalla.
+    mejoras:
+      - Límite diario amable que anticipa el final y evita cortes bruscos
+      - Cada juego explica a los adultos qué trabaja y cómo jugarlo juntos
+      - Funciona sin conexión y no guarda datos fuera del dispositivo
+    beneficios:
+      - { para: Familias, texto: "Pantalla poca y buena, con un final claro" }
+      - { para: Chicos, texto: "Juegos tranquilos, sin presión ni castigo por equivocarse" }
+      - { para: Docentes, texto: "Actividades por etapa con su fundamento y una propuesta sin pantalla" }
+
+  - path: ../proyectos-exitosos/vivicordoba
+    slug: plena-experiencia
+    rubro: Turismo · Alojamientos y recorridos
+    tipo: Plataforma de reservas y gestión
+    capas: [presencia, gestion, procesos, ia]
+    orden: 2
+    destacado: true
+    desafio: >-
+      Los alojamientos y guías de las sierras de Córdoba dependen de las grandes plataformas, que cobran
+      comisión por reserva, o de publicar en redes y contestar cada consulta a mano.
+    solucion: >-
+      Una plataforma regional que reúne alojamientos y recorridos con guía: el visitante busca por zona, fechas
+      y personas y reserva por WhatsApp sin pagar por adelantado; cada propietario gestiona sus unidades,
+      tarifas y calendario desde su panel.
+    funciones:
+      - Búsqueda de alojamientos por localidad, radio, fechas y cantidad de personas
+      - Tarifas por unidad según la cantidad de personas, con cálculo automático del precio
+      - Panel del propietario con propiedades, unidades, fotos y calendario de disponibilidad
+      - Reserva por WhatsApp sin pago por adelantado; el propietario confirma
+      - Recorridos con guía por dificultad, con duración, distancia y mapa descargable
+      - Recorridos cercanos sugeridos en cada alojamiento
+      - Seis regiones turísticas con su contenido propio
+    mejoras:
+      - Consultas que llegan con fechas y cantidad de personas definidas
+      - Disponibilidad y tarifas al día sin depender de mensajes
+      - Alojamiento y actividades de la zona en un mismo lugar
+    beneficios:
+      - { para: Visitantes, texto: "Planean la escapada completa: dónde dormir y qué caminar" }
+      - { para: Propietarios, texto: "Publican y gestionan sus unidades sin comisión por reserva" }
+      - { para: Guías, texto: "Sus salidas aparecen junto a los alojamientos de la zona" }
+    imagenes:
+      - .promo/screens/buscar-alojamiento/1.png
+      - .promo/screens/buscar-alojamiento/3.png
+      - .promo/screens/buscar-alojamiento/4.png
+      - .promo/screens/recorridos-con-guia/1.png
+      - .promo/screens/regiones/1.png
+      - public/Imagenes/Regiones/Punilla/uritorco.jpg

@@ -1,0 +1,125 @@
+---
+import Cierre from "../components/Cierre.astro";
+import PlanesTabla from "../components/PlanesTabla.astro";
+import Preguntas from "../components/Preguntas.astro";
+import SeccionCabeza from "../components/SeccionCabeza.astro";
+import Editorial from "../layouts/Editorial.astro";
+import { SITE } from "../site";
+
+const comparacion = [
+  ["Inversión para empezar", "Alta: se paga todo el desarrollo antes de usarlo", "Baja: el desarrollo se reparte en la cuota"],
+  ["Hosting, dominio y seguridad", "Aparte, a cargo tuyo", "Incluidos"],
+  ["Soporte y errores", "Presupuesto nuevo cada vez", "Incluido, por WhatsApp"],
+  ["Mejoras y funciones nuevas", "Se cotizan aparte", "Una mejora por mes incluida (plan Gestión)"],
+  ["Backups", "Si alguien se acuerda", "Diarios y automáticos"],
+  ["Costo previsible", "No", "Sí, un valor fijo por mes"],
+];
+---
+
+<Editorial
+  title="Planes"
+  description={`Planes de ${SITE.nombre} por suscripción mensual: sitio web, sistema de gestión y solución integral para emprendedores, sin inversión inicial grande.`}
+>
+  <section class="bloque cabeza">
+    <SeccionCabeza num="01" titulo="Planes" nota="Suscripción mensual, sin inversión inicial grande" h1 />
+    <p class="intro">
+      En lugar de pagar un desarrollo caro de una sola vez, pagás una cuota mensual que incluye el desarrollo, la
+      infraestructura, el soporte y las mejoras. Empezás por un plan y sumás lo que el negocio necesite.
+    </p>
+    <PlanesTabla />
+  </section>
+
+  <section class="bloque bloque--claro" aria-labelledby="t-comp">
+    <SeccionCabeza num="02" id="t-comp" titulo="Pago único o suscripción" />
+    <div class="tabla" role="table" aria-label="Comparación entre pago único y suscripción">
+      <div class="tabla__fila tabla__cabeza ed-mono" role="row">
+        <span role="columnheader"></span>
+        <span role="columnheader">Desarrollo con pago único</span>
+        <span role="columnheader">Suscripción {SITE.nombre}</span>
+      </div>
+      {
+        comparacion.map(([fila, a, b]) => (
+          <div class="tabla__fila" role="row">
+            <span role="rowheader" class="tabla__titulo">{fila}</span>
+            <span role="cell" class="tabla__a"><b class="ed-mono">Pago único</b>{a}</span>
+            <span role="cell" class="tabla__b"><b class="ed-mono">{SITE.nombre}</b>{b}</span>
+          </div>
+        ))
+      }
+    </div>
+  </section>
+
+  <section class="bloque" aria-labelledby="t-faq">
+    <SeccionCabeza num="03" id="t-faq" titulo="Preguntas" />
+    <Preguntas />
+  </section>
+
+  <Cierre etiqueta="(04) Diagnóstico gratuito · 45 min" />
+</Editorial>
+
+<style>
+  .cabeza {
+    padding-top: 120px;
+  }
+  .intro {
+    max-width: 56ch;
+    color: var(--hueso-2);
+    font-size: clamp(1.1rem, 1.6vw, 1.3rem);
+    margin-bottom: 48px;
+  }
+  .tabla {
+    border-top: 1px solid var(--linea-oscura);
+  }
+  .tabla__fila {
+    display: grid;
+    gap: 8px;
+    padding: 18px 0;
+    border-bottom: 1px solid var(--linea-oscura);
+  }
+  .tabla__cabeza {
+    display: none;
+  }
+  .tabla__titulo {
+    font-size: 1.3rem;
+    font-weight: 500;
+    letter-spacing: -0.03em;
+  }
+  .tabla__a,
+  .tabla__b {
+    display: grid;
+    grid-template-columns: 7rem 1fr;
+    gap: 8px;
+  }
+  .tabla__a {
+    color: #5a554e;
+  }
+  .tabla__b {
+    font-weight: 500;
+  }
+  .tabla b {
+    font-weight: 400;
+    color: #5a554e;
+    padding-top: 3px;
+  }
+  .tabla__b b {
+    color: #c2410c;
+  }
+  @media (min-width: 900px) {
+    .tabla__fila {
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 24px;
+      align-items: baseline;
+    }
+    .tabla__cabeza {
+      display: grid;
+      color: #5a554e;
+    }
+    .tabla__a,
+    .tabla__b {
+      display: block;
+    }
+    .tabla b {
+      display: none;
+    }
+  }
+</style>

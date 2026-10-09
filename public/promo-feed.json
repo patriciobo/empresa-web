@@ -1,0 +1,109 @@
+{
+  "items": [
+    {
+      "id": "caso-consultorio",
+      "title": "Consultorio: Software odontológico simple para consultorios de Argentina",
+      "body": "Odontólogos independientes llevaban turnos, stock de materiales y gastos en papel o en planillas sueltas, sin saber a fin de mes si el consultorio era rentable. Una app web instalable en el celular que une agenda, pacientes, atenciones, stock y gastos, y que arma sola el resumen del mes.",
+      "bullets": [
+        "Registrar una atención pasa a llevar menos de 30 segundos",
+        "El stock se descuenta solo con cada atención y avisa qué reponer",
+        "Recordatorios de turnos por WhatsApp con un toque",
+        "Rentabilidad mensual sin hacer cuentas"
+      ],
+      "pillar": "casos reales",
+      "url": "https://fogondigital.com.ar/proyectos/consultorio",
+      "image": "https://fogondigital.com.ar/proyectos/consultorio/1.webp"
+    },
+    {
+      "id": "caso-plena-experiencia",
+      "title": "Plena Experiencia: Recorridos de trekking con guía y alojamientos en las sierras de Córdoba",
+      "body": "Los alojamientos y guías de las sierras de Córdoba dependen de las grandes plataformas, que cobran comisión por reserva, o de publicar en redes y contestar cada consulta a mano. Una plataforma regional que reúne alojamientos y recorridos con guía: el visitante busca por zona, fechas y personas y reserva por WhatsApp sin pagar por adelantado; cada propietario gestiona sus unidades, tarifas y calendario desde su panel.",
+      "bullets": [
+        "Consultas que llegan con fechas y cantidad de personas definidas",
+        "Disponibilidad y tarifas al día sin depender de mensajes",
+        "Alojamiento y actividades de la zona en un mismo lugar"
+      ],
+      "pillar": "casos reales",
+      "url": "https://fogondigital.com.ar/proyectos/plena-experiencia",
+      "image": "https://fogondigital.com.ar/proyectos/plena-experiencia/1.webp"
+    },
+    {
+      "id": "caso-obras-trazabilidad",
+      "title": "Obras · Trazabilidad y costos: Control de obras, costos, sueldos y herramientas para constructoras chicas",
+      "body": "Una constructora chica controlaba presupuestos, certificaciones, sueldos semanales y herramientas repartidas en varias obras con planillas y mensajes, sin saber a tiempo si una obra se pasaba de presupuesto. Un sistema web con obras, gastos, sueldos, inventario de herramientas con fotos y un balance mensual para los socios, donde cada movimiento queda registrado con su usuario.",
+      "bullets": [
+        "Desvíos de presupuesto detectados durante la obra, no al final",
+        "Cada herramienta tiene ubicación conocida y su historial con fotos",
+        "La planilla de sueldos semanal se arma en minutos",
+        "Los socios ven el resultado del mes sin pedir informes"
+      ],
+      "pillar": "casos reales",
+      "url": "https://fogondigital.com.ar/proyectos/obras-trazabilidad",
+      "image": "https://fogondigital.com.ar/proyectos/obras-trazabilidad/1.webp"
+    },
+    {
+      "id": "caso-ciricina",
+      "title": "Ciricina · Taller de cerámica: Inscripción online, cupos en vivo y gestión integral de un taller de cerámica",
+      "body": "El taller coordinaba inscripciones, cupos, cuotas, venta de materiales y el control del horno por mensajes y en papel, sin saber cuánto costaba cada alumno. Una web con cupos en vivo e inscripción que deriva a WhatsApp para el pago, un panel de administración con cuotas, stock y costos, y un dispositivo junto al horno: una pequeña cámara fotografía el display y una inteligencia artificial lee la temperatura para seguir cada horneada desde el celular.",
+      "bullets": [
+        "Las inscripciones llegan solas y no se pisan los cupos",
+        "El precio de la cuota se calcula con los costos reales",
+        "La horneada se sigue desde el celular, sin estar al lado del horno",
+        "Cada horneada queda registrada con su curva de temperatura para comparar y repetir"
+      ],
+      "pillar": "casos reales",
+      "url": "https://fogondigital.com.ar/proyectos/ciricina",
+      "image": "https://fogondigital.com.ar/proyectos/ciricina/1.webp"
+    },
+    {
+      "id": "caso-hogacor",
+      "title": "Hogacor · Soluciones Constructivas: Sitio institucional y catálogo de una constructora de Steel Frame en Córdoba",
+      "body": "Una constructora con años de trayectoria y decenas de obras no tenía una presencia online que mostrara su trabajo ni aparecía en las búsquedas de su zona. Un sitio institucional rápido con catálogo de módulos, ampliaciones y viviendas, optimizado para Google y para los asistentes de IA, con contacto directo por WhatsApp.",
+      "bullets": [
+        "Consultas que llegan con el producto elegido",
+        "Respuestas a las preguntas frecuentes antes del primer contacto"
+      ],
+      "pillar": "casos reales",
+      "url": "https://fogondigital.com.ar/proyectos/hogacor",
+      "image": "https://fogondigital.com.ar/proyectos/hogacor/1.webp"
+    },
+    {
+      "id": "caso-radarglobal",
+      "title": "Radar Global: La actualidad internacional y su impacto en el comercio y las empresas, cada día",
+      "body": "Seguir la actualidad internacional y su impacto en el comercio exige leer decenas de medios en varios idiomas todos los días. Un sistema que rastrea 115 medios de 23 países, filtra lo relevante y publica cada mañana un reporte en español con impacto en comercio, materias primas y empresas, también por email.",
+      "bullets": [
+        "Horas de lectura diaria resumidas en un reporte de minutos",
+        "Publicación y envío por email automáticos cada mañana",
+        "Metodología y fuentes abiertas y verificables"
+      ],
+      "pillar": "casos reales",
+      "url": "https://fogondigital.com.ar/proyectos/radarglobal",
+      "image": "https://fogondigital.com.ar/proyectos/radarglobal/1.webp"
+    },
+    {
+      "id": "caso-mi-tenis",
+      "title": "Mi Tenis: Entrenamiento físico para tenistas amateur, en casa y a tu ritmo",
+      "body": "Los tenistas amateur que compiten entrenan poco tiempo por semana y sin un plan que se adapte a sus partidos ni a sus molestias. Una app que arma un plan físico semanal automático, guía cada ejercicio con una figura 3D y acompaña cada partido con intención, reflexión y guías tácticas.",
+      "bullets": [
+        "Plan semanal que se reacomoda solo al calendario de partidos",
+        "Seguimiento de constancia, carga semanal y resultados"
+      ],
+      "pillar": "casos reales",
+      "url": "https://fogondigital.com.ar/proyectos/mi-tenis",
+      "image": "https://fogondigital.com.ar/proyectos/mi-tenis/1.webp"
+    },
+    {
+      "id": "caso-brotes",
+      "title": "Brotes: Juegos tranquilos para la primera infancia, sin puntos, sin premios y con final",
+      "body": "Las apps para chicos chicos suelen estar diseñadas para enganchar: puntos, premios, niveles infinitos y reproducción automática, justo lo que la evidencia desaconseja en la primera infancia. Una app de juegos calmos por etapa de desarrollo, basada en investigación, donde cada juego termina solo, un sol marca el tiempo del día y cada actividad propone seguir jugando fuera de la pantalla.",
+      "bullets": [
+        "Límite diario amable que anticipa el final y evita cortes bruscos",
+        "Cada juego explica a los adultos qué trabaja y cómo jugarlo juntos",
+        "Funciona sin conexión y no guarda datos fuera del dispositivo"
+      ],
+      "pillar": "casos reales",
+      "url": "https://fogondigital.com.ar/proyectos/brotes",
+      "image": "https://fogondigital.com.ar/proyectos/brotes/1.webp"
+    }
+  ]
+}
