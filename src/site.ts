@@ -13,9 +13,9 @@ export const SITE = {
   pais: "AR",
   zona: "Argentina (trabajo 100 % remoto, reuniones presenciales en Córdoba)",
   /** WhatsApp en formato internacional sin "+" (para wa.me). Vacío oculta los botones de WhatsApp. */
-  whatsapp: "",
-  whatsappTexto: "",
-  email: "hola@fogondigital.com.ar",
+  whatsapp: "5493517642289",
+  whatsappTexto: "351 764-2289",
+  email: "contacto@fogondigital.com.ar",
   /** Agenda para el diagnóstico gratuito (Cal.com, Calendly, Google Calendar). Vacío usa WhatsApp o email. */
   agenda: "",
   github: "https://github.com/patriciobo",

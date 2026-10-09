@@ -100,6 +100,7 @@ const nav = [
         <div>
           <p class="ed-mono ed-gris">Contacto</p>
           <a href={`mailto:${SITE.email}`} class="pie__link">{SITE.email}</a>
+          {SITE.whatsapp && <><br /><a href={`https://wa.me/${SITE.whatsapp}`} class="pie__link">WhatsApp {SITE.whatsappTexto}</a></>}
           {Object.entries(SITE.redes).filter(([, url]) => url).map(([red, url]) => <><br /><a href={url} rel="me" class="pie__link">{red[0].toUpperCase() + red.slice(1)}</a></>)}
         </div>
         <div>

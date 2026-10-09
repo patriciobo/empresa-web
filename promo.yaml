@@ -67,7 +67,8 @@ links:
   - { label: Ver proyectos, url: "https://fogondigital.com.ar/proyectos" }
   - { label: Planes, url: "https://fogondigital.com.ar/planes" }
 contact:
-  email: hola@fogondigital.com.ar
+  email: contacto@fogondigital.com.ar
+  whatsapp: "+5493517642289"
 sources:
   # Un caso de éxito por proyecto, generado por `npm run proyectos` desde proyectos.yaml.
   - { type: feed, url: "https://fogondigital.com.ar/promo-feed.json" }
