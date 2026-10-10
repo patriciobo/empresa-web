@@ -4,6 +4,17 @@ Pensada para producir con **Promo Studio** a partir de `promo.yaml` (este repo) 
 proyecto. El objetivo de las redes no es "tener seguidores": es **llevar dueños de negocio al autodiagnóstico y a la
 charla inicial**.
 
+## Regla de voz: empresa de servicios, no producto
+
+Fogón es una empresa de servicios. Nunca se presenta como una plataforma, app o producto, ni como algo enlatado:
+- Sí: "te ayudamos a ordenar los turnos", "diseñamos el sistema para cómo trabaja tu equipo", "nos sumamos a tu equipo".
+- No: "así se ordena con Fogón", "Fogón te permite…", "probá Fogón", "descargá", "un módulo para tu rubro".
+- Los casos son soluciones hechas para ese negocio, no productos listos para contratar.
+- No prometer formatos fijos (app, sin instalar, autoadministrable): dependen de cada proyecto.
+- No presentarse como empresa de Córdoba: trabajamos con todo el país (la ubicación sólo figura en el sitio).
+
+La regla está también en `promo.yaml` (`tone` y `avoid`), así Promo Studio la respeta al generar.
+
 ## 1. Principios
 
 - **Mostrar, no prometer.** Cada post se apoya en algo real: una pantalla de un sistema en uso, un número que el

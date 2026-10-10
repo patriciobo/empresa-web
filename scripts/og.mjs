@@ -10,10 +10,10 @@ const texto = `<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630"
   <text x="56" y="70" font-family="Helvetica, Arial, sans-serif" font-size="34" font-weight="700" fill="#ece6dc" letter-spacing="-1">Fogón</text>
   <text x="1144" y="68" text-anchor="end" font-family="Menlo, monospace" font-size="18" fill="#ece6dc">SOFTWARE · WEB · MARCA · DATOS</text>
   <line x1="56" y1="96" x2="1144" y2="96" stroke="#ece6dc" stroke-opacity=".2"/>
-  <text x="56" y="430" font-family="Helvetica, Arial, sans-serif" font-size="74" font-weight="600" fill="#ece6dc" letter-spacing="-3.5">Software, web y marca para</text>
-  <text x="56" y="510" font-family="Helvetica, Arial, sans-serif" font-size="74" font-weight="600" fill="#ff5a1f" letter-spacing="-3.5">negocios que crecen ordenados.</text>
+  <text x="56" y="430" font-family="Helvetica, Arial, sans-serif" font-size="74" font-weight="600" fill="#ece6dc" letter-spacing="-3.5">Tu socio en tecnología</text>
+  <text x="56" y="510" font-family="Helvetica, Arial, sans-serif" font-size="74" font-weight="600" fill="#ff5a1f" letter-spacing="-3.5">e identidad digital.</text>
   <line x1="56" y1="556" x2="1144" y2="556" stroke="#ece6dc" stroke-opacity=".2"/>
-  <text x="56" y="592" font-family="Menlo, monospace" font-size="18" fill="#b9b2a7">ESTUDIO DE TECNOLOGÍA · CÓRDOBA, AR · POR SUSCRIPCIÓN MENSUAL</text>
+  <text x="56" y="592" font-family="Menlo, monospace" font-size="18" fill="#b9b2a7">SERVICIOS A MEDIDA · CUALQUIER RUBRO · CUOTA MENSUAL FIJA</text>
 </svg>`;
 
 await sharp(foto)

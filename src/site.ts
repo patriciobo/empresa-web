@@ -11,7 +11,7 @@ export const SITE = {
   ciudad: "Córdoba",
   provincia: "Córdoba",
   pais: "AR",
-  zona: "Argentina (trabajo 100 % remoto, reuniones presenciales en Córdoba)",
+  zona: "Todo el país, trabajo 100 % remoto",
   /** WhatsApp en formato internacional sin "+" (para wa.me). Vacío oculta los botones de WhatsApp. */
   whatsapp: "5493517642289",
   whatsappTexto: "351 764-2289",

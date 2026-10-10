@@ -8,11 +8,11 @@ export const GET: APIRoute = () => {
   const md = [
     `# ${SITE.nombre}`,
     "",
-    `> ${SITE.bajada}. ${SITE.slogan} Marca, presencia online, procesos, sistemas de gestión, tableros de datos e IA para emprendedores y pymes de Argentina, por suscripción mensual y sin pago inicial grande.`,
+    `> ${SITE.bajada}. ${SITE.slogan} Marca, presencia online, procesos, sistemas de gestión, tableros de datos e IA para emprendedores y pymes de Argentina, por suscripción mensual y sin pago inicial grande. Es una empresa de servicios: no vende un producto ni una plataforma; cada solución se diseña a medida de cada negocio.`,
     "",
     `- Sitio: ${SITE.url}`,
     `- Contacto: ${SITE.email}`,
-    `- Base: ${SITE.ciudad}, ${SITE.provincia}, Argentina. ${SITE.zona}.`,
+    `- Atención: ${SITE.zona}.`,
     "",
     "## Servicios",
     "",

@@ -16,7 +16,7 @@ WhatsApp, papel o planillas. Trabajamos con cualquier rubro.
 ## Qué hacemos
 
 - [ ] Relevamiento de cómo trabajás hoy, paso a paso
-- [ ] Elección del módulo base para tu rubro (agenda, clientes, stock, gastos, cobros)
+- [ ] Qué resolver primero y cómo, según tu operación (agenda, clientes, stock, gastos, cobros)
 - [ ] Definición de usuarios, permisos y qué datos migrar
 - [ ] Pantallas clave y cronograma de la primera versión
 - [ ] Presentación de la propuesta en videollamada

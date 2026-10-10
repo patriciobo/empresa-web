@@ -107,8 +107,7 @@ Revisar antes de cada cierre. Si alguna no se cumple, se saca del sitio (`src/co
 - [ ] **Una mejora nueva por mes** (Gestión): tener horas reservadas.
 - [ ] **Soporte por WhatsApp**: definir horario y tiempo de respuesta.
 - [ ] **Tiempos:** sitio en 1 a 3 semanas y sistema en 3 a 8 semanas.
-- [ ] **"Sitio autoadministrable"**: un sitio HTML estático (como Alto las Flores) no lo es. Ofrecer "cambios de
-      contenido todos los meses" en su lugar o sumar un editor.
+- [x] **"Sitio autoadministrable"**: se sacó del sitio; ahora dice "Sitio web o landing a medida" (si es editable o no depende de cada proyecto).
 - [ ] **Preparado para asistentes de IA** (`llms.txt` y datos estructurados) en cada sitio entregado.
 - [ ] **Revisión trimestral de objetivos** y **reunión mensual** (Integral): agendarlas desde el arranque.
 - [ ] **Precios:** que la cuota de 12 meses cubra las horas de desarrollo. Si no, subir la cuota.

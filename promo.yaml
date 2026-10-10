@@ -3,15 +3,15 @@
 # Estrategia completa (pilares, calendario, anuncios): docs/estrategia-redes.md
 name: Fogón
 url: https://fogonestudio.com.ar
-tagline: Marca, sitio web y sistemas de gestión para emprendedores, por suscripción mensual
+tagline: Tu socio en tecnología e identidad digital, con servicios a medida de cada negocio
 description: >-
-  Equipo de soluciones tecnológicas para emprendedores y pymes de Argentina. Diseña la marca, el sitio web,
-  ordena los procesos y desarrolla sistemas de gestión a medida (agenda, clientes, stock, gastos, cobros,
-  trazabilidad) con tableros para medir el progreso y planificar con datos. Se contrata por suscripción
-  mensual desde US$ 39 que incluye desarrollo, hosting, soporte y mejoras, sin un pago inicial grande:
-  gestionar un negocio de forma inteligente no es solo para empresas grandes. Automatiza consultas, turnos y
-  recordatorios con un bot de WhatsApp. Trabaja con cualquier rubro; proyectos en uso en salud, construcción,
-  educación, turismo, deporte y medios.
+  Empresa de servicios de tecnología e identidad digital para emprendedores y pymes de todo el país. No vende un
+  producto, una app ni una plataforma: es un equipo que se suma al del cliente y diseña cada solución a medida de
+  ese negocio (marca, sitio web, procesos, sistemas de gestión, tableros de datos y automatizaciones, por ejemplo
+  de consultas por WhatsApp). Primero entiende cómo trabaja el negocio y después decide qué conviene hacer.
+  Se contrata por una suscripción mensual desde US$ 39 que incluye desarrollo, hosting, soporte y mejoras.
+  Trabaja con cualquier rubro; tiene proyectos hechos para negocios de salud, construcción, educación, turismo,
+  deporte y medios.
 category: Desarrollo de software y consultoría para pymes
 audience:
   countries: [AR]
@@ -24,7 +24,10 @@ audience:
 languages: [es]
 tone: >-
   español rioplatense con voseo; cercano, claro y concreto, como un socio que sabe de tecnología y de negocios;
-  sin jerga técnica, sin metáforas ni promesas exageradas, con ejemplos reales del día a día de un negocio
+  sin jerga técnica, sin metáforas ni promesas exageradas, con ejemplos reales del día a día de un negocio.
+  Siempre como empresa de servicios que trabaja con cada cliente ("te ayudamos", "diseñamos para tu negocio",
+  "nos sumamos a tu equipo"), nunca como un producto o una herramienta que el negocio usa. Cada caso es una
+  solución hecha para ese negocio, no algo que cualquiera puede contratar igual.
 brand:
   colors: ["#ff5a1f", "#ece6dc", "#0c0b0a", "#7d776e"]
   font: Inter Tight
@@ -37,13 +40,14 @@ brand:
     low-key cinematic photo of a small business owner in their own workplace (workshop, clinic, construction site,
     studio) checking a laptop, dark background, warm orange practical light, film grain, Argentina, no visible text
 features:
-  - Sistemas de gestión a medida para emprendedores, en el celular y la PC
-  - Resumen mensual con ingresos, gastos y rentabilidad
-  - Sitios web con SEO local y preparados para asistentes de IA
+  - Empresa de servicios, no un producto - cada solución se diseña a medida de cada negocio
+  - Relevamiento de cómo trabaja el negocio antes de decidir qué hacer
+  - Sistemas de gestión a medida de la operación de cada cliente
+  - Tableros y resúmenes con los números que cada negocio necesita ver
+  - Sitios web a medida con SEO local y preparados para asistentes de IA
   - Diseño de marca e identidad
-  - Relevamiento y mejora de procesos antes de programar
+  - Automatización de consultas, turnos y recordatorios por WhatsApp cuando el negocio lo necesita
   - Suscripción mensual desde US$ 39 con desarrollo, hosting, soporte y mejoras incluidos
-  - Bot de WhatsApp que responde consultas frecuentes, da turnos y manda recordatorios
   - Autodiagnóstico gratuito de 2 minutos que recomienda el plan que conviene (Presencia, Gestión o Integral)
   - Proceso claro desde el primer contacto - charla inicial sin costo, relevamiento y propuesta, arranque y mejora mensual
   - Trabaja con cualquier rubro; proyectos en uso en salud, construcción, educación, turismo, deporte y medios
@@ -55,8 +59,13 @@ screenshots: # capturas del sitio en celular (.promo/shots); se regeneran con `n
   - .promo/shots/autodiagnostico.webp
   - .promo/shots/planes.webp
 pillars: [casos reales, números del negocio, procesos y productividad, marca y presencia online, detrás de escena]
-hashtags: ["#fogonestudio", "#emprendedores", "#pymes", "#emprendedoresargentinos", "#gestiondenegocios", "#transformaciondigital", "#software", "#marketingdigital", "#cordoba"]
+hashtags: ["#fogonestudio", "#emprendedores", "#pymes", "#emprendedoresargentinos", "#gestiondenegocios", "#transformaciondigital", "#software", "#marketingdigital"]
 avoid:
+  - presentar a Fogón como una plataforma, app, software o producto que se compra, se descarga, se instala o se prueba; es una empresa de servicios que diseña cada solución a medida
+  - frases que hagan de Fogón una herramienta - "así se ordena con Fogón", "con Fogón tenés…", "Fogón te permite…", "usá Fogón", "probá Fogón", "registrate", "descargá"
+  - mostrar los proyectos de clientes como productos de Fogón o como algo listo para contratar igual; cada uno es una solución hecha para ese negocio
+  - prometer funciones o formatos fijos (que funciona sin instalar nada, que es una app en el celular, que es autoadministrable, un módulo para tu rubro); dependen de cada proyecto
+  - presentar a Fogón como una empresa de Córdoba o local; trabaja con negocios de todo el país
   - inventar clientes, testimonios, reseñas, logos o cifras de resultados que no estén en los proyectos
   - prometer aumentos de ventas, ganancias o resultados garantizados
   - mencionar precios, descuentos o promociones que no estén en el sitio (sólo "desde US$ 39 por mes" y "desde US$ 89 por mes")
@@ -67,7 +76,6 @@ avoid:
   - dar asesoramiento contable, impositivo o legal
   - jerga técnica (frameworks, lenguajes, bases de datos) en lugar de beneficios para el negocio
 cta: Hacé el autodiagnóstico y descubrí qué plan te conviene (link en la bio)
-location: Córdoba, Argentina
 links:
   - { label: Autodiagnóstico gratis, url: "https://fogonestudio.com.ar/diagnostico" }
   - { label: Ver proyectos, url: "https://fogonestudio.com.ar/proyectos" }
@@ -131,7 +139,7 @@ flows:
     description: Cómo un sistema de gestión ordenó turnos, stock y números de un consultorio
     pillar: casos reales
     steps:
-      - { path: /proyectos/consultorio, shows: "Ficha del proyecto con capturas reales de la app" }
+      - { path: /proyectos/consultorio, shows: "Ficha del proyecto con capturas reales del sistema hecho para el consultorio" }
       - { path: /proyectos/consultorio, actions: [{ scroll: 1240 }], shows: "El desafío y la solución" }
       - { path: /proyectos/consultorio, actions: [{ scroll: 1800 }], shows: "Mejoras en el día a día del consultorio" }
   - id: caso-obras

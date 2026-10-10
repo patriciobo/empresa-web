@@ -15,7 +15,7 @@ export const SERVICIOS: Servicio[] = [
     id: "presencia",
     titulo: "Presencia online",
     bajada: "Un sitio rápido que aparece en Google y en los asistentes de IA, y que convierte visitas en consultas.",
-    items: ["Sitio web o landing autoadministrable", "SEO local y perfil de Google", "Inscripciones, reservas o pedidos online", "Preparado para ChatGPT, Gemini y Claude (llms.txt y datos estructurados)"],
+    items: ["Sitio web o landing a medida", "SEO local y perfil de Google", "Inscripciones, reservas o pedidos online", "Preparado para ChatGPT, Gemini y Claude (llms.txt y datos estructurados)"],
   },
   {
     id: "procesos",
@@ -26,8 +26,8 @@ export const SERVICIOS: Servicio[] = [
   {
     id: "gestion",
     titulo: "Sistemas de gestión",
-    bajada: "Aplicaciones a medida de tu negocio, en el celular y la PC, que reemplazan el papel y el Excel.",
-    items: ["Agenda, clientes, stock, gastos y cobros", "Trazabilidad: quién hizo qué y cuándo", "Funciona sin instalar nada y como app en el celular", "Tus datos siempre exportables"],
+    bajada: "Sistemas diseñados para cómo trabaja tu negocio, que reemplazan el papel y el Excel.",
+    items: ["Agenda, clientes, stock, gastos y cobros", "Trazabilidad: quién hizo qué y cuándo", "Pensado para dónde y cómo trabaja tu equipo", "Tus datos siempre exportables"],
   },
   {
     id: "datos",
@@ -50,7 +50,7 @@ export const BENEFICIOS = [
   { titulo: "Ganás tiempo", texto: "Lo repetitivo se hace solo: recordatorios, descuentos de stock, resúmenes y avisos." },
   { titulo: "Delegás sin perder el control", texto: "Cada usuario con sus permisos y un registro de quién cargó o cambió cada cosa." },
   { titulo: "Atendés mejor", texto: "Turnos, inscripciones y pedidos online, con confirmación por WhatsApp." },
-  { titulo: "Crecés sin desordenarte", texto: "El sistema crece con el negocio: sumás módulos cuando los necesitás." },
+  { titulo: "Crecés sin desordenarte", texto: "Lo que hacemos crece con el negocio: sumamos lo que va necesitando." },
 ];
 
 /** Cómo trabajamos: cada paso dice cuándo se paga. Detalle interno en docs/proceso-comercial.md. */
@@ -114,7 +114,7 @@ export const PLANES: Plan[] = [
     destacado: true,
     incluye: [
       "Todo lo de Presencia",
-      "Sistema de gestión adaptado a tu rubro",
+      "Sistema de gestión a medida de tu operación",
       "Bot de WhatsApp: consultas, turnos y recordatorios",
       "Usuarios, permisos y registro de actividad",
       "Resumen mensual con tus números",
@@ -153,7 +153,7 @@ export const SOCIO_BENEFICIOS = [
   { titulo: "Un costo fijo y previsible", texto: `Una cuota mensual desde ${PRECIO_DESDE}, con desarrollo, soporte y mejoras incluidos. Sin sorpresas ni presupuestos sueltos.` },
   { titulo: "Siempre funcionando", texto: "Soporte, backups y mejoras todo el año, y herramientas al día en IA, buscadores y seguridad." },
   { titulo: "El conocimiento queda en tu negocio", texto: "Todo documentado, procesos claros para tu equipo y tus datos siempre exportables." },
-  { titulo: "Crece con vos", texto: "Empezás por lo que más impacto tiene y sumás módulos cuando el negocio los pide." },
+  { titulo: "Crece con vos", texto: "Empezamos por lo que más impacto tiene y sumamos lo que el negocio va pidiendo." },
 ];
 
 export const CONDICIONES = [
@@ -162,6 +162,7 @@ export const CONDICIONES = [
   "Para arrancar se abonan 2 cuotas más: el mes 2 y el último mes de la permanencia.",
   "Permanencia mínima de 6 meses en Presencia y 12 en Gestión e Integral; después, mes a mes.",
   "Si das de baja antes, se abona el desarrollo pendiente según la tabla del contrato.",
+  "Cada proyecto se diseña para tu negocio: lo que incluye cada plan se ajusta a lo que necesitás.",
   "Precios de referencia; el valor final depende del alcance y se fija por escrito.",
   "Los mensajes de WhatsApp Business que cobra Meta se pagan aparte, al costo.",
   "Si te vas, te llevás tus datos completos en formatos abiertos.",
@@ -197,7 +198,7 @@ export const RECORRIDOS: Recorrido[] = [
     para: "Tu imagen está resuelta; lo que te frena es la operación.",
     plan: "Gestión",
     cobro: "1 cuota de Gestión: relevamos tu operación y definimos el sistema.",
-    hacemos: ["Relevamiento de cómo trabajás hoy (turnos, pedidos, stock, cobros)", "Elección del módulo base para tu rubro", "Usuarios, permisos y qué datos migrar", "Pantallas clave y cronograma de la primera versión"],
+    hacemos: ["Relevamiento de cómo trabajás hoy (turnos, pedidos, stock, cobros)", "Qué resolver primero y cómo, según tu operación", "Usuarios, permisos y qué datos migrar", "Pantallas clave y cronograma de la primera versión"],
     necesitamos: ["Tus archivos de marca (logo y colores)", "Las planillas o cuadernos que usás hoy", "Quiénes van a usar el sistema y qué hace cada uno", "Los números que querés ver cada mes"],
     pasos: ["Charla inicial", "Pago de la cuota de relevamiento", "Presentación de la propuesta", "Pago de 2 cuotas y arranque", "Primera versión en 3 a 8 semanas"],
   },
@@ -254,7 +255,7 @@ export const FAQ = [
   },
   {
     p: "¿Necesito saber de tecnología?",
-    r: "No. Diseñamos cada pantalla para que la use cualquier persona del equipo desde el celular, y te acompañamos en el arranque con una capacitación corta.",
+    r: "No. Diseñamos cada pantalla para que la use cualquier persona del equipo, en el lugar y el dispositivo donde trabaja, y te acompañamos en el arranque con una capacitación corta.",
   },
   {
     p: "¿De quién son los datos?",
