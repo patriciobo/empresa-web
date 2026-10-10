@@ -119,6 +119,5 @@ Aceptación: 2 cuotas más  →  primera versión en 3–8 semanas  →  mejora 
 - [x] Dominio: fogonestudio.com.ar (fogon.com.ar está tomado). Pendiente: marca en INPI (clase 42) y usuario en redes.
 - [ ] Cargar WhatsApp y agenda en `src/site.ts`.
 - [ ] Pedir permiso a cada cliente para mostrar su caso (y, si es posible, una frase textual suya).
-- [ ] Capturas reales de Obras y Ciricina con datos demo (`promo.yaml` + `.promo/capture.mjs` en cada repo).
 - [ ] Validar precios con los primeros 5 diagnósticos.
 - [ ] Perfil de Google Business y Search Console.

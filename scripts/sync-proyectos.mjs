@@ -330,7 +330,7 @@ async function main() {
       bullets: (p.mejoras.length ? p.mejoras : p.funciones).slice(0, 5),
       pillar: "casos reales",
       url: `${site}/proyectos/${p.slug}`,
-      ...(p.imagenes[0] ? { image: `${site}${p.imagenes[0].src}` } : {}),
+      // Sin imagen: los posts no muestran capturas reales de clientes ni del sitio (ver promo.yaml → avoid).
     })),
   };
   await writeFile(OUT_FEED, `${JSON.stringify(feed, null, 2)}\n`);

@@ -8,8 +8,6 @@
     "build": "astro check && astro build",
     "preview": "astro preview",
     "proyectos": "node scripts/sync-proyectos.mjs",
-    "promo:shots": "node scripts/promo-shots.mjs",
-    "promo:capture": "node .promo/capture.mjs",
     "og": "node scripts/og.mjs"
   },
   "dependencies": {

@@ -33,9 +33,9 @@ brand:
   font: Inter Tight
   logo: .promo/marca/logo.jpg
   imageStyle: >-
-    dark editorial still life on a near-black background: objects of small businesses (laptop, notebook, dental
-    tools, ceramic pieces, construction tools) lit by warm low orange light, high contrast, film grain, minimal
-    composition with lots of negative space, cinematic, not a cartoon, no text, no logos
+    dark editorial still life on a near-black background, warm low orange light, film grain, lots of negative
+    space: objects of the small business in the post, or a laptop or phone showing an invented simplified app
+    screen that matches the topic (chart, form, calendar, dashboard), no readable text, no real brands or logos
   photoStyle: >-
     low-key cinematic photo of a small business owner in their own workplace (workshop, clinic, construction site,
     studio) checking a laptop, dark background, warm orange practical light, film grain, Argentina, no visible text
@@ -51,16 +51,11 @@ features:
   - Autodiagnóstico gratuito de 2 minutos que recomienda el plan que conviene (Presencia, Gestión o Integral)
   - Proceso claro desde el primer contacto - charla inicial sin costo, relevamiento y propuesta, arranque y mejora mensual
   - Trabaja con cualquier rubro; proyectos en uso en salud, construcción, educación, turismo, deporte y medios
-screenshots: # capturas del sitio en celular (.promo/shots); se regeneran con `npm run promo:shots`
-  - .promo/shots/inicio.webp
-  - .promo/shots/proyectos.webp
-  - .promo/shots/caso-consultorio.webp
-  - .promo/shots/caso-obras.webp
-  - .promo/shots/autodiagnostico.webp
-  - .promo/shots/planes.webp
 pillars: [casos reales, números del negocio, procesos y productividad, marca y presencia online, detrás de escena]
 hashtags: ["#fogonestudio", "#emprendedores", "#pymes", "#emprendedoresargentinos", "#gestiondenegocios", "#transformaciondigital", "#software", "#marketingdigital"]
 avoid:
+  - usar imágenes o capturas del sitio de Fogón; no se promociona la página sino soluciones a medida de cada negocio
+  - usar capturas reales de los sistemas o sitios de los clientes; si hace falta mostrar una pantalla, que sea una interfaz inventada e ilustrativa (un gráfico, un formulario, un tablero) acorde a lo que cuenta el post, sin presentarla como real
   - presentar a Fogón como una plataforma, app, software o producto que se compra, se descarga, se instala o se prueba; es una empresa de servicios que diseña cada solución a medida
   - frases que hagan de Fogón una herramienta - "así se ordena con Fogón", "con Fogón tenés…", "Fogón te permite…", "usá Fogón", "probá Fogón", "registrate", "descargá"
   - mostrar los proyectos de clientes como productos de Fogón o como algo listo para contratar igual; cada uno es una solución hecha para ese negocio
@@ -71,7 +66,6 @@ avoid:
   - mencionar precios, descuentos o promociones que no estén en el sitio (sólo "desde US$ 39 por mes" y "desde US$ 89 por mes")
   - ofrecer diagnósticos, auditorías o propuestas gratis (gratis es sólo la charla inicial y el autodiagnóstico online)
   - decir que los mensajes de WhatsApp Business no tienen costo (Meta los cobra aparte)
-  - mostrar ilustraciones o pantallas generadas como si fueran capturas reales de los sistemas
   - criticar o nombrar a la competencia, a otros programas o a contadores
   - dar asesoramiento contable, impositivo o legal
   - jerga técnica (frameworks, lenguajes, bases de datos) en lugar de beneficios para el negocio
@@ -90,77 +84,3 @@ sources:
   # Servicios, planes y preguntas frecuentes completos.
   - { type: url, url: "https://fogonestudio.com.ar/llms.txt" }
 cadence: { feed: 3, reels: 2, stories: 3 }
-
-# Capturas reales de flujos: `npm run build && node .promo/capture.mjs` (sitio estático, sin login ni datos personales).
-capture:
-  start: npm run preview -- --port 4329
-  url: http://localhost:4329
-  device: mobile
-flows:
-  - id: autodiagnostico
-    name: Autodiagnóstico en 2 minutos
-    description: Respondés 10 preguntas y ves tu puntaje por área y el plan que te conviene, con el primer paso
-    pillar: números del negocio
-    steps:
-      - { path: /diagnostico, shows: "Primeras preguntas: cuántas personas trabajan y si hay varias sedes o áreas" }
-      - path: /diagnostico
-        actions:
-          - { click: "fieldset >> nth=0 >> text=De 2 a 10" }
-          - { click: "fieldset >> nth=1 >> text=No" }
-          - { click: "fieldset >> nth=2 >> text=Sí" }
-          - { click: "fieldset >> nth=3 >> text=A medias" }
-          - { click: "fieldset >> nth=4 >> text=Sí" }
-          - { click: "fieldset >> nth=5 >> text=Sí" }
-          - { click: "fieldset >> nth=6 >> text=A medias" }
-          - { click: "fieldset >> nth=7 >> text=No" }
-          - { click: "fieldset >> nth=8 >> text=A medias" }
-          - { click: "fieldset >> nth=9 >> text=No" }
-          - { click: "text=Ver mi resultado" }
-          - { waitFor: "#resultado:visible" }
-        shows: Puntaje total y por área
-      - path: /diagnostico
-        actions:
-          - { click: "fieldset >> nth=0 >> text=De 2 a 10" }
-          - { click: "fieldset >> nth=1 >> text=No" }
-          - { click: "fieldset >> nth=2 >> text=Sí" }
-          - { click: "fieldset >> nth=3 >> text=A medias" }
-          - { click: "fieldset >> nth=4 >> text=Sí" }
-          - { click: "fieldset >> nth=5 >> text=Sí" }
-          - { click: "fieldset >> nth=6 >> text=A medias" }
-          - { click: "fieldset >> nth=7 >> text=No" }
-          - { click: "fieldset >> nth=8 >> text=A medias" }
-          - { click: "fieldset >> nth=9 >> text=No" }
-          - { click: "text=Ver mi resultado" }
-          - { waitFor: "#resultado:visible" }
-          - { click: "#plan-nota" }  # click inofensivo: espera que termine el scroll suave y deja el plan a la vista
-        shows: Plan recomendado (Gestión), por qué conviene y el primer paso
-  - id: caso-consultorio
-    name: Caso real, consultorio odontológico
-    description: Cómo un sistema de gestión ordenó turnos, stock y números de un consultorio
-    pillar: casos reales
-    steps:
-      - { path: /proyectos/consultorio, shows: "Ficha del proyecto con capturas reales del sistema hecho para el consultorio" }
-      - { path: /proyectos/consultorio, actions: [{ scroll: 1240 }], shows: "El desafío y la solución" }
-      - { path: /proyectos/consultorio, actions: [{ scroll: 1800 }], shows: "Mejoras en el día a día del consultorio" }
-  - id: caso-obras
-    name: Caso real, constructora
-    description: Control de presupuesto, sueldos y herramientas de una constructora chica
-    pillar: casos reales
-    steps:
-      - { path: /proyectos/obras-trazabilidad, shows: "Ficha del sistema de obras con su rubro y capas" }
-      - { path: /proyectos/obras-trazabilidad, actions: [{ scroll: 1840 }], shows: "Mejoras: desvíos de presupuesto detectados a tiempo" }
-  - id: planes
-    name: Planes por suscripción
-    description: Tres planes mensuales con desarrollo, hosting y soporte incluidos, sin pago inicial grande
-    pillar: marca y presencia online
-    steps:
-      - { path: /planes, actions: [{ scroll: 400 }], shows: "Planes Presencia, Gestión e Integral" }
-      - { path: /planes, actions: [{ scroll: 2130 }], shows: "Comparación entre pago único y suscripción" }
-  - id: como-trabajamos
-    name: Cómo trabajamos
-    description: Los pasos desde la primera charla, qué se paga en cada uno y la lista de cada caso
-    pillar: detrás de escena
-    steps:
-      - { path: /como-trabajamos, shows: "Gestionar tu negocio de forma inteligente no es solo para empresas grandes, desde US$ 39 por mes" }
-      - { path: /como-trabajamos, actions: [{ scroll: 700 }], shows: "Los 4 pasos y cuándo se paga cada uno" }
-      - { path: /como-trabajamos, actions: [{ scroll: 1800 }], shows: "Recorridos según lo que necesita cada negocio, con su lista de pasos" }
