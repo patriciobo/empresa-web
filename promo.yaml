@@ -2,7 +2,7 @@
 # Ver github.com/patriciobo/promo-studio (asistente, validación y documentación de cada campo).
 # Estrategia completa (pilares, calendario, anuncios): docs/estrategia-redes.md
 name: Fogón
-url: https://fogondigital.com.ar
+url: https://fogonestudio.com.ar
 tagline: Marca, sitio web y sistemas de gestión para emprendedores, por suscripción mensual
 description: >-
   Equipo de soluciones tecnológicas para emprendedores y pymes de Argentina. Diseña la marca, el sitio web,
@@ -55,7 +55,7 @@ screenshots: # capturas del sitio en celular (.promo/shots); se regeneran con `n
   - .promo/shots/autodiagnostico.webp
   - .promo/shots/planes.webp
 pillars: [casos reales, números del negocio, procesos y productividad, marca y presencia online, detrás de escena]
-hashtags: ["#fogondigital", "#emprendedores", "#pymes", "#emprendedoresargentinos", "#gestiondenegocios", "#transformaciondigital", "#software", "#marketingdigital", "#cordoba"]
+hashtags: ["#fogonestudio", "#emprendedores", "#pymes", "#emprendedoresargentinos", "#gestiondenegocios", "#transformaciondigital", "#software", "#marketingdigital", "#cordoba"]
 avoid:
   - inventar clientes, testimonios, reseñas, logos o cifras de resultados que no estén en los proyectos
   - prometer aumentos de ventas, ganancias o resultados garantizados
@@ -69,18 +69,18 @@ avoid:
 cta: Hacé el autodiagnóstico y descubrí qué plan te conviene (link en la bio)
 location: Córdoba, Argentina
 links:
-  - { label: Autodiagnóstico gratis, url: "https://fogondigital.com.ar/diagnostico" }
-  - { label: Ver proyectos, url: "https://fogondigital.com.ar/proyectos" }
-  - { label: Planes, url: "https://fogondigital.com.ar/planes" }
-  - { label: Cómo trabajamos, url: "https://fogondigital.com.ar/como-trabajamos" }
+  - { label: Autodiagnóstico gratis, url: "https://fogonestudio.com.ar/diagnostico" }
+  - { label: Ver proyectos, url: "https://fogonestudio.com.ar/proyectos" }
+  - { label: Planes, url: "https://fogonestudio.com.ar/planes" }
+  - { label: Cómo trabajamos, url: "https://fogonestudio.com.ar/como-trabajamos" }
 contact:
-  email: contacto@fogondigital.com.ar
+  email: contacto@fogonestudio.com.ar
   whatsapp: "+5493517642289"
 sources:
   # Un caso de éxito por proyecto, generado por `npm run proyectos` desde proyectos.yaml.
-  - { type: feed, url: "https://fogondigital.com.ar/promo-feed.json" }
+  - { type: feed, url: "https://fogonestudio.com.ar/promo-feed.json" }
   # Servicios, planes y preguntas frecuentes completos.
-  - { type: url, url: "https://fogondigital.com.ar/llms.txt" }
+  - { type: url, url: "https://fogonestudio.com.ar/llms.txt" }
 cadence: { feed: 3, reels: 2, stories: 3 }
 
 # Capturas reales de flujos: `npm run build && node .promo/capture.mjs` (sitio estático, sin login ni datos personales).

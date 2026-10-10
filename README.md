@@ -1,7 +1,7 @@
 # Fogón · sitio institucional
 
 Sitio de la empresa (Astro, estático): servicios, proyectos como casos de éxito, planes por suscripción y
-autodiagnóstico. El dominio (`fogondigital.com.ar`) vive en `src/site.ts`, `astro.config.mjs` y `promo.yaml`.
+autodiagnóstico. El dominio (`fogonestudio.com.ar`) vive en `src/site.ts`, `astro.config.mjs` y `promo.yaml`.
 
 ## Comandos
 

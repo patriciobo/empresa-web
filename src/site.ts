@@ -7,7 +7,7 @@ export const SITE = {
   bajada: "Tu socio en tecnología e identidad digital",
   slogan: "Delegá en nosotros la tecnología y la marca, y ocupate de lo que mejor sabés hacer.",
   /** Dominio público (sin barra final). fogon.com.ar está tomado; confirmar disponibilidad en nic.ar. */
-  url: "https://fogondigital.com.ar",
+  url: "https://fogonestudio.com.ar",
   ciudad: "Córdoba",
   provincia: "Córdoba",
   pais: "AR",
@@ -15,7 +15,7 @@ export const SITE = {
   /** WhatsApp en formato internacional sin "+" (para wa.me). Vacío oculta los botones de WhatsApp. */
   whatsapp: "5493517642289",
   whatsappTexto: "351 764-2289",
-  email: "contacto@fogondigital.com.ar",
+  email: "contacto@fogonestudio.com.ar",
   /** Agenda para la charla inicial sin costo (Cal.com, Calendly, Google Calendar). Vacío usa WhatsApp o email. */
   agenda: "",
   github: "https://github.com/patriciobo",
