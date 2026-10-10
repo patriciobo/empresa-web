@@ -16,7 +16,7 @@ export const SITE = {
   whatsapp: "5493517642289",
   whatsappTexto: "351 764-2289",
   email: "contacto@fogondigital.com.ar",
-  /** Agenda para el diagnóstico gratuito (Cal.com, Calendly, Google Calendar). Vacío usa WhatsApp o email. */
+  /** Agenda para la charla inicial sin costo (Cal.com, Calendly, Google Calendar). Vacío usa WhatsApp o email. */
   agenda: "",
   github: "https://github.com/patriciobo",
   /** Perfiles públicos; dejar vacío lo que no exista. */
@@ -28,9 +28,9 @@ export const SITE = {
 } as const;
 
 /** Link de contacto principal: WhatsApp si está cargado, si no email. */
-export function contactoLink(texto = `Hola ${SITE.nombre}, quiero agendar un diagnóstico gratuito.`): string {
+export function contactoLink(texto = `Hola ${SITE.nombre}, quiero agendar una charla inicial.`): string {
   if (SITE.whatsapp) return `https://wa.me/${SITE.whatsapp}?text=${encodeURIComponent(texto)}`;
-  return `mailto:${SITE.email}?subject=${encodeURIComponent("Diagnóstico gratuito")}&body=${encodeURIComponent(texto)}`;
+  return `mailto:${SITE.email}?subject=${encodeURIComponent("Charla inicial")}&body=${encodeURIComponent(texto)}`;
 }
 
 /** Link para agendar: agenda online si existe, si no el contacto principal. */

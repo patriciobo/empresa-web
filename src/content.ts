@@ -39,7 +39,7 @@ export const SERVICIOS: Servicio[] = [
     id: "ia",
     titulo: "IA y automatización",
     bajada: "Inteligencia artificial donde ahorra tiempo de verdad, no como adorno.",
-    items: ["Resúmenes y reportes automáticos", "Lectura de fotos y documentos", "Sensores y dispositivos conectados", "Asistentes que responden con tu información"],
+    items: ["Bot de WhatsApp que responde consultas, da turnos y manda recordatorios", "Resúmenes y reportes automáticos", "Lectura de fotos y documentos", "Asistentes que responden con tu información"],
   },
 ];
 
@@ -53,15 +53,32 @@ export const BENEFICIOS = [
   { titulo: "Crecés sin desordenarte", texto: "El sistema crece con el negocio: sumás módulos cuando los necesitás." },
 ];
 
+/** Cómo trabajamos: cada paso dice cuándo se paga. Detalle interno en docs/proceso-comercial.md. */
 export const PROCESO = [
-  { paso: "Diagnóstico", texto: "Una reunión de 45 minutos, gratis, para entender tu negocio, cómo trabajás y qué te frena." },
-  { paso: "Propuesta", texto: "Te mostramos qué conviene hacer primero, con un plan mensual claro y sin letra chica." },
-  { paso: "Primera versión en semanas", texto: "Arrancamos por lo que más impacto tiene y lo usás en pocas semanas, no en meses." },
-  { paso: "Mejora continua", texto: "Cada mes medimos, ajustamos y sumamos lo que el negocio va pidiendo." },
+  {
+    paso: "Charla inicial",
+    cobro: "Sin costo",
+    texto: "20 a 30 minutos para conocernos, ver si encajamos y contarte cómo trabajamos. Trabajamos con cualquier rubro.",
+  },
+  {
+    paso: "Relevamiento y propuesta",
+    cobro: "1 cuota",
+    texto: "Relevamos cómo trabaja tu negocio y te presentamos la propuesta: plan, diseños y cronograma. Si avanzás, esa cuota vale como tu primer mes.",
+  },
+  {
+    paso: "Arranque",
+    cobro: "2 cuotas",
+    texto: "Al aceptar abonás el mes 2 y el último mes de la permanencia. Arrancamos por lo que más impacto tiene y lo usás en semanas.",
+  },
+  {
+    paso: "Mejora continua",
+    cobro: "Cuota mensual",
+    texto: "Cada mes medimos, ajustamos y sumamos lo que el negocio va pidiendo.",
+  },
 ];
 
 export type Plan = {
-  id: string;
+  id: "presencia" | "gestion" | "integral";
   nombre: string;
   para: string;
   /** Precio mensual de referencia; null muestra "a medida". Revisar en docs/estrategia-comercial.md. */
@@ -78,7 +95,15 @@ export const PLANES: Plan[] = [
     para: "Para salir a vender con una imagen profesional.",
     desde: 39,
     moneda: "US$",
-    incluye: ["Sitio web o landing con tu marca", "Dominio, hosting y certificado incluidos", "SEO local y perfil de Google", "Botón de WhatsApp y formulario de contacto", "Cambios de contenido todos los meses"],
+    incluye: [
+      "Marca básica: logo, paleta y tipografías",
+      "Sitio web o landing con tu marca",
+      "Dominio, hosting y certificado incluidos",
+      "SEO local y perfil de Google",
+      "Botón de WhatsApp y formulario de contacto",
+      "Cambios de contenido todos los meses",
+      "Opcional: respuestas automáticas por WhatsApp",
+    ],
   },
   {
     id: "gestion",
@@ -87,7 +112,15 @@ export const PLANES: Plan[] = [
     desde: 89,
     moneda: "US$",
     destacado: true,
-    incluye: ["Todo lo de Presencia", "Sistema de gestión adaptado a tu rubro", "Usuarios, permisos y registro de actividad", "Resumen mensual con tus números", "Soporte por WhatsApp y backups diarios", "Una mejora nueva por mes"],
+    incluye: [
+      "Todo lo de Presencia",
+      "Sistema de gestión adaptado a tu rubro",
+      "Bot de WhatsApp: consultas, turnos y recordatorios",
+      "Usuarios, permisos y registro de actividad",
+      "Resumen mensual con tus números",
+      "Soporte por WhatsApp y backups diarios",
+      "Una mejora nueva por mes",
+    ],
   },
   {
     id: "integral",
@@ -95,21 +128,108 @@ export const PLANES: Plan[] = [
     para: "Para crecer con estrategia, marca y datos.",
     desde: null,
     moneda: "US$",
-    incluye: ["Todo lo de Gestión", "Marca e identidad completa", "Relevamiento y mejora de procesos", "Tablero de indicadores a medida", "Automatizaciones e IA", "Reunión mensual de estrategia"],
+    incluye: [
+      "Todo lo de Gestión",
+      "Marca e identidad completa",
+      "Relevamiento y mejora de procesos",
+      "Tablero de indicadores a medida",
+      "Asistente con IA en WhatsApp que responde con tu información",
+      "Automatizaciones e IA",
+      "Reunión mensual de estrategia",
+    ],
   },
 ];
 
+/** Precio de entrada, para el mensaje de "accesible". */
+export const PRECIO_DESDE = `${PLANES[0].moneda} ${PLANES[0].desde}`;
+
 export const CONDICIONES = [
-  "Sin pago inicial grande: el desarrollo se paga dentro de la suscripción.",
-  "Permanencia mínima de 12 meses en Gestión e Integral; después, mes a mes.",
+  "Sin pago inicial grande: el desarrollo se reparte en la cuota mensual.",
+  "Charla inicial sin costo. El relevamiento y la propuesta se pagan con 1 cuota, que vale como primer mes si avanzás.",
+  "Para arrancar se abonan 2 cuotas más: el mes 2 y el último mes de la permanencia.",
+  "Permanencia mínima de 6 meses en Presencia y 12 en Gestión e Integral; después, mes a mes.",
+  "Si das de baja antes, se abona el desarrollo pendiente según la tabla del contrato.",
   "Precios de referencia; el valor final depende del alcance y se fija por escrito.",
+  "Los mensajes de WhatsApp Business que cobra Meta se pagan aparte, al costo.",
   "Si te vas, te llevás tus datos completos en formatos abiertos.",
+];
+
+export type Recorrido = {
+  id: string;
+  titulo: string;
+  para: string;
+  plan: string;
+  /** Qué se cobra en el relevamiento y por qué. */
+  cobro: string;
+  hacemos: string[];
+  necesitamos: string[];
+  pasos: string[];
+};
+
+/** Recorridos según lo que necesita cada cliente. Checklists completos en docs/checklists/. */
+export const RECORRIDOS: Recorrido[] = [
+  {
+    id: "presencia",
+    titulo: "Marca y web",
+    para: "Necesitás verte profesional y que te encuentren.",
+    plan: "Presencia",
+    cobro: "1 cuota de Presencia: definimos tu marca básica y la estructura del sitio.",
+    hacemos: ["Entrevista sobre tu negocio, tu público y tu competencia", "Dos direcciones de marca (logo, paleta y tipografías)", "Mapa del sitio y textos principales", "Presentación de la propuesta en videollamada"],
+    necesitamos: ["Qué vendés, a quién y en qué zona", "Fotos reales del negocio o permiso para producirlas", "Dominio, si ya tenés uno", "Acceso al perfil de Google, si existe"],
+    pasos: ["Charla inicial", "Pago de la cuota de relevamiento", "Presentación de la propuesta", "Pago de 2 cuotas y arranque", "Sitio publicado en 1 a 3 semanas"],
+  },
+  {
+    id: "sistema",
+    titulo: "Ya tengo marca, quiero un sistema",
+    para: "Tu imagen está resuelta; lo que te frena es la operación.",
+    plan: "Gestión",
+    cobro: "1 cuota de Gestión: relevamos tu operación y definimos el sistema.",
+    hacemos: ["Relevamiento de cómo trabajás hoy (turnos, pedidos, stock, cobros)", "Elección del módulo base para tu rubro", "Usuarios, permisos y qué datos migrar", "Pantallas clave y cronograma de la primera versión"],
+    necesitamos: ["Tus archivos de marca (logo y colores)", "Las planillas o cuadernos que usás hoy", "Quiénes van a usar el sistema y qué hace cada uno", "Los números que querés ver cada mes"],
+    pasos: ["Charla inicial", "Pago de la cuota de relevamiento", "Presentación de la propuesta", "Pago de 2 cuotas y arranque", "Primera versión en 3 a 8 semanas"],
+  },
+  {
+    id: "integral",
+    titulo: "Operación compleja o todo junto",
+    para: "Varias áreas, sedes o personas; o querés marca, web, sistema y datos.",
+    plan: "Integral",
+    cobro: "Relevamiento profundo con monto fijo según el tamaño de la operación; se descuenta del primer mes.",
+    hacemos: ["Entrevistas con cada área", "Mapa de procesos y cuellos de botella", "Indicadores para medir el negocio", "Plan por etapas: qué se hace primero y por qué"],
+    necesitamos: ["Una persona responsable del proyecto de tu lado", "Tiempo de cada área para las entrevistas", "Los sistemas y planillas que usan hoy", "Objetivos para los próximos 6 a 12 meses"],
+    pasos: ["Charla inicial", "Pago del relevamiento profundo", "Presentación del informe y la propuesta", "Pago de 2 cuotas y arranque por etapas", "Reunión mensual de estrategia"],
+  },
+  {
+    id: "existente",
+    titulo: "Ya tengo web o sistema",
+    para: "Tenés algo funcionando y no querés empezar de cero.",
+    plan: "El que corresponda",
+    cobro: "1 cuota del plan: auditamos lo que tenés dentro del relevamiento.",
+    hacemos: ["Revisión de tu sitio o sistema actual", "Qué conviene conservar, integrar o reemplazar", "Plan de migración sin perder datos"],
+    necesitamos: ["Accesos de solo lectura a lo que usás hoy", "Qué funciona bien y qué te hace perder tiempo"],
+    pasos: ["Charla inicial", "Pago de la cuota de relevamiento", "Presentación de la auditoría y la propuesta", "Pago de 2 cuotas y arranque"],
+  },
 ];
 
 export const FAQ = [
   {
+    p: "¿Es para negocios chicos?",
+    r: `Sí. Gestionar tu negocio de forma inteligente no es solo para empresas grandes: los planes arrancan en ${PRECIO_DESDE} por mes y el desarrollo se reparte en la cuota, así no tenés que juntar un monto alto para empezar.`,
+  },
+  {
     p: "¿Por qué una suscripción y no un pago único?",
     r: "Porque un sistema que no se mantiene envejece rápido. Con la suscripción no tenés que juntar un monto alto al principio, y el hosting, la seguridad, los backups, el soporte y las mejoras están siempre incluidos. Pagás un valor mensual previsible y el sistema mejora con tu negocio.",
+  },
+  {
+    p: "¿Por qué se cobra el relevamiento y la propuesta?",
+    r: "Porque es trabajo real: entrevistas, análisis de cómo trabajás, diseño y un plan escrito. Cuesta una cuota del plan y, si avanzás, vale como tu primer mes, así que no pagás nada extra.",
+  },
+  {
+    p: "¿Qué pasa si no acepto la propuesta?",
+    r: "Te quedás con el informe escrito del relevamiento: lo que encontramos y las prioridades. Los diseños y el desarrollo se entregan cuando arrancamos el plan.",
+  },
+  {
+    p: "¿Pueden automatizar las consultas por WhatsApp?",
+    r: "Sí. Un bot responde preguntas frecuentes (horarios, precios, ubicación), da turnos y manda recordatorios conectado a tu sistema. En el plan Integral usa IA para responder con tu información y deriva a una persona cuando hace falta. Los mensajes que cobra Meta se pagan aparte, al costo.",
   },
   {
     p: "¿Cuánto tarda en estar funcionando?",
@@ -124,12 +244,12 @@ export const FAQ = [
     r: "Tuyos. Podés exportarlos cuando quieras en formatos abiertos (CSV o JSON), y si dejás el servicio te los entregamos completos.",
   },
   {
-    p: "¿Trabajan con negocios de cualquier rubro?",
-    r: "Trabajamos con emprendimientos y pymes de servicios, salud, construcción, educación, comercio y talleres. Si tu rubro no está en los proyectos, lo charlamos en el diagnóstico: los problemas de gestión se parecen más de lo que parece.",
+    p: "¿Trabajan con cualquier rubro?",
+    r: "Sí, con cualquier rubro. Ya trabajamos con salud, construcción, educación, turismo, deporte y medios, y los problemas de gestión se parecen más de lo que parece: turnos, pedidos, stock, cobros y saber los números del mes.",
   },
   {
     p: "¿Qué pasa si ya tengo sitio o algún sistema?",
-    r: "Lo evaluamos en el diagnóstico. Muchas veces conviene conservar lo que funciona e integrarlo, y reemplazar solo lo que hoy te hace perder tiempo.",
+    r: "Lo auditamos en el relevamiento. Muchas veces conviene conservar lo que funciona e integrarlo, y reemplazar solo lo que hoy te hace perder tiempo.",
   },
 ];
 
@@ -144,3 +264,66 @@ export const AUTODIAGNOSTICO = [
   { area: "Datos", pregunta: "¿Sabés qué producto o servicio te deja más margen?" },
   { area: "Datos", pregunta: "¿Tenés objetivos para los próximos 6 meses y una forma de medir si los cumplís?" },
 ];
+
+/** Preguntas de perfil: no suman puntos, sirven para elegir el plan. */
+export const PERFIL = [
+  {
+    id: "equipo",
+    pregunta: "¿Cuántas personas trabajan en el negocio?",
+    opciones: [
+      { v: "solo", t: "Solo yo" },
+      { v: "chico", t: "De 2 a 10" },
+      { v: "grande", t: "Más de 10" },
+    ],
+  },
+  {
+    id: "areas",
+    pregunta: "¿Tenés más de una sede, o áreas que se pasan trabajo entre sí (por ejemplo ventas → producción → entrega)?",
+    opciones: [
+      { v: "no", t: "No" },
+      { v: "si", t: "Sí" },
+    ],
+  },
+] as const;
+
+export type Respuestas = {
+  /** Porcentaje 0–100 por área del autodiagnóstico. */
+  pct: Record<string, number>;
+  equipo: string;
+  areas: string;
+};
+
+/** Elige uno de los 3 planes a partir del autodiagnóstico. La primera regla que se cumple gana. */
+export function clasificar({ pct, equipo, areas }: Respuestas): { plan: Plan; motivo: string; nota: string } {
+  const plan = (id: Plan["id"]) => PLANES.find((p) => p.id === id)!;
+  const procesos = pct.Procesos ?? 0;
+  const datos = pct.Datos ?? 0;
+  const tieneMarca = (pct.Marca ?? 0) >= 50;
+
+  let elegido: Plan;
+  let motivo: string;
+  if (equipo === "grande") {
+    elegido = plan("integral");
+    motivo = "Con más de 10 personas, ordenar procesos y medir pide relevar toda la operación antes de construir.";
+  } else if (areas === "si") {
+    elegido = plan("integral");
+    motivo = "Con varias sedes o áreas que se pasan trabajo, conviene relevar cómo se conectan antes de construir.";
+  } else if (procesos < 40 && datos < 40) {
+    elegido = plan("integral");
+    motivo = "Procesos y números necesitan ordenarse a la vez: conviene un plan completo, por etapas.";
+  } else if (procesos < 60 || datos < 60) {
+    elegido = plan("gestion");
+    motivo = "Tu operación todavía depende de WhatsApp, papel o planillas: un sistema la ordena y te da los números del mes.";
+  } else {
+    elegido = plan("presencia");
+    motivo = "Tu operación está bastante ordenada: lo que más rinde ahora es que te encuentren y te reconozcan.";
+  }
+
+  const nota =
+    elegido.id === "presencia"
+      ? "Incluye tu marca básica: logo, paleta y tipografías."
+      : tieneMarca
+        ? "Como ya tenés marca, arrancamos directo por el sistema."
+        : "Incluye la marca básica, para que el sistema y tu imagen hablen igual.";
+  return { plan: elegido, motivo, nota };
+}

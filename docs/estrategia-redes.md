@@ -1,8 +1,8 @@
 # Estrategia de redes
 
 Pensada para producir con **Promo Studio** a partir de `promo.yaml` (este repo) y de los `promo.yaml` de cada
-proyecto. El objetivo de las redes no es "tener seguidores": es **llevar dueños de negocio al autodiagnóstico y al
-diagnóstico gratuito**.
+proyecto. El objetivo de las redes no es "tener seguidores": es **llevar dueños de negocio al autodiagnóstico y a la
+charla inicial**.
 
 ## 1. Principios
 
@@ -86,7 +86,7 @@ Calendario tipo:
 - "5 cosas que tu sitio tiene que tener para que te escriban."
 
 **Detrás de escena**
-- "Así es un diagnóstico gratuito, de principio a fin."
+- "Así es un relevamiento, de principio a fin (y por qué lo cobramos)."
 - "Por qué cobramos por mes y no un pago único."
 
 ## 6. LinkedIn (perfil personal del fundador)

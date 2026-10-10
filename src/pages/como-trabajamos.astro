@@ -1,0 +1,310 @@
+---
+// Plantilla de primer contacto: se comparte el link o se imprime como PDF (Ctrl/Cmd + P).
+import Cierre from "../components/Cierre.astro";
+import SeccionCabeza from "../components/SeccionCabeza.astro";
+import { CONDICIONES, PLANES, PRECIO_DESDE, PROCESO, RECORRIDOS } from "../content";
+import Editorial from "../layouts/Editorial.astro";
+import { SITE } from "../site";
+
+const n2 = (i: number) => String(i + 1).padStart(2, "0");
+const llevas = [
+  "Una charla para conocernos y saber si encajamos.",
+  "El informe escrito del relevamiento, aunque no avances.",
+  "Los diseños, el sistema y sus archivos, a medida que se construyen.",
+  "Tus datos completos en formatos abiertos, siempre.",
+];
+---
+
+<Editorial
+  title="Cómo trabajamos"
+  description={`Cómo trabaja ${SITE.nombre}: charla inicial sin costo, relevamiento y propuesta, arranque y mejora mensual. Planes desde ${PRECIO_DESDE} por mes, para cualquier rubro.`}
+>
+  <section class="bloque cabeza">
+    <SeccionCabeza num="01" titulo="Cómo trabajamos" nota="Para leer antes de la primera charla" h1 />
+    <p class="intro">
+      Gestionar tu negocio de forma inteligente no es solo para empresas grandes. Trabajamos con cualquier rubro, por
+      una suscripción mensual desde {PRECIO_DESDE}, y te contamos desde el principio qué se paga, cuándo y por qué.
+    </p>
+    <button type="button" class="ed-mono imprimir" onclick="window.print()">Imprimir o guardar como PDF ↓</button>
+  </section>
+
+  <section class="bloque" aria-labelledby="t-pasos">
+    <SeccionCabeza num="02" id="t-pasos" titulo="Los pasos" nota="Y cuándo se paga cada uno" />
+    <ol class="pasos">
+      {
+        PROCESO.map((p, i) => (
+          <li>
+            <span class="pasos__num">{n2(i)}</span>
+            <div>
+              <h3>{p.paso}</h3>
+              <p>{p.texto}</p>
+            </div>
+            <span class="ed-mono pasos__cobro">{p.cobro}</span>
+          </li>
+        ))
+      }
+    </ol>
+  </section>
+
+  <section class="bloque bloque--claro" aria-labelledby="t-recorridos">
+    <SeccionCabeza num="03" id="t-recorridos" titulo="Según lo que necesitás" nota="Cada caso tiene su lista de pasos" />
+    <div class="recorridos">
+      {
+        RECORRIDOS.map((r) => (
+          <article class="recorrido">
+            <p class="ed-mono recorrido__plan">Plan {r.plan}</p>
+            <h3>{r.titulo}</h3>
+            <p class="recorrido__para">{r.para}</p>
+            <p class="recorrido__cobro">{r.cobro}</p>
+            <h4 class="ed-mono">Qué hacemos</h4>
+            <ul>{r.hacemos.map((x) => <li>{x}</li>)}</ul>
+            <h4 class="ed-mono">Qué necesitamos de vos</h4>
+            <ul>{r.necesitamos.map((x) => <li>{x}</li>)}</ul>
+            <h4 class="ed-mono">Pasos</h4>
+            <ul class="casillas">{r.pasos.map((x) => <li>{x}</li>)}</ul>
+          </article>
+        ))
+      }
+    </div>
+  </section>
+
+  <section class="bloque" aria-labelledby="t-planes">
+    <SeccionCabeza num="04" id="t-planes" titulo="Planes" nota="Precios de referencia por mes" />
+    <ul class="planes">
+      {
+        PLANES.map((p) => (
+          <li>
+            <b>{p.nombre}</b>
+            <span>{p.para}</span>
+            <span class="ed-mono">{p.desde === null ? "A medida" : `desde ${p.moneda} ${p.desde}`}</span>
+          </li>
+        ))
+      }
+    </ul>
+    <p class="mas"><a class="ed-link" href="/planes">Ver qué incluye cada plan <span aria-hidden="true">→</span></a></p>
+  </section>
+
+  <section class="bloque" aria-labelledby="t-condiciones">
+    <SeccionCabeza num="05" id="t-condiciones" titulo="Condiciones" nota="Sin letra chica" />
+    <div class="dos">
+      <div>
+        <h3 class="ed-mono">Lo que te llevás</h3>
+        <ul class="lista-mono">{llevas.map((x) => <li>{x}</li>)}</ul>
+      </div>
+      <div>
+        <h3 class="ed-mono">Lo que acordamos</h3>
+        <ul class="lista-mono">{CONDICIONES.map((x) => <li>{x}</li>)}</ul>
+      </div>
+    </div>
+    <p class="ed-mono ed-gris contacto">{SITE.nombre} · {SITE.email} · WhatsApp {SITE.whatsappTexto} · {SITE.url.replace("https://", "")}</p>
+  </section>
+
+  <Cierre etiqueta="(06) Charla inicial sin costo · 30 min" />
+</Editorial>
+
+<style>
+  .cabeza {
+    padding-top: 120px;
+  }
+  .intro {
+    max-width: 56ch;
+    color: var(--hueso-2);
+    font-size: clamp(1.1rem, 1.6vw, 1.3rem);
+    margin-bottom: 24px;
+  }
+  .imprimir {
+    background: none;
+    border: 1px solid var(--linea);
+    color: var(--hueso);
+    padding: 10px 16px;
+    cursor: pointer;
+  }
+  .imprimir:hover {
+    border-color: var(--brasa);
+    color: var(--brasa);
+  }
+  .pasos {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    border-top: 1px solid var(--linea);
+  }
+  .pasos li {
+    display: grid;
+    grid-template-columns: 4rem 1fr;
+    gap: 8px 24px;
+    padding: 24px 0;
+    border-bottom: 1px solid var(--linea);
+  }
+  .pasos__num {
+    font-size: 2.4rem;
+    font-weight: 500;
+    letter-spacing: -0.06em;
+    line-height: 1;
+    color: var(--brasa);
+  }
+  .pasos h3 {
+    font-size: 1.5rem;
+    letter-spacing: -0.03em;
+    margin-bottom: 6px;
+  }
+  .pasos p {
+    color: var(--hueso-2);
+    max-width: 60ch;
+  }
+  .pasos__cobro {
+    grid-column: 2;
+    color: var(--brasa);
+  }
+  @media (min-width: 900px) {
+    .pasos li {
+      grid-template-columns: 6rem 1fr 12rem;
+      align-items: baseline;
+    }
+    .pasos__cobro {
+      grid-column: 3;
+      text-align: right;
+    }
+  }
+  .recorridos {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr));
+    gap: 0;
+    border-top: 1px solid var(--linea-oscura);
+    border-left: 1px solid var(--linea-oscura);
+  }
+  .recorrido {
+    border-right: 1px solid var(--linea-oscura);
+    border-bottom: 1px solid var(--linea-oscura);
+    padding: 24px;
+    display: grid;
+    gap: 10px;
+    align-content: start;
+  }
+  .recorrido__plan {
+    color: #c2410c;
+  }
+  .recorrido h3 {
+    font-size: 1.6rem;
+    letter-spacing: -0.04em;
+    line-height: 1.1;
+  }
+  .recorrido__para {
+    color: #5a554e;
+  }
+  .recorrido__cobro {
+    font-weight: 500;
+    padding: 10px 0;
+    border-block: 1px solid var(--linea-oscura);
+  }
+  .recorrido h4 {
+    font-weight: 400;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    color: #5a554e;
+    margin-top: 8px;
+  }
+  .recorrido ul {
+    margin: 0;
+    padding-left: 1.1em;
+    display: grid;
+    gap: 4px;
+    font-size: 0.95rem;
+  }
+  .recorrido .casillas {
+    list-style: none;
+    padding-left: 0;
+  }
+  .casillas li::before {
+    content: "☐ ";
+    color: #c2410c;
+  }
+  .planes {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    border-top: 1px solid var(--linea);
+  }
+  .planes li {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 4px 24px;
+    padding: 18px 0;
+    border-bottom: 1px solid var(--linea);
+  }
+  .planes b {
+    font-size: 1.6rem;
+    font-weight: 500;
+    letter-spacing: -0.04em;
+  }
+  .planes span:not(.ed-mono) {
+    color: var(--hueso-2);
+  }
+  @media (min-width: 900px) {
+    .planes li {
+      grid-template-columns: 12rem 1fr 10rem;
+      align-items: baseline;
+    }
+    .planes .ed-mono {
+      text-align: right;
+    }
+  }
+  .mas {
+    margin-top: 32px;
+  }
+  .dos {
+    display: grid;
+    gap: 40px;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 320px), 1fr));
+  }
+  .dos h3 {
+    font-weight: 400;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    color: var(--brasa);
+    margin-bottom: 16px;
+  }
+  .contacto {
+    margin-top: 48px;
+  }
+
+  /* Versión para imprimir o guardar como PDF y mandar al cliente. */
+  @media print {
+    :global(body) {
+      background: #fff !important;
+      color: #111 !important;
+    }
+    :global(header),
+    :global(footer),
+    :global(.cierre),
+    :global(.menu),
+    :global(.ed-saltar),
+    .imprimir,
+    .mas {
+      display: none !important;
+    }
+    :global(.bloque) {
+      background: #fff !important;
+      color: #111 !important;
+      padding: 16px 0 !important;
+    }
+    .cabeza {
+      padding-top: 0;
+    }
+    .intro,
+    .dos :global(.lista-mono),
+    .pasos p,
+    .planes span:not(.ed-mono) {
+      color: #333;
+    }
+    .recorrido {
+      break-inside: avoid;
+    }
+    .pasos li,
+    .planes li {
+      break-inside: avoid;
+    }
+  }
+</style>

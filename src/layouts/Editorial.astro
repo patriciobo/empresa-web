@@ -43,6 +43,7 @@ const nav = [
   { href: "/proyectos", texto: "Proyectos" },
   { href: "/#servicios", texto: "Servicios" },
   { href: "/planes", texto: "Planes" },
+  { href: "/como-trabajamos", texto: "Cómo trabajamos" },
   { href: "/diagnostico", texto: "Autodiagnóstico" },
 ];
 ---
@@ -79,7 +80,7 @@ const nav = [
       <nav aria-label="Principal" class="cabecera__nav">
         {nav.map((n) => <a class="ed-mono" href={n.href} aria-current={Astro.url.pathname === n.href ? "page" : undefined}>{n.texto}</a>)}
       </nav>
-      <a class="ed-mono cabecera__cta" href={agendaLink}>Diagnóstico gratis ↗</a>
+      <a class="ed-mono cabecera__cta" href={agendaLink}>Charla inicial ↗</a>
       <button class="ed-mono cabecera__menu" type="button" popovertarget="menu">Menú</button>
     </header>
 
@@ -88,7 +89,7 @@ const nav = [
       <ol>
         {nav.map((n, i) => <li><a href={n.href}><span class="ed-mono ed-gris">{String(i + 1).padStart(2, "0")}</span>{n.texto}</a></li>)}
       </ol>
-      <a class="ed-link menu__cta" href={agendaLink}>Agendar diagnóstico gratis <span aria-hidden="true">→</span></a>
+      <a class="ed-link menu__cta" href={agendaLink}>Agendar charla inicial <span aria-hidden="true">→</span></a>
     </nav>
 
     <main id="contenido">

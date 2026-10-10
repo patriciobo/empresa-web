@@ -60,6 +60,8 @@ Reglas para que el modelo sea rentable:
 - **Precio en dólares, cobro en pesos** al tipo de cambio del día de facturación (o en ARS con ajuste trimestral).
   Débito automático (Mercado Pago suscripciones) para bajar la morosidad.
 - **Plan anual con 2 meses bonificados** para quien prefiere pagar por adelantado.
+- **Cobro por adelantado antes de producir:** 1 cuota por el relevamiento y la propuesta, más 2 cuotas al aceptar
+  (el mes 2 y el último de la permanencia). Detalle en [`proceso-comercial.md`](proceso-comercial.md).
 - **Salida digna:** exportación completa de datos. Baja el miedo a "quedar atado" y es un argumento de venta.
 
 Validar con los primeros clientes: ¿la cuota de Gestión se paga sin fricción? ¿el plan Integral se vende o asusta?
@@ -72,19 +74,18 @@ Instagram / LinkedIn / Google / boca a boca
           ↓
 Sitio: caso de éxito de su rubro  →  Autodiagnóstico (2 min)
           ↓
-Diagnóstico gratuito de 45 min (WhatsApp o agenda)
+Charla inicial sin costo de 20–30 min (WhatsApp o agenda)
           ↓
-Propuesta con plan mensual (en 48 h)
+Relevamiento y propuesta pagos (1 cuota, vale como mes 1)
           ↓
-Primera versión en 3–8 semanas  →  mejora mensual  →  caso de éxito nuevo  →  referidos
+Aceptación: 2 cuotas más  →  primera versión en 3–8 semanas  →  mejora mensual  →  caso de éxito nuevo  →  referidos
 ```
 
-- **Imán de clientes:** el autodiagnóstico (`/diagnostico`). Sin formulario: el resultado se manda por WhatsApp
-  ya redactado, así el lead llega con contexto.
-- **Diagnóstico de 45 min:** relevar procesos, qué miden hoy, qué los frena. Entregar siempre un resumen escrito
-  con 3 recomendaciones, aunque no compren (genera confianza y referidos).
-- **Propuesta:** una página, con el problema en sus palabras, el plan, la cuota y qué van a poder hacer a las
-  4 semanas.
+- **Imán de clientes:** el autodiagnóstico (`/diagnostico`). Sin formulario: recomienda uno de los 3 planes y el
+  resultado se manda por WhatsApp ya redactado, así el lead llega con contexto y con un plan en mente.
+- **Charla inicial:** ver si encajamos y explicar el proceso con `/como-trabajamos`. No se regala diagnóstico.
+- **Relevamiento y propuesta:** pagos. La propuesta se presenta en vivo; si no compran, se llevan solo el informe
+  escrito, no los diseños (ver [`proceso-comercial.md`](proceso-comercial.md)).
 
 ## 5. Canales (en orden de retorno esperado)
 

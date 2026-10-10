@@ -1,5 +1,5 @@
 ---
-import { AUTODIAGNOSTICO } from "../content";
+import { AUTODIAGNOSTICO, PERFIL } from "../content";
 import SeccionCabeza from "../components/SeccionCabeza.astro";
 import Editorial from "../layouts/Editorial.astro";
 import { SITE } from "../site";
@@ -9,25 +9,44 @@ const opciones = [
   { v: 1, t: "A medias" },
   { v: 0, t: "No" },
 ];
+const total = AUTODIAGNOSTICO.length + PERFIL.length;
 ---
 
 <Editorial
   title="Autodiagnóstico"
-  description="En 2 minutos, descubrí qué tan ordenado y medible está tu negocio en presencia online, marca, procesos y datos, y por dónde conviene empezar."
+  description="En 2 minutos, descubrí qué tan ordenado y medible está tu negocio en presencia online, marca, procesos y datos, y qué plan te conviene."
 >
   <section class="bloque cabeza">
-    <SeccionCabeza num="01" titulo="Autodiagnóstico" nota="8 preguntas · 2 minutos" h1 />
+    <SeccionCabeza num="01" titulo="Autodiagnóstico" nota={`${total} preguntas · 2 minutos`} h1 />
     <p class="intro">
       ¿Qué tan preparado está tu negocio para crecer? Respondé y te mostramos tu puntaje en presencia online, marca,
-      procesos y datos, con el primer paso recomendado.
+      procesos y datos, y cuál de nuestros tres planes te conviene.
     </p>
 
     <form id="form" data-whatsapp={SITE.whatsapp} data-email={SITE.email}>
       {
+        PERFIL.map((q, i) => (
+          <fieldset>
+            <legend>
+              <span class="ed-mono ed-gris">{String(i + 1).padStart(2, "0")} · Tu negocio</span>
+              {q.pregunta}
+            </legend>
+            <div class="opciones">
+              {q.opciones.map((o) => (
+                <label class="opcion">
+                  <input type="radio" name={q.id} value={o.v} required />
+                  <span>{o.t}</span>
+                </label>
+              ))}
+            </div>
+          </fieldset>
+        ))
+      }
+      {
         AUTODIAGNOSTICO.map((q, i) => (
           <fieldset data-area={q.area}>
             <legend>
-              <span class="ed-mono ed-gris">{String(i + 1).padStart(2, "0")} · {q.area}</span>
+              <span class="ed-mono ed-gris">{String(PERFIL.length + i + 1).padStart(2, "0")} · {q.area}</span>
               {q.pregunta}
             </legend>
             <div class="opciones">
@@ -48,12 +67,19 @@ const opciones = [
       <p class="ed-mono ed-gris">Tu resultado</p>
       <p class="resultado__total"><strong id="total"></strong><span class="ed-mono"> / 100</span></p>
       <div id="areas" class="areas"></div>
+      <div class="plan-sugerido">
+        <p class="ed-mono ed-acento">Plan recomendado</p>
+        <p class="plan-sugerido__nombre"><span id="plan-nombre"></span> <span class="ed-mono" id="plan-precio"></span></p>
+        <p id="plan-motivo"></p>
+        <ul id="plan-incluye" class="lista-mono"></ul>
+        <p class="ed-mono ed-gris" id="plan-nota"></p>
+      </div>
       <div class="recomendacion">
-        <p class="ed-mono ed-acento">Primer paso recomendado</p>
-        <p id="recomendacion"></p>
+        <p class="ed-mono ed-acento">Primer paso</p>
+        <p id="primer-paso"></p>
       </div>
       <div class="resultado__botones">
-        <a id="enviar" class="ed-link" href="#">Enviar mi resultado y agendar <span aria-hidden="true">→</span></a>
+        <a id="enviar" class="ed-link" href="#">Enviar mi resultado y agendar la charla <span aria-hidden="true">→</span></a>
         <button class="ed-mono reiniciar" type="button" id="reiniciar">Volver a empezar</button>
       </div>
       <p class="ed-mono ed-gris">No guardamos tus respuestas: el resultado se calcula en tu navegador.</p>
@@ -62,24 +88,16 @@ const opciones = [
 </Editorial>
 
 <script>
-  const RECOMENDACION: Record<string, string> = {
-    Presencia:
-      "Empezar por tu presencia online: un sitio propio que aparezca en Google y reciba consultas o reservas sin depender de que contestes cada mensaje. Es el plan Presencia.",
-    Marca:
-      "Ordenar tu marca: logo, colores y forma de comunicar consistentes en todos lados. Hace que cada peso que inviertas en redes rinda más.",
-    Procesos:
-      "Llevar tu operación a un sistema: turnos, pedidos, stock o cobros en un solo lugar, con recordatorios y avisos automáticos. Es el plan Gestión.",
-    Datos:
-      "Medir: un resumen mensual con ingresos, gastos y margen por producto o servicio, para planificar los próximos meses con números y no a ojo. Es el plan Gestión, con tablero.",
-  };
+  import { clasificar } from "../content";
 
   const form = document.getElementById("form") as HTMLFormElement;
   const res = document.getElementById("resultado") as HTMLElement;
+  const $ = (id: string) => document.getElementById(id)!;
 
   form.addEventListener("submit", (e) => {
     e.preventDefault();
     const puntos: Record<string, { s: number; max: number }> = {};
-    for (const fs of form.querySelectorAll<HTMLFieldSetElement>("fieldset")) {
+    for (const fs of form.querySelectorAll<HTMLFieldSetElement>("fieldset[data-area]")) {
       const area = fs.dataset.area!;
       const v = Number(fs.querySelector<HTMLInputElement>("input:checked")?.value ?? 0);
       puntos[area] ??= { s: 0, max: 0 };
@@ -88,15 +106,32 @@ const opciones = [
     }
     const pct = Object.entries(puntos).map(([area, { s, max }]) => ({ area, pct: Math.round((s / max) * 100) }));
     const total = Math.round(pct.reduce((a, b) => a + b.pct, 0) / pct.length);
-    const peor = [...pct].sort((a, b) => a.pct - b.pct)[0];
+    const datos = new FormData(form);
+    const { plan, motivo, nota } = clasificar({
+      pct: Object.fromEntries(pct.map((p) => [p.area, p.pct])),
+      equipo: String(datos.get("equipo")),
+      areas: String(datos.get("areas")),
+    });
 
-    document.getElementById("total")!.textContent = String(total);
-    document.getElementById("areas")!.innerHTML = pct
+    $("total").textContent = String(total);
+    $("areas").innerHTML = pct
       .map((p) => `<div class="area"><span>${p.area}</span><div class="barra"><i style="width:${p.pct}%"></i></div><b>${p.pct}%</b></div>`)
       .join("");
-    document.getElementById("recomendacion")!.textContent = RECOMENDACION[peor.area];
+    $("plan-nombre").textContent = plan.nombre;
+    $("plan-precio").textContent = plan.desde === null ? "a medida" : `desde ${plan.moneda} ${plan.desde} / mes`;
+    $("plan-motivo").textContent = motivo;
+    $("plan-incluye").innerHTML = plan.incluye
+      .filter((i) => !i.startsWith("Todo lo de") && !i.startsWith("Opcional"))
+      .slice(0, 3)
+      .map((i) => `<li>${i}</li>`)
+      .join("");
+    $("plan-nota").textContent = nota;
+    $("primer-paso").textContent =
+      plan.id === "integral"
+        ? "Una charla inicial sin costo y después un relevamiento profundo de tu operación, que se descuenta de tu primer mes si avanzás."
+        : `Una charla inicial sin costo y después el relevamiento y la propuesta: 1 cuota del plan ${plan.nombre}, que vale como tu primer mes si avanzás.`;
 
-    const texto = `Hola, hice el autodiagnóstico: ${total}/100 (${pct.map((p) => `${p.area} ${p.pct}%`).join(", ")}). Quiero agendar el diagnóstico gratuito.`;
+    const texto = `Hola, hice el autodiagnóstico: ${total}/100 (${pct.map((p) => `${p.area} ${p.pct}%`).join(", ")}). Me salió el plan ${plan.nombre}. Quiero agendar la charla inicial.`;
     const wa = form.dataset.whatsapp;
     (document.getElementById("enviar") as HTMLAnchorElement).href = wa
       ? `https://wa.me/${wa}?text=${encodeURIComponent(texto)}`
@@ -107,7 +142,7 @@ const opciones = [
     res.scrollIntoView({ behavior: "smooth", block: "start" });
   });
 
-  document.getElementById("reiniciar")!.addEventListener("click", () => {
+  $("reiniciar").addEventListener("click", () => {
     form.reset();
     res.hidden = true;
     form.hidden = false;
@@ -210,6 +245,27 @@ const opciones = [
   .areas :global(b) {
     text-align: right;
     font-weight: 500;
+  }
+  .plan-sugerido {
+    display: grid;
+    gap: 12px;
+    border: 1px solid var(--brasa);
+    padding: 24px;
+  }
+  .plan-sugerido__nombre {
+    font-size: clamp(2.4rem, 6vw, 4.5rem);
+    font-weight: 500;
+    letter-spacing: -0.05em;
+    line-height: 1;
+  }
+  .plan-sugerido__nombre .ed-mono {
+    font-size: 0.9rem;
+    letter-spacing: 0;
+    color: var(--gris);
+  }
+  #plan-motivo {
+    font-size: clamp(1.1rem, 1.8vw, 1.35rem);
+    max-width: 48ch;
   }
   .recomendacion {
     display: grid;

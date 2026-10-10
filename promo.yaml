@@ -8,16 +8,18 @@ description: >-
   Equipo de soluciones tecnológicas para emprendedores y pymes de Argentina. Diseña la marca, el sitio web,
   ordena los procesos y desarrolla sistemas de gestión a medida (agenda, clientes, stock, gastos, cobros,
   trazabilidad) con tableros para medir el progreso y planificar con datos. Se contrata por suscripción
-  mensual que incluye desarrollo, hosting, soporte y mejoras, sin un pago inicial grande. Proyectos en uso
-  en odontología, construcción, talleres, deporte y medios.
+  mensual desde US$ 39 que incluye desarrollo, hosting, soporte y mejoras, sin un pago inicial grande:
+  gestionar un negocio de forma inteligente no es solo para empresas grandes. Automatiza consultas, turnos y
+  recordatorios con un bot de WhatsApp. Trabaja con cualquier rubro; proyectos en uso en salud, construcción,
+  educación, turismo, deporte y medios.
 category: Desarrollo de software y consultoría para pymes
 audience:
   countries: [AR]
   age: [28, 58]
   interests: [emprendimiento, pequeñas empresas, gestión empresarial, marketing digital, transformación digital, productividad]
   description: >-
-    dueños de emprendimientos y pymes de servicios (salud, construcción, talleres, educación, comercio) con
-    2 a 30 personas, que ya venden pero gestionan con WhatsApp, papel y planillas, no saben bien sus números
+    dueños de emprendimientos y pymes de cualquier rubro (servicios, salud, construcción, educación, turismo,
+    comercio) con 1 a 30 personas, que ya venden pero gestionan con WhatsApp, papel y planillas, no saben bien sus números
     y quieren profesionalizarse sin hacer una inversión grande de entrada
 languages: [es]
 tone: >-
@@ -40,9 +42,11 @@ features:
   - Sitios web con SEO local y preparados para asistentes de IA
   - Diseño de marca e identidad
   - Relevamiento y mejora de procesos antes de programar
-  - Suscripción mensual con desarrollo, hosting, soporte y mejoras incluidos
-  - Autodiagnóstico digital gratuito de 2 minutos en el sitio
-  - Proyectos en uso en odontología, construcción, talleres de cerámica, deporte y medios
+  - Suscripción mensual desde US$ 39 con desarrollo, hosting, soporte y mejoras incluidos
+  - Bot de WhatsApp que responde consultas frecuentes, da turnos y manda recordatorios
+  - Autodiagnóstico gratuito de 2 minutos que recomienda el plan que conviene (Presencia, Gestión o Integral)
+  - Proceso claro desde el primer contacto - charla inicial sin costo, relevamiento y propuesta, arranque y mejora mensual
+  - Trabaja con cualquier rubro; proyectos en uso en salud, construcción, educación, turismo, deporte y medios
 screenshots: # capturas del sitio en celular (.promo/shots); se regeneran con `npm run promo:shots`
   - .promo/shots/inicio.webp
   - .promo/shots/proyectos.webp
@@ -55,17 +59,20 @@ hashtags: ["#fogondigital", "#emprendedores", "#pymes", "#emprendedoresargentino
 avoid:
   - inventar clientes, testimonios, reseñas, logos o cifras de resultados que no estén en los proyectos
   - prometer aumentos de ventas, ganancias o resultados garantizados
-  - mencionar precios, descuentos o promociones que no estén en el sitio
+  - mencionar precios, descuentos o promociones que no estén en el sitio (sólo "desde US$ 39 por mes" y "desde US$ 89 por mes")
+  - ofrecer diagnósticos, auditorías o propuestas gratis (gratis es sólo la charla inicial y el autodiagnóstico online)
+  - decir que los mensajes de WhatsApp Business no tienen costo (Meta los cobra aparte)
   - mostrar ilustraciones o pantallas generadas como si fueran capturas reales de los sistemas
   - criticar o nombrar a la competencia, a otros programas o a contadores
   - dar asesoramiento contable, impositivo o legal
   - jerga técnica (frameworks, lenguajes, bases de datos) en lugar de beneficios para el negocio
-cta: Hacé el autodiagnóstico gratis (link en la bio)
+cta: Hacé el autodiagnóstico y descubrí qué plan te conviene (link en la bio)
 location: Córdoba, Argentina
 links:
   - { label: Autodiagnóstico gratis, url: "https://fogondigital.com.ar/diagnostico" }
   - { label: Ver proyectos, url: "https://fogondigital.com.ar/proyectos" }
   - { label: Planes, url: "https://fogondigital.com.ar/planes" }
+  - { label: Cómo trabajamos, url: "https://fogondigital.com.ar/como-trabajamos" }
 contact:
   email: contacto@fogondigital.com.ar
   whatsapp: "+5493517642289"
@@ -84,23 +91,41 @@ capture:
 flows:
   - id: autodiagnostico
     name: Autodiagnóstico en 2 minutos
-    description: Respondés 8 preguntas y ves tu puntaje en presencia, marca, procesos y datos con el primer paso recomendado
+    description: Respondés 10 preguntas y ves tu puntaje por área y el plan que te conviene, con el primer paso
     pillar: números del negocio
     steps:
-      - { path: /diagnostico, shows: "Pregunta inicial del autodiagnóstico con opciones Sí, A medias y No" }
+      - { path: /diagnostico, shows: "Primeras preguntas: cuántas personas trabajan y si hay varias sedes o áreas" }
       - path: /diagnostico
         actions:
-          - { click: "fieldset >> nth=0 >> text=Sí" }
-          - { click: "fieldset >> nth=1 >> text=A medias" }
-          - { click: "fieldset >> nth=2 >> text=No" }
+          - { click: "fieldset >> nth=0 >> text=De 2 a 10" }
+          - { click: "fieldset >> nth=1 >> text=No" }
+          - { click: "fieldset >> nth=2 >> text=Sí" }
           - { click: "fieldset >> nth=3 >> text=A medias" }
-          - { click: "fieldset >> nth=4 >> text=No" }
-          - { click: "fieldset >> nth=5 >> text=No" }
+          - { click: "fieldset >> nth=4 >> text=Sí" }
+          - { click: "fieldset >> nth=5 >> text=Sí" }
           - { click: "fieldset >> nth=6 >> text=A medias" }
           - { click: "fieldset >> nth=7 >> text=No" }
+          - { click: "fieldset >> nth=8 >> text=A medias" }
+          - { click: "fieldset >> nth=9 >> text=No" }
           - { click: "text=Ver mi resultado" }
           - { waitFor: "#resultado:visible" }
-        shows: Puntaje total y por área, con el primer paso recomendado
+        shows: Puntaje total y por área
+      - path: /diagnostico
+        actions:
+          - { click: "fieldset >> nth=0 >> text=De 2 a 10" }
+          - { click: "fieldset >> nth=1 >> text=No" }
+          - { click: "fieldset >> nth=2 >> text=Sí" }
+          - { click: "fieldset >> nth=3 >> text=A medias" }
+          - { click: "fieldset >> nth=4 >> text=Sí" }
+          - { click: "fieldset >> nth=5 >> text=Sí" }
+          - { click: "fieldset >> nth=6 >> text=A medias" }
+          - { click: "fieldset >> nth=7 >> text=No" }
+          - { click: "fieldset >> nth=8 >> text=A medias" }
+          - { click: "fieldset >> nth=9 >> text=No" }
+          - { click: "text=Ver mi resultado" }
+          - { waitFor: "#resultado:visible" }
+          - { click: "#plan-nota" }  # click inofensivo: espera que termine el scroll suave y deja el plan a la vista
+        shows: Plan recomendado (Gestión), por qué conviene y el primer paso
   - id: caso-consultorio
     name: Caso real, consultorio odontológico
     description: Cómo un sistema de gestión ordenó turnos, stock y números de un consultorio
@@ -123,3 +148,11 @@ flows:
     steps:
       - { path: /planes, actions: [{ scroll: 400 }], shows: "Planes Presencia, Gestión e Integral" }
       - { path: /planes, actions: [{ scroll: 2130 }], shows: "Comparación entre pago único y suscripción" }
+  - id: como-trabajamos
+    name: Cómo trabajamos
+    description: Los pasos desde la primera charla, qué se paga en cada uno y la lista de cada caso
+    pillar: detrás de escena
+    steps:
+      - { path: /como-trabajamos, shows: "Gestionar tu negocio de forma inteligente no es solo para empresas grandes, desde US$ 39 por mes" }
+      - { path: /como-trabajamos, actions: [{ scroll: 700 }], shows: "Los 4 pasos y cuándo se paga cada uno" }
+      - { path: /como-trabajamos, actions: [{ scroll: 1800 }], shows: "Recorridos según lo que necesita cada negocio, con su lista de pasos" }
