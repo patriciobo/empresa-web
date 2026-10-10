@@ -4,8 +4,22 @@ Documento de trabajo. Las cifras de precios son **hipótesis para validar** con 
 
 ## 1. Qué vendemos (en una frase)
 
-> Tecnología para que tu negocio crezca ordenado: marca, presencia online, procesos y sistemas de gestión
-> en un solo equipo, por una suscripción mensual.
+> Tu socio en tecnología e identidad digital: delegás en nosotros la web, los sistemas, la marca y los datos,
+> y vos y tu equipo se ocupan de lo que mejor saben hacer. Una cuota mensual fija, todo incluido.
+
+Posicionamiento: no somos un proveedor que hace un trabajo y se va; somos un **equipo extendido** que se suma al del
+cliente. **Nunca nos comparamos con contratar personas** ni sugerimos reemplazar empleados: sumamos especialistas y le
+sacamos tareas repetitivas al equipo para que tenga más tiempo para los clientes.
+
+Los beneficios que mejor funcionan en servicios administrados y equipos "fraccionales" (y los que usamos):
+
+1. Un equipo de especialistas (desarrollo, diseño, marca, datos, IA) que se suma al tuyo.
+2. Foco: el dueño y su equipo se dedican a su negocio.
+3. Costo fijo y previsible, sin presupuestos sueltos.
+4. Siempre funcionando: soporte, backups, mejoras y herramientas al día.
+5. El conocimiento queda en el negocio: documentación, procesos claros y datos exportables.
+
+La lista está en `src/content.ts → SOCIO_BENEFICIOS`. Si preguntan si reemplazamos a su equipo: no, nos sumamos.
 
 No vendemos "desarrollo de software". El emprendedor no compra tecnología: compra **saber cuánto gana, dejar de
 perder turnos, que el equipo no dependa de él y verse profesional**. La tecnología es el medio; el copy del sitio,

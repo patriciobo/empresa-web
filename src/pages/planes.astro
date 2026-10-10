@@ -3,6 +3,7 @@ import Cierre from "../components/Cierre.astro";
 import PlanesTabla from "../components/PlanesTabla.astro";
 import Preguntas from "../components/Preguntas.astro";
 import SeccionCabeza from "../components/SeccionCabeza.astro";
+import SocioBeneficios from "../components/SocioBeneficios.astro";
 import { PRECIO_DESDE } from "../content";
 import Editorial from "../layouts/Editorial.astro";
 import { SITE } from "../site";
@@ -19,20 +20,25 @@ const comparacion = [
 
 <Editorial
   title="Planes"
-  description={`Planes de ${SITE.nombre} por suscripción mensual: sitio web, sistema de gestión y solución integral para emprendedores, sin inversión inicial grande.`}
+  description={`Planes de ${SITE.nombre} por suscripción mensual: tu socio en tecnología e identidad digital, con una cuota fija y todo incluido. Sitio web, sistema de gestión y solución integral.`}
 >
   <section class="bloque cabeza">
-    <SeccionCabeza num="01" titulo="Planes" nota="Suscripción mensual, sin inversión inicial grande" h1 />
+    <SeccionCabeza num="01" titulo="Planes" nota="Una cuota fija, todo incluido" h1 />
     <p class="intro">
-      Gestionar tu negocio de forma inteligente no es solo para empresas grandes. En lugar de pagar un desarrollo caro de
-      una sola vez, pagás desde {PRECIO_DESDE} por mes, con el desarrollo, la infraestructura, el soporte y las mejoras
-      incluidos. Empezás por un plan y sumás lo que el negocio necesite.
+      Gestionar tu negocio de forma inteligente no es solo para empresas grandes. Delegás en nosotros la tecnología y la
+      marca desde {PRECIO_DESDE} por mes, con el desarrollo, la infraestructura, el soporte y las mejoras incluidos, y
+      vos y tu equipo se dedican a lo que mejor saben hacer. Empezás por un plan y sumás lo que el negocio necesite.
     </p>
     <PlanesTabla />
   </section>
 
+  <section class="bloque bloque--claro" aria-labelledby="t-socio">
+    <SeccionCabeza num="02" id="t-socio" titulo="Qué cambia cuando nos sumamos" nota="Tu socio en tecnología" />
+    <SocioBeneficios />
+  </section>
+
   <section class="bloque bloque--claro" aria-labelledby="t-comp">
-    <SeccionCabeza num="02" id="t-comp" titulo="Pago único o suscripción" />
+    <SeccionCabeza num="03" id="t-comp" titulo="Pago único o suscripción" />
     <div class="tabla" role="table" aria-label="Comparación entre pago único y suscripción">
       <div class="tabla__fila tabla__cabeza ed-mono" role="row">
         <span role="columnheader"></span>
@@ -52,11 +58,11 @@ const comparacion = [
   </section>
 
   <section class="bloque" aria-labelledby="t-faq">
-    <SeccionCabeza num="03" id="t-faq" titulo="Preguntas" />
+    <SeccionCabeza num="04" id="t-faq" titulo="Preguntas" />
     <Preguntas />
   </section>
 
-  <Cierre etiqueta="(04) Charla inicial sin costo · 30 min" />
+  <Cierre etiqueta="(05) Charla inicial sin costo · 30 min" />
 </Editorial>
 
 <style>

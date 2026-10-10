@@ -141,7 +141,20 @@ export const PLANES: Plan[] = [
 ];
 
 /** Precio de entrada, para el mensaje de "accesible". */
-export const PRECIO_DESDE = `${PLANES[0].moneda} ${PLANES[0].desde}`;
+export const PRECIO_DESDE = `${PLANES[0].moneda}\u00a0${PLANES[0].desde}`; // espacio duro: "US$ 39" no se parte
+
+/**
+ * Qué gana el negocio al sumarnos como socio. Sin comparar con contratar personas: el foco está en el equipo
+ * extendido, el tiempo que libera, el costo previsible y que el conocimiento queda en el negocio.
+ */
+export const SOCIO_BENEFICIOS = [
+  { titulo: "Un equipo que se suma al tuyo", texto: "Desarrollo, diseño, marca, datos e IA en un solo equipo que conoce tu negocio y trabaja con tu gente." },
+  { titulo: "Más tiempo para lo importante", texto: "Vos y tu equipo se dedican a atender clientes y hacer crecer el negocio; la tecnología ya no les quita horas." },
+  { titulo: "Un costo fijo y previsible", texto: `Una cuota mensual desde ${PRECIO_DESDE}, con desarrollo, soporte y mejoras incluidos. Sin sorpresas ni presupuestos sueltos.` },
+  { titulo: "Siempre funcionando", texto: "Soporte, backups y mejoras todo el año, y herramientas al día en IA, buscadores y seguridad." },
+  { titulo: "El conocimiento queda en tu negocio", texto: "Todo documentado, procesos claros para tu equipo y tus datos siempre exportables." },
+  { titulo: "Crece con vos", texto: "Empezás por lo que más impacto tiene y sumás módulos cuando el negocio los pide." },
+];
 
 export const CONDICIONES = [
   "Sin pago inicial grande: el desarrollo se reparte en la cuota mensual.",
@@ -214,6 +227,10 @@ export const FAQ = [
   {
     p: "¿Es para negocios chicos?",
     r: `Sí. Gestionar tu negocio de forma inteligente no es solo para empresas grandes: los planes arrancan en ${PRECIO_DESDE} por mes y el desarrollo se reparte en la cuota, así no tenés que juntar un monto alto para empezar.`,
+  },
+  {
+    p: "¿Reemplazan a mi equipo?",
+    r: "No: nos sumamos a él. Tu gente sigue haciendo lo que mejor sabe y nosotros nos ocupamos de la tecnología y la marca. Muchas veces lo que hacemos es sacarle tareas repetitivas para que tenga más tiempo para los clientes, y le dejamos procesos y herramientas claras para trabajar mejor.",
   },
   {
     p: "¿Por qué una suscripción y no un pago único?",

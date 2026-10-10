@@ -4,6 +4,7 @@ import IndiceProyectos from "../components/IndiceProyectos.astro";
 import PlanesTabla from "../components/PlanesTabla.astro";
 import Preguntas from "../components/Preguntas.astro";
 import SeccionCabeza from "../components/SeccionCabeza.astro";
+import SocioBeneficios from "../components/SocioBeneficios.astro";
 import { FAQ, PRECIO_DESDE, PROCESO, SERVICIOS } from "../content";
 import { PROYECTOS, RUBROS } from "../data";
 import Editorial from "../layouts/Editorial.astro";
@@ -20,8 +21,8 @@ const faqSchema = {
 ---
 
 <Editorial
-  title="Software, web y marca para negocios que crecen"
-  description={`${SITE.nombre}: estudio de tecnología en Córdoba. Sistemas de gestión, sitios web y marca para emprendedores, por suscripción mensual y sin inversión inicial grande.`}
+  title="Tu socio en tecnología e identidad digital"
+  description={`${SITE.nombre}: tu socio en tecnología e identidad digital. Un equipo de especialistas que se suma al tuyo para ocuparse de la web, los sistemas, la marca y los datos, por una cuota mensual fija.`}
   schema={[faqSchema]}
   preloadHero
 >
@@ -40,21 +41,21 @@ const faqSchema = {
     <div class="foto-sangre__grano" aria-hidden="true"></div>
 
     <div class="hero__arriba">
-      <span class="ed-mono">(Estudio de tecnología)</span>
+      <span class="ed-mono">(Tu socio en tecnología)</span>
       <span class="ed-mono hero__derecha">Software · Web · Marca · Datos</span>
     </div>
 
-    <h1 class="hero__titulo">Software, web y marca para negocios que quieren <span>crecer ordenados.</span></h1>
+    <h1 class="hero__titulo">Nosotros nos ocupamos de la tecnología. Vos, de <span>lo que mejor sabés hacer.</span></h1>
 
     <div class="hero__abajo">
       <p class="hero__bajada">
-        Diseñamos y desarrollamos los sistemas con los que un emprendimiento gestiona, mide y planifica. Gestionar tu
-        negocio de forma inteligente no es solo para empresas grandes: desde {PRECIO_DESDE} por mes.
+        Somos el equipo de tecnología e identidad digital que se suma a tu negocio: web, sistemas, marca y datos, por
+        una cuota mensual fija desde {PRECIO_DESDE}.
       </p>
       <ul class="hero__datos ed-mono">
         <li><b>{String(PROYECTOS.length).padStart(2, "0")}</b> soluciones en uso</li>
         <li><b>{String(RUBROS.length).padStart(2, "0")}</b> rubros</li>
-        <li><b>{PRECIO_DESDE}</b> por mes, desde</li>
+        <li><b>{PRECIO_DESDE}</b> por mes, mínimo</li>
       </ul>
       <a class="ed-link hero__cta" href={agendaLink}>Agendar charla inicial <span aria-hidden="true">→</span></a>
     </div>
@@ -72,11 +73,13 @@ const faqSchema = {
   </section>
 
   <section class="bloque bloque--claro manifiesto">
-    <span class="ed-mono">(02) Enfoque</span>
-    <p class="manifiesto__texto">
-      No vendemos tecnología. Ordenamos negocios. Primero entendemos cómo trabajás; después diseñamos el sistema, lo
-      ponemos en marcha en semanas y lo mejoramos cada mes con tus números.
+    <span class="ed-mono">(02) Un socio, no un proveedor</span>
+    <p class="manifiesto__texto">Delegá en nosotros la tecnología y la marca de tu negocio.</p>
+    <p class="manifiesto__bajada">
+      Entendemos cómo trabajás, lo ponemos en marcha en semanas y lo mejoramos cada mes con tus números. Así vos y tu
+      equipo se dedican a lo que mejor saben hacer.
     </p>
+    <SocioBeneficios />
   </section>
 
   <section class="bloque" id="servicios" aria-labelledby="t-servicios">
@@ -116,7 +119,7 @@ const faqSchema = {
   </section>
 
   <section class="bloque" id="planes" aria-labelledby="t-planes">
-    <SeccionCabeza num="05" id="t-planes" titulo="Planes" nota="Suscripción mensual, sin inversión inicial grande" />
+    <SeccionCabeza num="05" id="t-planes" titulo="Planes" nota="Una cuota fija, todo incluido" />
     <PlanesTabla />
     <p class="mas">
       <a class="ed-link" href="/como-trabajamos">Cómo trabajamos y cuándo se paga <span aria-hidden="true">→</span></a>
@@ -246,6 +249,11 @@ const faqSchema = {
   .manifiesto .ed-mono {
     border-top: 1px solid var(--linea-oscura);
     padding-top: 14px;
+  }
+  .manifiesto__bajada {
+    max-width: 52ch;
+    font-size: clamp(1.1rem, 1.6vw, 1.3rem);
+    color: #3d3934;
   }
   .manifiesto__texto {
     font-size: clamp(1.8rem, 4.4vw, 4.2rem);

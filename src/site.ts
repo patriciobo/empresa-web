@@ -4,8 +4,8 @@
 
 export const SITE = {
   nombre: "Fogón",
-  bajada: "Soluciones tecnológicas para emprendedores",
-  slogan: "Tecnología a medida para emprendedores, cerca y sin vueltas.",
+  bajada: "Tu socio en tecnología e identidad digital",
+  slogan: "Delegá en nosotros la tecnología y la marca, y ocupate de lo que mejor sabés hacer.",
   /** Dominio público (sin barra final). fogon.com.ar está tomado; confirmar disponibilidad en nic.ar. */
   url: "https://fogondigital.com.ar",
   ciudad: "Córdoba",

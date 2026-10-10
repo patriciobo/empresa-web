@@ -1,0 +1,56 @@
+---
+// Qué gana el negocio al sumarnos como socio: grilla de beneficios para fondo claro (bloque--claro).
+import { SOCIO_BENEFICIOS } from "../content";
+const n2 = (i: number) => String(i + 1).padStart(2, "0");
+---
+
+<ul class="socio">
+  {
+    SOCIO_BENEFICIOS.map((b, i) => (
+      <li>
+        <span class="ed-mono socio__num">{n2(i)}</span>
+        <h3>{b.titulo}</h3>
+        <p>{b.texto}</p>
+      </li>
+    ))
+  }
+</ul>
+
+<style>
+  .socio {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr));
+    border-top: 1px solid var(--linea-oscura);
+  }
+  .socio li {
+    padding: 22px 24px 28px 0;
+    border-bottom: 1px solid var(--linea-oscura);
+    display: grid;
+    gap: 10px;
+    align-content: start;
+  }
+  .socio__num {
+    color: #c2410c;
+  }
+  .socio h3 {
+    font-size: 1.35rem;
+    font-weight: 500;
+    letter-spacing: -0.03em;
+  }
+  .socio p {
+    color: #3d3934;
+    max-width: 38ch;
+  }
+  @media (min-width: 900px) {
+    .socio {
+      grid-template-columns: repeat(3, 1fr);
+    }
+    .socio li {
+      padding-left: 24px;
+      border-left: 1px solid var(--linea-oscura);
+    }
+  }
+</style>
