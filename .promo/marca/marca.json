@@ -1,0 +1,43 @@
+{
+  "generatedBy": "Promo Studio",
+  "concept": "micro",
+  "conceptId": "micro",
+  "title": "Estructura y Datos Claros",
+  "rationale": "Inspirado en la precisión técnica de los sistemas de datos. Este concepto organiza la información compleja de las pymes con coordenadas, líneas finas y una grilla limpia, transmitiendo control absoluto, seriedad y escalabilidad sobre el stock, los gastos y las ventas.",
+  "brandName": "Fogón",
+  "names": [],
+  "tagline": "Marca, sitio web y sistemas de gestión para emprendedores, por suscripción mensual",
+  "palette": [
+    {
+      "hex": "#ff5a1f",
+      "name": "",
+      "role": "principal"
+    },
+    {
+      "hex": "#ece6dc",
+      "name": "",
+      "role": "fondo"
+    },
+    {
+      "hex": "#0c0b0a",
+      "name": "",
+      "role": "texto"
+    },
+    {
+      "hex": "#7d776e",
+      "name": "",
+      "role": "acento"
+    }
+  ],
+  "fonts": {
+    "display": "Inter Tight",
+    "text": "Inter Tight"
+  },
+  "logo": {
+    "type": "combination",
+    "idea": "Un símbolo de fogata abstracta construida enteramente por líneas vectoriales técnicas y pequeños puntos de control, combinada con tipografía monoespaciada.",
+    "prompt": "Minimalist technical logo showing a stylized flame composed of fine vector lines and crosshairs. Below it, the word 'FOGÓN' in a clean, modern monospace-inspired sans-serif font. High contrast, sharp edges, dark charcoal and orange on a sand background.",
+    "file": ".promo/marca/logo.jpg"
+  },
+  "pattern": "ninguno"
+}

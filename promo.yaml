@@ -28,7 +28,7 @@ tone: >-
 brand:
   colors: ["#ff5a1f", "#ece6dc", "#0c0b0a", "#7d776e"]
   font: Inter Tight
-  logo: public/favicon.svg
+  logo: .promo/marca/logo.jpg
   imageStyle: >-
     dark editorial still life on a near-black background: objects of small businesses (laptop, notebook, dental
     tools, ceramic pieces, construction tools) lit by warm low orange light, high contrast, film grain, minimal
