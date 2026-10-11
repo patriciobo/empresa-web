@@ -43,7 +43,7 @@ export const SERVICIOS: Servicio[] = [
   },
 ];
 
-/** Lo que gana un emprendimiento con un sistema de información propio. */
+/** Lo que gana un negocio con un sistema de información propio. */
 export const BENEFICIOS = [
   { titulo: "Medís el progreso", texto: "Ventas, costos y rentabilidad del mes en una pantalla, comparados con el mes anterior." },
   { titulo: "Planificás con datos", texto: "Sabés qué servicio deja más, qué cliente vuelve y dónde se va la plata antes de decidir." },
@@ -226,8 +226,8 @@ export const RECORRIDOS: Recorrido[] = [
 
 export const FAQ = [
   {
-    p: "¿Es para negocios chicos?",
-    r: `Sí. Gestionar tu negocio de forma inteligente no es solo para empresas grandes: los planes arrancan en ${PRECIO_DESDE} por mes y el desarrollo se reparte en la cuota, así no tenés que juntar un monto alto para empezar.`,
+    p: "¿Cuánto hace falta para empezar?",
+    r: `Gestionar tu negocio de forma inteligente está a tu alcance: los planes arrancan en ${PRECIO_DESDE} por mes y el desarrollo se reparte en la cuota, así no tenés que juntar un monto alto para empezar.`,
   },
   {
     p: "¿Reemplazan a mi equipo?",

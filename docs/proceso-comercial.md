@@ -4,7 +4,7 @@ Documento interno: cómo se vende, cuándo y cuánto se cobra, y cómo se proteg
 pague. Lo que ve el cliente está en `/como-trabajamos` (sale de `src/content.ts`: `PROCESO`, `RECORRIDOS`,
 `CONDICIONES`) y en los checklists de `docs/checklists/`.
 
-Mensaje central: **gestionar tu negocio de forma inteligente no es solo para empresas grandes.** Planes desde
+Mensaje central: **gestionar tu negocio de forma inteligente está a tu alcance.** Planes desde
 US$ 39/mes, el desarrollo se reparte en la cuota y trabajamos con cualquier rubro.
 
 ## 1. Modelo de cobro (igual para todos los recorridos)

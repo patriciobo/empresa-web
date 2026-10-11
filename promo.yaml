@@ -5,22 +5,22 @@ name: Fogón
 url: https://fogonestudio.com.ar
 tagline: Tu socio en tecnología e identidad digital, con servicios a medida de cada negocio
 description: >-
-  Empresa de servicios de tecnología e identidad digital para emprendedores y pymes de todo el país. No vende un
+  Empresa de servicios de tecnología e identidad digital para negocios de cualquier rubro en todo el país. No vende un
   producto, una app ni una plataforma: es un equipo que se suma al del cliente y diseña cada solución a medida de
   ese negocio (marca, sitio web, procesos, sistemas de gestión, tableros de datos y automatizaciones, por ejemplo
   de consultas por WhatsApp). Primero entiende cómo trabaja el negocio y después decide qué conviene hacer.
   Se contrata por una suscripción mensual desde US$ 39 que incluye desarrollo, hosting, soporte y mejoras.
   Trabaja con cualquier rubro; tiene proyectos hechos para negocios de salud, construcción, educación, turismo,
   deporte y medios.
-category: Desarrollo de software y consultoría para pymes
+category: Servicios de tecnología e identidad digital
 audience:
   countries: [AR]
   age: [28, 58]
-  interests: [emprendimiento, pequeñas empresas, gestión empresarial, marketing digital, transformación digital, productividad]
+  interests: [emprendimiento, administración de empresas, gestión empresarial, marketing digital, transformación digital, productividad]
   description: >-
-    dueños de emprendimientos y pymes de cualquier rubro (servicios, salud, construcción, educación, turismo,
-    comercio) con 1 a 30 personas, que ya venden pero gestionan con WhatsApp, papel y planillas, no saben bien sus números
-    y quieren profesionalizarse sin hacer una inversión grande de entrada
+    dueños de negocios de cualquier rubro (servicios, salud, construcción, educación, turismo, comercio) que ya
+    venden pero gestionan con WhatsApp, papel y planillas, no saben bien sus números y quieren profesionalizarse
+    sin hacer una inversión grande de entrada
 languages: [es]
 tone: >-
   español rioplatense con voseo; cercano, claro y concreto, como un socio que sabe de tecnología y de negocios;
@@ -34,10 +34,10 @@ brand:
   logo: .promo/marca/logo.jpg
   imageStyle: >-
     dark editorial still life on a near-black background, warm low orange light, film grain, lots of negative
-    space: objects of the small business in the post, or a laptop or phone showing an invented simplified app
+    space: objects of the business in the post, or a laptop or phone showing an invented simplified app
     screen that matches the topic (chart, form, calendar, dashboard), no readable text, no real brands or logos
   photoStyle: >-
-    low-key cinematic photo of a small business owner in their own workplace (workshop, clinic, construction site,
+    low-key cinematic photo of a business owner in their own workplace (workshop, clinic, construction site,
     studio) checking a laptop, dark background, warm orange practical light, film grain, Argentina, no visible text
 features:
   - Empresa de servicios, no un producto - cada solución se diseña a medida de cada negocio
@@ -52,7 +52,7 @@ features:
   - Proceso claro desde el primer contacto - charla inicial sin costo, relevamiento y propuesta, arranque y mejora mensual
   - Trabaja con cualquier rubro; proyectos en uso en salud, construcción, educación, turismo, deporte y medios
 pillars: [casos reales, números del negocio, procesos y productividad, marca y presencia online, detrás de escena]
-hashtags: ["#fogonestudio", "#emprendedores", "#pymes", "#emprendedoresargentinos", "#gestiondenegocios", "#transformaciondigital", "#software", "#marketingdigital"]
+hashtags: ["#fogonestudio", "#emprendedores", "#emprendedoresargentinos", "#gestiondenegocios", "#transformaciondigital", "#software", "#marketingdigital"]
 avoid:
   - usar imágenes o capturas del sitio de Fogón; no se promociona la página sino soluciones a medida de cada negocio
   - usar capturas reales de los sistemas o sitios de los clientes; si hace falta mostrar una pantalla, que sea una interfaz inventada e ilustrativa (un gráfico, un formulario, un tablero) acorde a lo que cuenta el post, sin presentarla como real
@@ -61,6 +61,7 @@ avoid:
   - mostrar los proyectos de clientes como productos de Fogón o como algo listo para contratar igual; cada uno es una solución hecha para ese negocio
   - prometer funciones o formatos fijos (que funciona sin instalar nada, que es una app en el celular, que es autoadministrable, un módulo para tu rubro); dependen de cada proyecto
   - presentar a Fogón como una empresa de Córdoba o local; trabaja con negocios de todo el país
+  - mencionar el tamaño de los negocios a los que apunta (pymes, negocios chicos, pequeñas empresas, cantidad de empleados, "no es solo para empresas grandes"); trabaja con negocios de cualquier tamaño y rubro
   - inventar clientes, testimonios, reseñas, logos o cifras de resultados que no estén en los proyectos
   - prometer aumentos de ventas, ganancias o resultados garantizados
   - mencionar precios, descuentos o promociones que no estén en el sitio (sólo "desde US$ 39 por mes" y "desde US$ 89 por mes")

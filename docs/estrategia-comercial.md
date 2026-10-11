@@ -27,7 +27,7 @@ los posts y las reuniones hablan de esos resultados.
 
 ## 2. Cliente ideal
 
-**Emprendedor/a o pyme de servicios con 2 a 30 personas** que ya factura y tiene clientes recurrentes, pero gestiona
+**Negocio de cualquier rubro** que ya factura y tiene clientes recurrentes, pero gestiona
 con WhatsApp, papel y planillas.
 
 Señales de que es un buen cliente:
@@ -44,7 +44,7 @@ Rubros donde ya hay prueba (proyectos en uso), por orden de prioridad para salir
 | Salud independiente (odontólogos, kinesiólogos, psicólogos, nutricionistas) | Consultorio | Producto ya hecho y replicable: venta como SaaS, margen alto |
 | Construcción y oficios | Obras, Hogacor | Dolor fuerte (presupuestos que se pasan), ticket más alto |
 | Talleres, academias y cursos | Ciricina | Inscripciones y cupos: problema universal y fácil de mostrar |
-| Deporte y bienestar (gimnasios chicos, profes, clubes) | Mi Tenis | Comunidad grande en Instagram |
+| Deporte y bienestar (gimnasios, profes, clubes) | Mi Tenis | Comunidad grande en Instagram |
 
 Primer foco recomendado: **salud independiente + construcción**. Dos rubros con casos reales y dolores medibles.
 Cada rubro nuevo entra cuando hay un caso para mostrar.
@@ -109,7 +109,7 @@ Aceptación: 2 cuotas más  →  primera versión en 3–8 semanas  →  mejora 
    rubro ("Sistema de gestión para constructoras", "Software para consultorios") a medida que haya casos.
    Crear el perfil de Google Business.
 3. **Instagram** como vidriera y prueba social (ver `estrategia-redes.md`).
-4. **LinkedIn** del fundador: para constructoras, estudios y pymes más formales; contenido de "cómo lo resolvimos".
+4. **LinkedIn** del fundador: para constructoras, estudios y empresas más formales; contenido de "cómo lo resolvimos".
 5. **Alianzas:** contadores, estudios de diseño sin desarrollo, cámaras de comercio y colegios profesionales
    (odontólogos, arquitectos). Charla gratuita "Cómo saber si tu negocio es rentable" con autodiagnóstico en vivo.
 6. **Anuncios pagos** (Meta) recién cuando haya 3+ casos y el embudo convierta orgánicamente.
