@@ -38,15 +38,13 @@ pueden pasar `imagenes:` en `proyectos.yaml` o generarlas en el repo con el fluj
 
 ## Promo Studio
 
-`promo.yaml` describe la empresa para generar contenido de Instagram. Fuentes: `promo-feed.json` (un caso de éxito
-por proyecto, con su primera captura) y `llms.txt`.
-
-Los posts usan las capturas de los proyectos de clientes (`screenshots` en `promo.yaml`, las mismas del detalle
-de cada caso), nunca las del sitio de Fogón: no se promociona la página sino las soluciones hechas para cada negocio.
-Cada ítem de `promo-feed.json` lleva la primera captura de su caso.
+`promo.yaml` describe la empresa para generar contenido de Instagram. El foco es gestionar la información del
+negocio (registrar, organizar, analizar, decidir): los posts no hablan de proyectos, clientes ni rubros, así que no
+hay `screenshots` ni fuente de casos. Fuentes: `public/promo-temas.json` (ideas por pilar, se edita a mano) y
+`/promo.txt` (servicios, planes y FAQ sin proyectos, `src/pages/promo.txt.ts`). `promo-feed.json` se sigue
+generando pero Promo Studio no lo usa.
 
 ```bash
-npm run proyectos   # regenera public/promo-feed.json
 bash ~/.claude/skills/promo-yaml/validate.sh promo.yaml
 ```
 

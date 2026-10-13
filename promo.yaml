@@ -1,134 +1,81 @@
 # Manifiesto para Promo Studio: describe Fogón para generar su contenido de Instagram.
 # Ver github.com/patriciobo/promo-studio (asistente, validación y documentación de cada campo).
 # Estrategia completa (pilares, calendario, anuncios): docs/estrategia-redes.md
+#
+# Foco: soluciones de negocio para gestionar la información (registrar, organizar, analizar, decidir).
+# Los posts NO hablan de proyectos, clientes ni rubros puntuales: por eso no hay screenshots ni fuentes con casos.
 name: Fogón
 url: https://fogonestudio.com.ar
-tagline: Tu socio en tecnología e identidad digital, con servicios a medida de cada negocio
+tagline: Soluciones a medida para que tu negocio registre, organice y entienda su información
 description: >-
-  Empresa de servicios de tecnología e identidad digital para negocios de cualquier rubro en todo el país. No vende un
-  producto, una app ni una plataforma: es un equipo que se suma al del cliente y diseña cada solución a medida de
-  ese negocio (marca, sitio web, procesos, sistemas de gestión, tableros de datos y automatizaciones, por ejemplo
-  de consultas por WhatsApp). Primero entiende cómo trabaja el negocio y después decide qué conviene hacer.
-  Se contrata por una suscripción mensual desde US$ 39 que incluye desarrollo, hosting, soporte y mejoras.
-  Trabaja con cualquier rubro; tiene proyectos hechos para negocios de salud, construcción, educación, turismo,
-  deporte y medios. Un sistema de información hecho a medida deja registrado cada movimiento del negocio (atenciones,
-  gastos, stock, cobros, sueldos) y lo convierte en números para analizar y decidir: rentabilidad del mes, costo
-  real por cliente o por obra, desvíos a tiempo. Ordena el trabajo del equipo y queda propiedad del negocio.
-category: Servicios de tecnología e identidad digital
+  Fogón desarrolla soluciones de negocio a medida y acompaña a emprendedores a crecer ayudándolos a gestionar su
+  información. Diseña herramientas para registrar cada movimiento del negocio en el momento, tenerlo todo
+  organizado en un solo lugar y analizarlo después: resúmenes, indicadores y alertas para decidir con números
+  reales en vez de intuición. Es una empresa de servicios, no un producto: primero entiende cómo trabaja cada
+  negocio y después diseña lo que conviene (sistemas de gestión, tableros, procesos, automatizaciones, sitio web y
+  marca). Se contrata por una suscripción mensual desde US$ 39 que incluye desarrollo, hosting, backups, soporte y
+  mejoras, así que no hace falta juntar un monto alto para empezar. Los datos son siempre del negocio.
+category: Desarrollo de soluciones de negocio y gestión de la información
 audience:
   countries: [AR]
   age: [28, 58]
-  interests: [emprendimiento, administración de empresas, gestión empresarial, marketing digital, transformación digital, productividad]
+  interests: [emprendimiento, administración de empresas, gestión empresarial, transformación digital, productividad, análisis de datos]
   description: >-
-    dueños de negocios de cualquier rubro (servicios, salud, construcción, educación, turismo, comercio) que ya
-    venden pero gestionan con WhatsApp, papel y planillas, no saben bien sus números y quieren profesionalizarse
-    sin hacer una inversión grande de entrada
+    emprendedores y dueños de negocios que ya venden pero llevan la información en papel, planillas y mensajes,
+    no saben bien sus números y quieren ordenarse y crecer tomando decisiones con datos, sin una inversión
+    grande de entrada
 languages: [es]
 tone: >-
   español rioplatense con voseo; cercano, claro y concreto, como un socio que sabe de tecnología y de negocios;
-  sin jerga técnica, sin metáforas ni promesas exageradas, con ejemplos reales del día a día de un negocio.
-  Siempre como empresa de servicios que trabaja con cada cliente ("te ayudamos", "diseñamos para tu negocio",
-  "nos sumamos a tu equipo"), nunca como un producto o una herramienta que el negocio usa. Cada caso es una
-  solución hecha para ese negocio, no algo que cualquiera puede contratar igual.
+  sin jerga técnica, sin metáforas ni promesas exageradas. Habla de situaciones que cualquier negocio reconoce
+  (no saber cuánto ganó el mes, datos repartidos en planillas y chats, tiempo perdido en tareas administrativas)
+  sin nombrar rubros ni casos. Siempre como empresa de servicios que acompaña ("te ayudamos", "diseñamos para tu
+  negocio", "nos sumamos a tu equipo"), nunca como un producto o una herramienta que el negocio usa.
 brand:
   colors: ["#ff5a1f", "#ece6dc", "#0c0b0a", "#7d776e"]
   font: Inter Tight
   logo: .promo/marca/logo.jpg
   imageStyle: >-
     dark editorial still life on a near-black background, warm low orange light, film grain, lots of negative
-    space: objects of the business in the post, or a laptop or phone showing an invented simplified app
-    screen that matches the topic (chart, form, calendar, dashboard), no readable text, no real brands or logos
+    space: a laptop, phone, notebook or desk objects, or a screen showing an invented simplified interface that
+    matches the topic (chart, table, form, dashboard), no tools or objects of any specific trade, no readable
+    text, no real brands or logos
   photoStyle: >-
-    low-key cinematic photo of a business owner in their own workplace (workshop, clinic, construction site,
-    studio) checking a laptop, dark background, warm orange practical light, film grain, Argentina, no visible text
+    low-key cinematic photo of an entrepreneur at a desk reviewing charts on a laptop, neutral office or home
+    workspace with no signs of a specific trade, dark background, warm orange practical light, film grain,
+    Argentina, no visible text
 features:
   - Empresa de servicios, no un producto - cada solución se diseña a medida de cada negocio
-  - Relevamiento de cómo trabaja el negocio antes de decidir qué hacer
-  - Sistemas de gestión a medida de la operación de cada cliente
-  - Tableros y resúmenes con los números que cada negocio necesita ver
-  - Sitios web a medida con SEO local y preparados para asistentes de IA
-  - Diseño de marca e identidad
-  - Automatización de consultas, turnos y recordatorios por WhatsApp cuando el negocio lo necesita
-  - Suscripción mensual desde US$ 39 con desarrollo, hosting, soporte y mejoras incluidos
+  - Relevamiento de cómo trabaja el negocio antes de decidir qué desarrollar
+  - Registro de cada movimiento en el momento (ventas, gastos, cobros, stock) para analizarlo después
+  - Toda la información del negocio en un solo lugar, en vez de papel, planillas y mensajes dispersos
+  - Historial que no se pierde - cada cliente, pedido o trabajo queda guardado para consultar y comparar
+  - Decisiones con números reales - resultado del mes, costos y rentabilidad sin hacer cuentas
+  - Precios calculados con los costos reales del negocio
+  - Alertas a tiempo - presupuesto excedido, stock bajo, cobros vencidos
+  - Resumen mensual automático e indicadores con los números que cada negocio necesita ver
+  - Menos tiempo administrativo - carga rápida desde el celular, tareas repetidas simplificadas o automatizadas
+  - Usuarios, permisos y registro de actividad - delegar sin perder el control, sabiendo quién hizo qué y cuándo
+  - El conocimiento queda en el negocio - procesos documentados y datos siempre exportables en formatos abiertos
+  - La solución se adapta a cómo trabaja el negocio y mejora todos los meses con la suscripción
+  - Suscripción mensual desde US$ 39 con desarrollo, hosting, backups diarios, soporte y mejoras incluidos
+  - Sitios web a medida con SEO local y preparados para asistentes de IA, y diseño de marca e identidad
+  - Automatización de consultas y recordatorios por WhatsApp cuando el negocio lo necesita
   - Autodiagnóstico gratuito de 2 minutos que recomienda el plan que conviene (Presencia, Gestión o Integral)
   - Proceso claro desde el primer contacto - charla inicial sin costo, relevamiento y propuesta, arranque y mejora mensual
-  - Trabaja con cualquier rubro; proyectos en uso en salud, construcción, educación, turismo, deporte y medios
-  # Beneficios de un sistema de información a medida, con ejemplos de los proyectos (capturas en screenshots)
-  - Registro de cada movimiento al momento (atenciones, gastos, cobros, stock, sueldos) para analizarlo después, no anotaciones sueltas
-  - Historial que no se pierde - cada atención, obra, horneada o pieza dental queda guardada para consultar y comparar
-  - Decisiones con números reales - rentabilidad del mes, costo por alumno, resultado de cada obra, en vez de intuición
-  - Desvíos detectados a tiempo - una obra que se pasa del presupuesto se ve durante la obra, no al final
-  - Precios calculados con los costos reales (por ejemplo, la cuota de un taller según lo que cuesta cada alumno)
-  - Todo el negocio en un mismo lugar - agenda, clientes, stock, gastos y cobros, sin planillas ni mensajes dispersos
-  - Menos tiempo administrativo - registrar una atención en menos de 30 segundos, armar los sueldos de la semana en minutos
-  - Stock que se descuenta solo y avisa qué reponer
-  - Trazabilidad - quién cargó qué y cuándo, con usuarios y permisos para delegar sin perder el control
-  - El equipo carga desde el celular donde está trabajando (la obra, el taller, el consultorio)
-  - Resúmenes automáticos - el resultado del mes sin hacer cuentas ni pedir informes
-  - El sistema se adapta a cómo trabaja el negocio, no el negocio al sistema, y mejora mes a mes con la suscripción
-  - El conocimiento queda en el negocio - procesos documentados y datos siempre exportables en formatos abiertos
-  - Accesible - sin juntar un monto alto al principio; hosting, backups diarios, soporte y mejoras incluidos en la cuota
-screenshots:
-  # Capturas de los proyectos de clientes (las del detalle de cada caso en fogonestudio.com.ar/proyectos).
-  # Se generan con `npm run proyectos`. Los datos que se ven son de demostración.
-  # Sistemas de gestión primero: registro, tableros, costos y trazabilidad.
-  - public/proyectos/consultorio/5.webp        # Consultorio odontológico: resumen del mes (ingresos, gastos, resultado)
-  - public/proyectos/obras-trazabilidad/1.webp # Constructora: presupuesto consumido y ganancia de una obra
-  - public/proyectos/ciricina/5.webp           # Taller de cerámica: costo por alumno con gastos reales
-  - public/proyectos/consultorio/1.webp        # Consultorio: registrar una atención con materiales y cobro
-  - public/proyectos/obras-trazabilidad/2.webp # Constructora: avance de presupuesto por obra y herramientas
-  - public/proyectos/ciricina/2.webp           # Taller: curva de temperatura de una horneada registrada
-  - public/proyectos/consultorio/4.webp        # Consultorio: stock que se descuenta solo y avisa qué reponer
-  - public/proyectos/obras-trazabilidad/5.webp # Constructora: sueldos semanales imputados a cada obra
-  - public/proyectos/ciricina/3.webp           # Taller: cupos e inscripciones con estado de pago
-  - public/proyectos/consultorio/6.webp        # Consultorio: odontograma e historial por pieza
-  - public/proyectos/obras-trazabilidad/4.webp # Constructora: inventario de herramientas con ubicación
-  - public/proyectos/ciricina/4.webp           # Taller: horneada en curso seguida desde el celular
-  - public/proyectos/consultorio/3.webp        # Consultorio: agenda semanal de turnos
-  - public/proyectos/obras-trazabilidad/3.webp # Constructora: listado de obras con presupuesto y saldo
-  - public/proyectos/obras-trazabilidad/6.webp # Constructora: mover herramientas entre obras
-  - public/proyectos/consultorio/2.webp        # Consultorio: atención registrada
-  - public/proyectos/ciricina/6.webp           # Taller: inscripción online con cupos en vivo
-  - public/proyectos/ciricina/1.webp           # Taller: sitio con inscripción
-  # Reservas, datos y productos digitales
-  - public/proyectos/plena-experiencia/3.webp  # Turismo: precio calculado y reserva por WhatsApp
-  - public/proyectos/plena-experiencia/1.webp  # Turismo: búsqueda por localidad, radio, fechas y personas
-  - public/proyectos/plena-experiencia/2.webp  # Turismo: ficha de alojamiento con servicios
-  - public/proyectos/plena-experiencia/4.webp  # Turismo: recorrido con guía
-  - public/proyectos/plena-experiencia/5.webp  # Turismo: región con recorridos cercanos
-  - public/proyectos/radarglobal/2.webp        # Medios: reporte diario por región
-  - public/proyectos/radarglobal/3.webp        # Medios: impacto en comercio y materias primas
-  - public/proyectos/radarglobal/1.webp        # Medios: portada y suscripción por email
-  - public/proyectos/radarglobal/4.webp        # Medios: empresas afectadas por región
-  - public/proyectos/mi-tenis/2.webp           # Deporte: plan de entrenamiento personalizado
-  - public/proyectos/mi-tenis/4.webp           # Deporte: calendario de entrenamientos y partidos
-  - public/proyectos/mi-tenis/3.webp           # Deporte: registro y análisis de cada partido
-  - public/proyectos/mi-tenis/1.webp           # Deporte: check-in diario
-  - public/proyectos/mi-tenis/5.webp           # Deporte: ejercicio guiado con figura 3D
-  - public/proyectos/brotes/4.webp             # Primera infancia: inicio por etapa de desarrollo
-  - public/proyectos/brotes/1.webp             # Primera infancia: juegos calmos
-  - public/proyectos/brotes/5.webp             # Primera infancia: cuentos
-  # Marca y presencia online (fotos y renders de los clientes, no pantallas de sistemas)
-  - public/proyectos/hogacor/1.webp            # Constructora Steel Frame: módulo del catálogo del sitio
-  - public/proyectos/hogacor/4.webp            # Constructora Steel Frame: interior de vivienda
-  - public/proyectos/altolasflores/1.webp      # Complejo de cabañas: fotos reales del sitio nuevo
-  - public/proyectos/altolasflores/2.webp      # Complejo de cabañas: pileta
-  - public/proyectos/altolasflores/4.webp      # Complejo de cabañas: comedor
-pillars: [casos reales, números del negocio, procesos y productividad, marca y presencia online, detrás de escena]
-hashtags: ["#fogonestudio", "#emprendedores", "#emprendedoresargentinos", "#gestiondenegocios", "#transformaciondigital", "#software", "#marketingdigital"]
+pillars: [información para decidir, orden y procesos, herramientas a medida, crecer acompañado, marca y presencia online]
+hashtags: ["#fogonestudio", "#emprendedores", "#emprendedoresargentinos", "#gestiondenegocios", "#transformaciondigital", "#software", "#datos"]
 avoid:
-  - usar imágenes o capturas del sitio de Fogón; no se promociona la página sino las soluciones hechas para los clientes
-  - describir una captura con funciones o datos que no muestra, o atribuirla a otro rubro o cliente (cada captura es de un proyecto puntual, ver comentarios en screenshots)
-  - presentar los números de las capturas (montos, pacientes, obras, alumnos) como resultados reales de un cliente; son datos de demostración
-  - presentar las fotos de cabañas o los renders de viviendas como pantallas de un sistema
-  - presentar ilustraciones o pantallas generadas por IA como capturas reales de un proyecto
+  - mencionar proyectos, clientes, casos de éxito o nombres de negocios (ni reales ni inventados)
+  - nombrar o apuntar el texto a un rubro o sector en particular (salud, consultorios, odontología, construcción, obras, talleres, cerámica, turismo, alojamientos, comercios, gastronomía, etc.); hablar de negocios en general
+  - ejemplos atados a un oficio (pacientes, turnos médicos, obras, materiales de construcción, alumnos, huéspedes, recetas); usar ejemplos que sirven a cualquier negocio (ventas, gastos, cobros, stock, clientes, pedidos)
+  - usar imágenes o capturas del sitio de Fogón o de sistemas reales; si hace falta mostrar una pantalla, que sea una interfaz inventada e ilustrativa sin presentarla como real
   - presentar a Fogón como una plataforma, app, software o producto que se compra, se descarga, se instala o se prueba; es una empresa de servicios que diseña cada solución a medida
   - frases que hagan de Fogón una herramienta - "así se ordena con Fogón", "con Fogón tenés…", "Fogón te permite…", "usá Fogón", "probá Fogón", "registrate", "descargá"
-  - mostrar los proyectos de clientes como productos de Fogón o como algo listo para contratar igual; cada uno es una solución hecha para ese negocio
-  - prometer funciones o formatos fijos (que funciona sin instalar nada, que es una app en el celular, que es autoadministrable, un módulo para tu rubro); dependen de cada proyecto
+  - prometer funciones o formatos fijos (que funciona sin instalar nada, que es una app en el celular, que es autoadministrable, un módulo para tu rubro); dependen de cada solución
   - presentar a Fogón como una empresa de Córdoba o local; trabaja con negocios de todo el país
-  - mencionar el tamaño de los negocios a los que apunta (pymes, negocios chicos, pequeñas empresas, cantidad de empleados, "no es solo para empresas grandes"); trabaja con negocios de cualquier tamaño y rubro
-  - inventar clientes, testimonios, reseñas, logos o cifras de resultados que no estén en los proyectos
+  - mencionar el tamaño de los negocios a los que apunta (pymes, negocios chicos, pequeñas empresas, cantidad de empleados, "no es solo para empresas grandes")
+  - inventar testimonios, reseñas, logos o cifras de resultados
   - prometer aumentos de ventas, ganancias o resultados garantizados
   - mencionar precios, descuentos o promociones que no estén en el sitio (sólo "desde US$ 39 por mes" y "desde US$ 89 por mes")
   - ofrecer diagnósticos, auditorías o propuestas gratis (gratis es sólo la charla inicial y el autodiagnóstico online)
@@ -139,15 +86,14 @@ avoid:
 cta: Hacé el autodiagnóstico y descubrí qué plan te conviene (link en la bio)
 links:
   - { label: Autodiagnóstico gratis, url: "https://fogonestudio.com.ar/diagnostico" }
-  - { label: Ver proyectos, url: "https://fogonestudio.com.ar/proyectos" }
   - { label: Planes, url: "https://fogonestudio.com.ar/planes" }
   - { label: Cómo trabajamos, url: "https://fogonestudio.com.ar/como-trabajamos" }
 contact:
   email: contacto@fogonestudio.com.ar
   whatsapp: "+5493517642289"
 sources:
-  # Un caso de éxito por proyecto, generado por `npm run proyectos` desde proyectos.yaml.
-  - { type: feed, url: "https://fogonestudio.com.ar/promo-feed.json" }
-  # Servicios, planes y preguntas frecuentes completos.
-  - { type: url, url: "https://fogonestudio.com.ar/llms.txt" }
+  # Ideas de contenido sobre gestionar la información del negocio, sin rubros ni casos (public/promo-temas.json).
+  - { type: feed, url: "https://fogonestudio.com.ar/promo-temas.json" }
+  # Servicios, planes y preguntas frecuentes, sin proyectos (src/pages/promo.txt.ts; llms.txt sí los incluye).
+  - { type: url, url: "https://fogonestudio.com.ar/promo.txt" }
 cadence: { feed: 3, reels: 2, stories: 3 }

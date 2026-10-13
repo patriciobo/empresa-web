@@ -1,0 +1,116 @@
+{
+  "items": [
+    {
+      "id": "registrar-para-decidir",
+      "title": "Lo que no se registra, no se puede analizar",
+      "body": "Cada venta, gasto o cobro que queda anotado en el momento se convierte después en información para decidir. Lo que vive en la memoria o en mensajes sueltos se pierde.",
+      "bullets": ["Registrar al momento, no a fin de mes", "Un solo lugar para cada dato", "Después, los números salen solos"],
+      "pillar": "información para decidir"
+    },
+    {
+      "id": "numeros-del-mes",
+      "title": "¿Sabés cuánto ganaste el mes pasado?",
+      "body": "Muchos negocios venden bien y no saben si son rentables. Un resumen mensual automático muestra ingresos, gastos y resultado sin hacer cuentas.",
+      "bullets": ["Ingresos y gastos en una pantalla", "Comparación con el mes anterior", "Sin armar planillas a mano"],
+      "pillar": "información para decidir"
+    },
+    {
+      "id": "costo-real",
+      "title": "Poner precios con los costos reales",
+      "body": "Cuando los gastos quedan registrados, se puede saber cuánto cuesta de verdad cada cliente, servicio o pedido, y poner precios con números y no a ojo.",
+      "bullets": ["Costo real por cliente o por servicio", "Precios que cubren lo que gastás", "Revisión simple cuando suben los costos"],
+      "pillar": "información para decidir"
+    },
+    {
+      "id": "desvios-a-tiempo",
+      "title": "Enterarte a tiempo, no al final",
+      "body": "Un sistema que cruza lo presupuestado con lo gastado avisa cuando algo se desvía, mientras todavía se puede corregir.",
+      "bullets": ["Alertas de presupuesto excedido", "Stock bajo antes de quedarte sin nada", "Cobros vencidos a la vista"],
+      "pillar": "información para decidir"
+    },
+    {
+      "id": "historial",
+      "title": "El historial de tu negocio, siempre a mano",
+      "body": "Cada cliente, pedido o trabajo queda guardado con su historia. Consultar qué pasó, comparar y repetir lo que funcionó deja de depender de la memoria de alguien.",
+      "bullets": ["Buscar cualquier movimiento en segundos", "Comparar meses y temporadas", "Aprender de lo que ya hiciste"],
+      "pillar": "orden y procesos"
+    },
+    {
+      "id": "todo-en-un-lugar",
+      "title": "Del papel, el Excel y el WhatsApp a un solo lugar",
+      "body": "Agenda, clientes, stock, gastos y cobros repartidos en cuadernos, planillas y chats hacen que se dupliquen datos y se pierdan cosas. Juntarlos ordena el día a día.",
+      "bullets": ["Menos doble carga", "Menos errores", "Todo el equipo mira lo mismo"],
+      "pillar": "orden y procesos"
+    },
+    {
+      "id": "procesos-antes-que-software",
+      "title": "Primero entender cómo trabajás, después la herramienta",
+      "body": "Antes de desarrollar nada relevamos cómo funciona hoy el negocio, qué tareas se repiten y dónde se traba. La herramienta se diseña para ese proceso, no al revés.",
+      "bullets": ["Mapa de procesos simple", "Tareas repetidas detectadas", "Prioridades claras para arrancar"],
+      "pillar": "orden y procesos"
+    },
+    {
+      "id": "trazabilidad",
+      "title": "Delegar sin perder el control",
+      "body": "Con usuarios, permisos y registro de actividad, cada persona carga lo suyo y queda claro quién hizo qué y cuándo. Podés delegar y seguir sabiendo qué pasa.",
+      "bullets": ["Cada uno ve lo que necesita", "Registro de quién cargó qué", "Menos dependencia de una sola persona"],
+      "pillar": "orden y procesos"
+    },
+    {
+      "id": "tiempo-administrativo",
+      "title": "Menos tiempo administrando, más tiempo trabajando",
+      "body": "Las tareas repetidas (anotar, pasar en limpio, sumar, recordar) se pueden simplificar o automatizar. Ese tiempo vuelve a lo que sabés hacer.",
+      "bullets": ["Carga rápida desde el celular", "Resúmenes automáticos", "Recordatorios que salen solos"],
+      "pillar": "herramientas a medida"
+    },
+    {
+      "id": "a-medida",
+      "title": "Una herramienta que se adapta a tu negocio",
+      "body": "Los programas genéricos obligan a trabajar como ellos quieren. Una solución a medida se diseña para tu forma de trabajar y crece con vos, con mejoras todos los meses.",
+      "bullets": ["Pantallas pensadas para tu equipo", "Solo lo que necesitás", "Mejoras incluidas en la suscripción"],
+      "pillar": "herramientas a medida"
+    },
+    {
+      "id": "datos-tuyos",
+      "title": "Tus datos son tuyos",
+      "body": "La información del negocio es uno de sus activos más valiosos. Se puede exportar en formatos abiertos cuando quieras y, si dejás el servicio, te la llevás completa.",
+      "bullets": ["Exportación en CSV o JSON", "Backups diarios", "El conocimiento queda en tu negocio"],
+      "pillar": "herramientas a medida"
+    },
+    {
+      "id": "accesible",
+      "title": "Gestionar tu negocio con información está a tu alcance",
+      "body": "No hace falta juntar un monto alto para empezar: el desarrollo se reparte en una cuota mensual desde US$ 39, con hosting, soporte y mejoras incluidos.",
+      "bullets": ["Cuota mensual previsible", "Sin inversión inicial grande", "Soporte y mejoras todo el año"],
+      "pillar": "crecer acompañado"
+    },
+    {
+      "id": "socio-no-proveedor",
+      "title": "Un socio en tecnología, no un proveedor más",
+      "body": "Nos sumamos a tu equipo: entendemos el negocio, proponemos qué conviene hacer primero y acompañamos mes a mes para que la tecnología siga el ritmo de tu crecimiento.",
+      "bullets": ["Charla inicial sin costo", "Relevamiento y propuesta", "Arranque y mejora mensual"],
+      "pillar": "crecer acompañado"
+    },
+    {
+      "id": "crecer-ordenado",
+      "title": "Crecer sin desordenarse",
+      "body": "Cuando un negocio crece, lo que antes se manejaba de memoria deja de alcanzar. Tener la información ordenada desde temprano permite sumar clientes y personas sin perder el control.",
+      "bullets": ["Procesos claros para el equipo", "Números para planificar", "Herramientas que crecen con vos"],
+      "pillar": "crecer acompañado"
+    },
+    {
+      "id": "presencia-online",
+      "title": "Que te encuentren en Google y en los asistentes de IA",
+      "body": "Un sitio rápido, con SEO local y preparado para ChatGPT, Gemini y Claude, convierte búsquedas en consultas que llegan con la información ya vista.",
+      "bullets": ["SEO local y perfil de Google", "Datos estructurados y llms.txt", "Contacto directo por WhatsApp"],
+      "pillar": "marca y presencia online"
+    },
+    {
+      "id": "marca",
+      "title": "Una marca que transmite confianza desde el primer contacto",
+      "body": "Nombre, logo, colores y tono de comunicación coherentes hacen que un negocio se reconozca y se vea profesional en todos lados.",
+      "bullets": ["Logo y paleta", "Tono y mensajes clave", "Plantillas para redes y documentos"],
+      "pillar": "marca y presencia online"
+    }
+  ]
+}
