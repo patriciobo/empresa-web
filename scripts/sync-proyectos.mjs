@@ -330,7 +330,8 @@ async function main() {
       bullets: (p.mejoras.length ? p.mejoras : p.funciones).slice(0, 5),
       pillar: "casos reales",
       url: `${site}/proyectos/${p.slug}`,
-      // Sin imagen: los posts no muestran capturas reales de clientes ni del sitio (ver promo.yaml → avoid).
+      // Primera captura del caso (las mismas que el detalle del proyecto y promo.yaml → screenshots).
+      ...(p.imagenes[0] && { image: `${site}${p.imagenes[0].src}` }),
     })),
   };
   await writeFile(OUT_FEED, `${JSON.stringify(feed, null, 2)}\n`);

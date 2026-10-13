@@ -39,11 +39,11 @@ pueden pasar `imagenes:` en `proyectos.yaml` o generarlas en el repo con el fluj
 ## Promo Studio
 
 `promo.yaml` describe la empresa para generar contenido de Instagram. Fuentes: `promo-feed.json` (un caso de éxito
-por proyecto, sólo texto) y `llms.txt`.
+por proyecto, con su primera captura) y `llms.txt`.
 
-Los posts no usan capturas del sitio de Fogón ni de los sistemas de los clientes: no se promociona la página sino
-soluciones a medida. Si un post necesita mostrar una pantalla, la imagen IA dibuja una interfaz inventada e
-ilustrativa (gráfico, formulario, tablero) acorde al tema (`brand.imageStyle` y `avoid`).
+Los posts usan las capturas de los proyectos de clientes (`screenshots` en `promo.yaml`, las mismas del detalle
+de cada caso), nunca las del sitio de Fogón: no se promociona la página sino las soluciones hechas para cada negocio.
+Cada ítem de `promo-feed.json` lleva la primera captura de su caso.
 
 ```bash
 npm run proyectos   # regenera public/promo-feed.json

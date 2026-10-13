@@ -64,14 +64,15 @@ Calendario tipo:
 ## 4. Cómo se conecta con Promo Studio
 
 1. **Este repo** (`promo.yaml`): marca, tono, `avoid`, pilares y dos fuentes:
-   - `promo-feed.json`: un ítem por proyecto (desafío, solución, mejoras; sin imagen). Se regenera con
+   - `promo-feed.json`: un ítem por proyecto (desafío, solución, mejoras y primera captura). Se regenera con
      `npm run proyectos` y se publica con el sitio.
    - `llms.txt`: servicios, planes y FAQ completos, para que los textos no inventen.
-2. **Imágenes:** nunca capturas del sitio de Fogón ni de los sistemas reales de los clientes. Cuando un post habla
-   de una solución, la imagen IA muestra una interfaz inventada e ilustrativa (un gráfico, un formulario, un tablero)
-   acorde a lo que se cuenta, sin presentarla como real. No se promociona la página: se muestran soluciones a medida.
-3. Los posts de casos cuentan el problema y cómo se resolvió para ese negocio, con texto; los flujos y capturas de
-   los repos de cada cliente son para las cuentas de esos clientes, no para la de Fogón.
+2. **Imágenes:** capturas de los proyectos de clientes (`screenshots`, las mismas del detalle de cada caso en
+   `/proyectos`), nunca del sitio de Fogón. Los números que muestran son de demostración y no se presentan como
+   resultados reales. Si un post no tiene captura que encaje, la imagen IA muestra una interfaz inventada sin
+   presentarla como real.
+3. Los posts de casos cuentan el problema, cómo se resolvió y qué gana el negocio con un sistema a medida (registro
+   para analizar después, orden, decisiones con números reales), con la captura del proyecto como prueba.
 4. Commitear y pushear `promo.yaml` y `public/` → "Sincronizar" en Promo Studio.
 
 ## 5. Ideas de contenido listas para producir
