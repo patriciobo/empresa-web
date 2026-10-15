@@ -27,7 +27,10 @@ audience:
 languages: [es]
 tone: >-
   español rioplatense con voseo; cercano, claro y concreto, como un socio que sabe de tecnología y de negocios;
-  sin jerga técnica, sin metáforas ni promesas exageradas. Habla de situaciones que cualquier negocio reconoce
+  sin jerga técnica, sin metáforas ni promesas exageradas. Serio y moderno sin sonar caro ni sofisticado: frases
+  cortas, títulos que dicen el beneficio o el problema de forma directa (un dato, una pregunta o una afirmación con
+  criterio, como una empresa que comparte lo que sabe), formato de tip, checklist, comparación o paso a paso, nada de
+  lenguaje aspiracional ni adjetivos grandilocuentes. Habla de situaciones que cualquier negocio reconoce
   (no saber cuánto ganó el mes, datos repartidos en planillas y chats, tiempo perdido en tareas administrativas)
   sin nombrar rubros ni casos. Siempre como empresa de servicios que acompaña ("te ayudamos", "diseñamos para tu
   negocio", "nos sumamos a tu equipo"), nunca como un producto o una herramienta que el negocio usa.
@@ -35,15 +38,21 @@ brand:
   colors: ["#ff5a1f", "#ece6dc", "#0c0b0a", "#7d776e"]
   font: Inter Tight
   logo: .promo/marca/logo.jpg
+  # Estilo visual tomado de lo que publican empresas de desarrollo de software como servicio (BairesDev, Netguru,
+  # Rootstrap, Thoughtworks, 10Clouds, Light-it, Globant): piezas tipográficas con datos, esquemas y pantallas
+  # simplificadas, y gente real trabajando en fotos cotidianas. Nada de stock de oficina ni foto cinematográfica.
+  # "clasico" para que se apliquen imageStyle y photoStyle (los otros estilos los reemplazan).
+  style: clasico
   imageStyle: >-
-    dark editorial still life on a near-black background, warm low orange light, film grain, lots of negative
-    space: a laptop, phone, notebook or desk objects, or a screen showing an invented simplified interface that
-    matches the topic (chart, table, form, dashboard), no tools or objects of any specific trade, no readable
-    text, no real brands or logos
+    clean flat vector graphic on a plain light sand background: a simple process diagram (boxes joined by arrows),
+    a small data table or bar chart, or simplified invented interface cards (form, checklist, alert), thin dark
+    lines, solid flat fills, orange as the only accent, lots of whitespace, no gradients, no 3D, no glow, no
+    people, no readable text, no logos
   photoStyle: >-
-    low-key cinematic photo of an entrepreneur at a desk reviewing charts on a laptop, neutral office or home
-    workspace with no signs of a specific trade, dark background, warm orange practical light, film grain,
-    Argentina, no visible text
+    candid phone photo of two people working together at an ordinary table, reviewing a laptop or sketching on
+    paper, focus on hands and screen, faces partly out of frame, bright daylight, everyday office in Argentina,
+    true-to-life colors, uncluttered background, no dramatic lighting, no luxury interiors, no trade-specific
+    objects, no visible text or logos
 features:
   - Empresa de servicios, no un producto - cada solución se diseña a medida de cada negocio
   - Relevamiento de cómo trabaja el negocio antes de decidir qué desarrollar
@@ -82,6 +91,9 @@ avoid:
   - decir que los mensajes de WhatsApp Business no tienen costo (Meta los cobra aparte)
   - criticar o nombrar a la competencia, a otros programas o a contadores
   - dar asesoramiento contable, impositivo o legal
+  - estética o lenguaje de lujo, exclusividad o "premium" (fotos cinematográficas, ambientes oscuros, "elevá tu negocio", "experiencia única")
+  - presentar a las personas de las imágenes como el equipo de Fogón o como clientes reales
+  - fotos de stock de gente sonriendo frente a una computadora o dándose la mano
   - jerga técnica (frameworks, lenguajes, bases de datos) en lugar de beneficios para el negocio
 cta: Hacé el autodiagnóstico y descubrí qué plan te conviene (link en la bio)
 links:
